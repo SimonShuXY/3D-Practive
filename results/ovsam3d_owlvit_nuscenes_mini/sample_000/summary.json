@@ -1,0 +1,500 @@
+{
+  "status": "OK",
+  "method": "OV-SAM3D/OV3D-style minimal 2D open-vocabulary to 3D projection scaffold",
+  "note": "Uses OWL-ViT open-vocabulary 2D detections as a replaceable 2D prior. SAM/RAM masks can replace boxes later.",
+  "version": "v1.0-mini",
+  "dataroot": "data/nuscenes_mini/raw",
+  "sample_index": 0,
+  "sample_token": "ca9a282c9e77460f8360f564131a8af5",
+  "scene_token": "cc8c0bf57f984915a77078b10eb33198",
+  "model": "google/owlvit-base-patch32",
+  "threshold": 0.06,
+  "device": "cuda",
+  "prompts": [
+    "car",
+    "truck",
+    "bus",
+    "trailer",
+    "construction vehicle",
+    "pedestrian",
+    "person",
+    "bicycle",
+    "motorcycle",
+    "traffic cone",
+    "barrier",
+    "road sign",
+    "traffic light"
+  ],
+  "points_total": 34688,
+  "points_assigned_open_vocab": 10951,
+  "assigned_ratio": 0.31569995387453875,
+  "label_histogram": {
+    "car": 4576,
+    "truck": 693,
+    "construction vehicle": 178,
+    "pedestrian": 2,
+    "person": 94,
+    "traffic cone": 26,
+    "barrier": 5348,
+    "road sign": 6,
+    "traffic light": 28
+  },
+  "camera_summaries": [
+    {
+      "camera": "CAM_FRONT",
+      "image": "samples/CAM_FRONT/n015-2018-07-24-11-22-45+0800__CAM_FRONT__1532402927612460.jpg",
+      "projected_points": 3067,
+      "detections": 25,
+      "top_detections": [
+        {
+          "box": [
+            126.5422592163086,
+            224.8407440185547,
+            606.0316162109375,
+            633.0803833007812
+          ],
+          "score": 0.4365754723548889,
+          "label_id": 1,
+          "label": "truck"
+        },
+        {
+          "box": [
+            890.822998046875,
+            473.6878356933594,
+            964.1416625976562,
+            526.6860961914062
+          ],
+          "score": 0.3288305103778839,
+          "label_id": 0,
+          "label": "car"
+        },
+        {
+          "box": [
+            708.5911254882812,
+            466.3656005859375,
+            790.6216430664062,
+            528.9857177734375
+          ],
+          "score": 0.30950117111206055,
+          "label_id": 1,
+          "label": "truck"
+        },
+        {
+          "box": [
+            1082.9237060546875,
+            483.6711730957031,
+            1600.9775390625,
+            680.3569946289062
+          ],
+          "score": 0.2572970390319824,
+          "label_id": 10,
+          "label": "barrier"
+        },
+        {
+          "box": [
+            1001.3230590820312,
+            490.68316650390625,
+            1076.7105712890625,
+            534.4292602539062
+          ],
+          "score": 0.2165771871805191,
+          "label_id": 0,
+          "label": "car"
+        },
+        {
+          "box": [
+            897.8505249023438,
+            395.453125,
+            915.3517456054688,
+            428.2214050292969
+          ],
+          "score": 0.1959179937839508,
+          "label_id": 12,
+          "label": "traffic light"
+        },
+        {
+          "box": [
+            1017.91162109375,
+            470.26214599609375,
+            1075.8455810546875,
+            514.8184814453125
+          ],
+          "score": 0.1708855926990509,
+          "label_id": 1,
+          "label": "truck"
+        },
+        {
+          "box": [
+            113.48285675048828,
+            227.7340850830078,
+            568.127685546875,
+            629.206298828125
+          ],
+          "score": 0.15986670553684235,
+          "label_id": 1,
+          "label": "truck"
+        }
+      ],
+      "outputs": {
+        "raw": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/CAM_FRONT/image_raw.jpg",
+        "boxes": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/CAM_FRONT/image_open_vocab_boxes.jpg",
+        "depth_projection": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/CAM_FRONT/image_lidar_depth_projection.jpg",
+        "open_vocab_projection": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/CAM_FRONT/image_open_vocab_point_projection.jpg"
+      }
+    },
+    {
+      "camera": "CAM_FRONT_LEFT",
+      "image": "samples/CAM_FRONT_LEFT/n015-2018-07-24-11-22-45+0800__CAM_FRONT_LEFT__1532402927604844.jpg",
+      "projected_points": 3704,
+      "detections": 3,
+      "top_detections": [
+        {
+          "box": [
+            8.714771270751953,
+            577.6693115234375,
+            1597.7889404296875,
+            902.198974609375
+          ],
+          "score": 0.09671326726675034,
+          "label_id": 10,
+          "label": "barrier"
+        },
+        {
+          "box": [
+            16.13459587097168,
+            475.40948486328125,
+            1608.0858154296875,
+            895.1697387695312
+          ],
+          "score": 0.08222451061010361,
+          "label_id": 10,
+          "label": "barrier"
+        },
+        {
+          "box": [
+            569.3492431640625,
+            420.52142333984375,
+            618.724853515625,
+            497.4433288574219
+          ],
+          "score": 0.07001633942127228,
+          "label_id": 6,
+          "label": "person"
+        }
+      ],
+      "outputs": {
+        "raw": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/CAM_FRONT_LEFT/image_raw.jpg",
+        "boxes": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/CAM_FRONT_LEFT/image_open_vocab_boxes.jpg",
+        "depth_projection": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/CAM_FRONT_LEFT/image_lidar_depth_projection.jpg",
+        "open_vocab_projection": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/CAM_FRONT_LEFT/image_open_vocab_point_projection.jpg"
+      }
+    },
+    {
+      "camera": "CAM_FRONT_RIGHT",
+      "image": "samples/CAM_FRONT_RIGHT/n015-2018-07-24-11-22-45+0800__CAM_FRONT_RIGHT__1532402927620339.jpg",
+      "projected_points": 3079,
+      "detections": 6,
+      "top_detections": [
+        {
+          "box": [
+            282.21258544921875,
+            548.9094848632812,
+            357.4487609863281,
+            662.7799072265625
+          ],
+          "score": 0.1511809527873993,
+          "label_id": 9,
+          "label": "traffic cone"
+        },
+        {
+          "box": [
+            2.084076404571533,
+            505.8967590332031,
+            366.6012878417969,
+            652.5848388671875
+          ],
+          "score": 0.09830841422080994,
+          "label_id": 10,
+          "label": "barrier"
+        },
+        {
+          "box": [
+            1545.310546875,
+            374.07061767578125,
+            1600.0145263671875,
+            519.1625366210938
+          ],
+          "score": 0.08332982659339905,
+          "label_id": 12,
+          "label": "traffic light"
+        },
+        {
+          "box": [
+            1095.718994140625,
+            395.5563659667969,
+            1148.202880859375,
+            448.6781005859375
+          ],
+          "score": 0.0806226134300232,
+          "label_id": 11,
+          "label": "road sign"
+        },
+        {
+          "box": [
+            287.4562072753906,
+            593.3642578125,
+            345.9075622558594,
+            660.9429931640625
+          ],
+          "score": 0.06946758925914764,
+          "label_id": 9,
+          "label": "traffic cone"
+        },
+        {
+          "box": [
+            1.813119649887085,
+            506.697509765625,
+            149.13540649414062,
+            634.1826782226562
+          ],
+          "score": 0.06361107528209686,
+          "label_id": 10,
+          "label": "barrier"
+        }
+      ],
+      "outputs": {
+        "raw": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/CAM_FRONT_RIGHT/image_raw.jpg",
+        "boxes": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/CAM_FRONT_RIGHT/image_open_vocab_boxes.jpg",
+        "depth_projection": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/CAM_FRONT_RIGHT/image_lidar_depth_projection.jpg",
+        "open_vocab_projection": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/CAM_FRONT_RIGHT/image_open_vocab_point_projection.jpg"
+      }
+    },
+    {
+      "camera": "CAM_BACK",
+      "image": "samples/CAM_BACK/n015-2018-07-24-11-22-45+0800__CAM_BACK__1532402927637525.jpg",
+      "projected_points": 4826,
+      "detections": 13,
+      "top_detections": [
+        {
+          "box": [
+            327.1892395019531,
+            511.81982421875,
+            481.4878845214844,
+            586.3418579101562
+          ],
+          "score": 0.2553117573261261,
+          "label_id": 0,
+          "label": "car"
+        },
+        {
+          "box": [
+            59.655296325683594,
+            543.5971069335938,
+            340.20953369140625,
+            676.7380981445312
+          ],
+          "score": 0.15560591220855713,
+          "label_id": 10,
+          "label": "barrier"
+        },
+        {
+          "box": [
+            913.2349243164062,
+            499.5787658691406,
+            984.1489868164062,
+            594.1814575195312
+          ],
+          "score": 0.13748463988304138,
+          "label_id": 6,
+          "label": "person"
+        },
+        {
+          "box": [
+            1045.304443359375,
+            463.3670654296875,
+            1086.4696044921875,
+            513.1458740234375
+          ],
+          "score": 0.1217426210641861,
+          "label_id": 12,
+          "label": "traffic light"
+        },
+        {
+          "box": [
+            1007.296875,
+            506.6210632324219,
+            1079.719482421875,
+            548.134033203125
+          ],
+          "score": 0.1115693673491478,
+          "label_id": 0,
+          "label": "car"
+        },
+        {
+          "box": [
+            8.002424240112305,
+            1.0051846504211426,
+            1604.961181640625,
+            895.5467529296875
+          ],
+          "score": 0.11085972189903259,
+          "label_id": 0,
+          "label": "car"
+        },
+        {
+          "box": [
+            670.3504028320312,
+            468.878662109375,
+            722.3911743164062,
+            500.17071533203125
+          ],
+          "score": 0.10085002332925797,
+          "label_id": 0,
+          "label": "car"
+        },
+        {
+          "box": [
+            78.59244537353516,
+            840.835205078125,
+            1578.4071044921875,
+            899.5880126953125
+          ],
+          "score": 0.09524572640657425,
+          "label_id": 0,
+          "label": "car"
+        }
+      ],
+      "outputs": {
+        "raw": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/CAM_BACK/image_raw.jpg",
+        "boxes": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/CAM_BACK/image_open_vocab_boxes.jpg",
+        "depth_projection": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/CAM_BACK/image_lidar_depth_projection.jpg",
+        "open_vocab_projection": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/CAM_BACK/image_open_vocab_point_projection.jpg"
+      }
+    },
+    {
+      "camera": "CAM_BACK_LEFT",
+      "image": "samples/CAM_BACK_LEFT/n015-2018-07-24-11-22-45+0800__CAM_BACK_LEFT__1532402927647423.jpg",
+      "projected_points": 4097,
+      "detections": 3,
+      "top_detections": [
+        {
+          "box": [
+            -6.955099105834961,
+            752.01513671875,
+            1571.093505859375,
+            900.363037109375
+          ],
+          "score": 0.09390076249837875,
+          "label_id": 10,
+          "label": "barrier"
+        },
+        {
+          "box": [
+            23.3358154296875,
+            566.24755859375,
+            631.8115234375,
+            752.9550170898438
+          ],
+          "score": 0.08529268205165863,
+          "label_id": 10,
+          "label": "barrier"
+        },
+        {
+          "box": [
+            588.1663208007812,
+            609.7103271484375,
+            1232.287353515625,
+            644.2704467773438
+          ],
+          "score": 0.07229991257190704,
+          "label_id": 10,
+          "label": "barrier"
+        }
+      ],
+      "outputs": {
+        "raw": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/CAM_BACK_LEFT/image_raw.jpg",
+        "boxes": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/CAM_BACK_LEFT/image_open_vocab_boxes.jpg",
+        "depth_projection": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/CAM_BACK_LEFT/image_lidar_depth_projection.jpg",
+        "open_vocab_projection": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/CAM_BACK_LEFT/image_open_vocab_point_projection.jpg"
+      }
+    },
+    {
+      "camera": "CAM_BACK_RIGHT",
+      "image": "samples/CAM_BACK_RIGHT/n015-2018-07-24-11-22-45+0800__CAM_BACK_RIGHT__1532402927627893.jpg",
+      "projected_points": 3379,
+      "detections": 3,
+      "top_detections": [
+        {
+          "box": [
+            1079.3531494140625,
+            503.974853515625,
+            1148.830078125,
+            621.181884765625
+          ],
+          "score": 0.09909597039222717,
+          "label_id": 6,
+          "label": "person"
+        },
+        {
+          "box": [
+            17.847871780395508,
+            634.2470703125,
+            1611.4722900390625,
+            869.8915405273438
+          ],
+          "score": 0.08487267047166824,
+          "label_id": 10,
+          "label": "barrier"
+        },
+        {
+          "box": [
+            775.147705078125,
+            477.7127380371094,
+            805.8229370117188,
+            531.9610595703125
+          ],
+          "score": 0.06267231702804565,
+          "label_id": 6,
+          "label": "person"
+        }
+      ],
+      "outputs": {
+        "raw": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/CAM_BACK_RIGHT/image_raw.jpg",
+        "boxes": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/CAM_BACK_RIGHT/image_open_vocab_boxes.jpg",
+        "depth_projection": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/CAM_BACK_RIGHT/image_lidar_depth_projection.jpg",
+        "open_vocab_projection": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/CAM_BACK_RIGHT/image_open_vocab_point_projection.jpg"
+      }
+    }
+  ],
+  "gt_reference": {
+    "available": true,
+    "unique_ids": [
+      0,
+      2,
+      9,
+      11,
+      12,
+      14,
+      16,
+      17,
+      18,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      30,
+      31
+    ],
+    "path": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/bev_lidarseg_gt_reference.png"
+  },
+  "outputs": {
+    "bev_open_vocab": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/bev_open_vocab_labels.png",
+    "bev_lidarseg_gt_reference": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/bev_lidarseg_gt_reference.png",
+    "ply": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/open_vocab_labeled_points.ply",
+    "montage_boxes": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/montage_open_vocab_boxes.jpg",
+    "montage_depth_projection": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/montage_lidar_depth_projection.jpg",
+    "montage_open_vocab_projection": "outputs/ovsam3d_owlvit_nuscenes_mini/sample_000/montage_open_vocab_point_projection.jpg"
+  }
+}
