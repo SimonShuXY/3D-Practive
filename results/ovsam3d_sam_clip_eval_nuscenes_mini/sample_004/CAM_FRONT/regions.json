@@ -1,0 +1,194 @@
+[
+  {
+    "box": [
+      958.9501342773438,
+      379.83551025390625,
+      974.1763305664062,
+      395.8955383300781
+    ],
+    "owl_label": "traffic light",
+    "owl_score": 0.4255977272987366,
+    "clip_label": "traffic light",
+    "clip_score": 0.6111228466033936,
+    "final_label": "traffic light",
+    "final_score": 0.6111228466033936,
+    "sam_iou": 0.8986338973045349,
+    "mask_pixels": 134
+  },
+  {
+    "box": [
+      900.5223999023438,
+      427.61712646484375,
+      918.6460571289062,
+      446.91546630859375
+    ],
+    "owl_label": "traffic light",
+    "owl_score": 0.4164031445980072,
+    "clip_label": "traffic light",
+    "clip_score": 0.5810673832893372,
+    "final_label": "traffic light",
+    "final_score": 0.5810673832893372,
+    "sam_iou": 0.8989368081092834,
+    "mask_pixels": 325
+  },
+  {
+    "box": [
+      959.1884765625,
+      476.0773620605469,
+      1019.9130859375,
+      514.1347045898438
+    ],
+    "owl_label": "car",
+    "owl_score": 0.35854074358940125,
+    "clip_label": "car",
+    "clip_score": 0.501307487487793,
+    "final_label": "car",
+    "final_score": 0.501307487487793,
+    "sam_iou": 0.9509937167167664,
+    "mask_pixels": 2184
+  },
+  {
+    "box": [
+      1085.30419921875,
+      476.7745056152344,
+      1163.567626953125,
+      526.301513671875
+    ],
+    "owl_label": "car",
+    "owl_score": 0.2864709198474884,
+    "clip_label": "trailer",
+    "clip_score": 0.38066720962524414,
+    "final_label": "trailer",
+    "final_score": 0.38066720962524414,
+    "sam_iou": 0.9451925158500671,
+    "mask_pixels": 2629
+  },
+  {
+    "box": [
+      1176.9891357421875,
+      465.9188537597656,
+      1346.9200439453125,
+      577.7300415039062
+    ],
+    "owl_label": "car",
+    "owl_score": 0.2673477828502655,
+    "clip_label": "car",
+    "clip_score": 0.6007824540138245,
+    "final_label": "car",
+    "final_score": 0.6007824540138245,
+    "sam_iou": 0.970580518245697,
+    "mask_pixels": 13913
+  },
+  {
+    "box": [
+      701.1619873046875,
+      457.6258544921875,
+      801.3251953125,
+      540.5289306640625
+    ],
+    "owl_label": "car",
+    "owl_score": 0.2462851107120514,
+    "clip_label": "car",
+    "clip_score": 0.5359743237495422,
+    "final_label": "car",
+    "final_score": 0.5359743237495422,
+    "sam_iou": 0.9659044146537781,
+    "mask_pixels": 6694
+  },
+  {
+    "box": [
+      1296.2518310546875,
+      440.89166259765625,
+      1315.303466796875,
+      454.9324645996094
+    ],
+    "owl_label": "traffic light",
+    "owl_score": 0.2061452865600586,
+    "clip_label": "person",
+    "clip_score": 0.4665679335594177,
+    "final_label": "person",
+    "final_score": 0.4665679335594177,
+    "sam_iou": 0.8481083512306213,
+    "mask_pixels": 179
+  },
+  {
+    "box": [
+      1029.657958984375,
+      471.7930603027344,
+      1071.9432373046875,
+      494.6041564941406
+    ],
+    "owl_label": "car",
+    "owl_score": 0.18416659533977509,
+    "clip_label": "person",
+    "clip_score": 0.2042296975851059,
+    "final_label": "person",
+    "final_score": 0.2042296975851059,
+    "sam_iou": 0.8554377555847168,
+    "mask_pixels": 791
+  },
+  {
+    "box": [
+      1177.322509765625,
+      443.4306945800781,
+      1204.974853515625,
+      467.79736328125
+    ],
+    "owl_label": "traffic light",
+    "owl_score": 0.175922229886055,
+    "clip_label": "traffic light",
+    "clip_score": 0.3009413778781891,
+    "final_label": "traffic light",
+    "final_score": 0.3009413778781891,
+    "sam_iou": 0.746292233467102,
+    "mask_pixels": 423
+  },
+  {
+    "box": [
+      709.5486450195312,
+      455.06756591796875,
+      795.02392578125,
+      501.35003662109375
+    ],
+    "owl_label": "car",
+    "owl_score": 0.16977979242801666,
+    "clip_label": "trailer",
+    "clip_score": 0.2876679003238678,
+    "final_label": "trailer",
+    "final_score": 0.2876679003238678,
+    "sam_iou": 0.9295349717140198,
+    "mask_pixels": 2727
+  },
+  {
+    "box": [
+      1459.864501953125,
+      510.88897705078125,
+      1599.0,
+      606.6571655273438
+    ],
+    "owl_label": "barrier",
+    "owl_score": 0.167428657412529,
+    "clip_label": "barrier",
+    "clip_score": 0.44558101892471313,
+    "final_label": "barrier",
+    "final_score": 0.44558101892471313,
+    "sam_iou": 0.9094295501708984,
+    "mask_pixels": 10409
+  },
+  {
+    "box": [
+      963.4425048828125,
+      468.6379699707031,
+      1016.330078125,
+      491.9209289550781
+    ],
+    "owl_label": "car",
+    "owl_score": 0.15339796245098114,
+    "clip_label": "barrier",
+    "clip_score": 0.34222862124443054,
+    "final_label": "barrier",
+    "final_score": 0.34222862124443054,
+    "sam_iou": 0.9140242338180542,
+    "mask_pixels": 971
+  }
+]

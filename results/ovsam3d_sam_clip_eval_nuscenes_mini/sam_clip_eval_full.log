@@ -1,0 +1,42 @@
+/root/autodl-tmp/ipfp_repro/.venv/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/root/autodl-tmp/ipfp_repro/.venv/lib/python3.10/site-packages/huggingface_hub/file_download.py:1132: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+/root/miniconda3/lib/python3.10/site-packages/torch/_utils.py:831: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
+  return self.fget.__get__(instance, owner)()
+Unused or unrecognized kwargs: padding.
+Unused or unrecognized kwargs: padding.
+Unused or unrecognized kwargs: padding.
+Unused or unrecognized kwargs: padding.
+Unused or unrecognized kwargs: padding.
+Unused or unrecognized kwargs: padding.
+sample_000 box_ratio 0.311 sam_ratio 0.171 sam_acc 0.13408860331416977
+Unused or unrecognized kwargs: padding.
+Unused or unrecognized kwargs: padding.
+Unused or unrecognized kwargs: padding.
+Unused or unrecognized kwargs: padding.
+Unused or unrecognized kwargs: padding.
+Unused or unrecognized kwargs: padding.
+sample_001 box_ratio 0.371 sam_ratio 0.248 sam_acc 0.335658644343681
+Unused or unrecognized kwargs: padding.
+Unused or unrecognized kwargs: padding.
+Unused or unrecognized kwargs: padding.
+Unused or unrecognized kwargs: padding.
+Unused or unrecognized kwargs: padding.
+Unused or unrecognized kwargs: padding.
+sample_002 box_ratio 0.154 sam_ratio 0.105 sam_acc 0.044866501513900356
+Unused or unrecognized kwargs: padding.
+Unused or unrecognized kwargs: padding.
+Unused or unrecognized kwargs: padding.
+Unused or unrecognized kwargs: padding.
+Unused or unrecognized kwargs: padding.
+sample_003 box_ratio 0.327 sam_ratio 0.265 sam_acc 0.3358695652173913
+Unused or unrecognized kwargs: padding.
+Unused or unrecognized kwargs: padding.
+Unused or unrecognized kwargs: padding.
+Unused or unrecognized kwargs: padding.
+Unused or unrecognized kwargs: padding.
+Unused or unrecognized kwargs: padding.
+sample_004 box_ratio 0.347 sam_ratio 0.214 sam_acc 0.4889187374076561
+OUTPUT_DIR outputs/ovsam3d_sam_clip_eval_nuscenes_mini
+EXIT:0
