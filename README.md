@@ -1,4 +1,4 @@
-# OV3D / OV-SAM3D Open-Vocabulary 3D Reproduction Notes
+# 3D-Practive: OV3D / OV-SAM3D Open-Vocabulary 3D Reproduction Notes
 
 This repository stores the isolated open-vocabulary 3D reproduction branch built after the IPFP/PTv3 experiments.
 
