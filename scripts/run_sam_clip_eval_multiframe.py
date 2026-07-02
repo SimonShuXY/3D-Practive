@@ -427,6 +427,63 @@ def assign_regions_to_points(
                 sam_scores[targets] = score
 
 
+def make_superpoints(points: np.ndarray, voxel_size: float) -> np.ndarray:
+    coords = np.floor(points / voxel_size).astype(np.int32)
+    _, inverse = np.unique(coords, axis=0, return_inverse=True)
+    return inverse.astype(np.int32)
+
+
+def superpoint_vote_labels(
+    point_labels: np.ndarray,
+    point_scores: np.ndarray,
+    superpoints: np.ndarray,
+    min_points: int,
+    min_purity: float,
+    min_score: float,
+) -> Tuple[np.ndarray, np.ndarray, dict]:
+    out_labels = np.full_like(point_labels, -1)
+    out_scores = np.zeros_like(point_scores)
+    total_superpoints = int(superpoints.max() + 1) if len(superpoints) else 0
+    accepted_superpoints = 0
+    assigned_points = 0
+
+    for sid in range(total_superpoints):
+        idxs = np.where(superpoints == sid)[0]
+        if len(idxs) < min_points:
+            continue
+        assigned = idxs[point_labels[idxs] >= 0]
+        if len(assigned) < min_points:
+            continue
+        labels = point_labels[assigned]
+        scores = point_scores[assigned]
+        label_ids, inverse = np.unique(labels, return_inverse=True)
+        label_scores = np.zeros(len(label_ids), dtype=np.float32)
+        label_counts = np.zeros(len(label_ids), dtype=np.int32)
+        for lid_idx, score in zip(inverse, scores):
+            label_scores[lid_idx] += float(score)
+            label_counts[lid_idx] += 1
+        best = int(np.argmax(label_scores))
+        best_label = int(label_ids[best])
+        purity = float(label_counts[best] / len(assigned))
+        mean_score = float(label_scores[best] / max(1, label_counts[best]))
+        if purity < min_purity or mean_score < min_score:
+            continue
+        out_labels[idxs] = best_label
+        out_scores[idxs] = mean_score * purity
+        accepted_superpoints += 1
+        assigned_points += int(len(idxs))
+
+    stats = {
+        "total_superpoints": total_superpoints,
+        "accepted_superpoints": accepted_superpoints,
+        "assigned_points": assigned_points,
+        "min_points": min_points,
+        "min_purity": min_purity,
+        "min_score": min_score,
+    }
+    return out_labels, out_scores, stats
+
+
 def idx_to_name_mapping(nusc: NuScenes) -> Dict[int, str]:
     if hasattr(nusc, "lidarseg_idx2name_mapping"):
         return {int(k): v for k, v in nusc.lidarseg_idx2name_mapping.items()}
@@ -646,8 +703,11 @@ def process_sample(
     box_scores = np.zeros(points.shape[0], dtype=np.float32)
     sam_labels = np.full(points.shape[0], -1, dtype=np.int32)
     sam_scores = np.zeros(points.shape[0], dtype=np.float32)
+    superpoint_labels = None
+    superpoint_scores = None
+    superpoint_stats = None
 
-    mask_paths, box_proj_paths, sam_proj_paths = [], [], []
+    mask_paths, box_proj_paths, sam_proj_paths, superpoint_bev_paths = [], [], [], []
     camera_summaries = []
 
     for cam_name in CAMERAS:
@@ -722,6 +782,24 @@ def process_sample(
 
     draw_bev(points, box_labels, out / "bev_box_open_vocab_labels.png", "Box-level open-vocabulary point labels")
     draw_bev(points, sam_labels, out / "bev_sam_open_vocab_labels.png", "SAM-refined open-vocabulary point labels")
+    if args.enable_superpoints:
+        superpoints = make_superpoints(points, args.superpoint_voxel_size)
+        superpoint_labels, superpoint_scores, superpoint_stats = superpoint_vote_labels(
+            sam_labels,
+            sam_scores,
+            superpoints,
+            args.superpoint_min_points,
+            args.superpoint_min_purity,
+            args.superpoint_min_score,
+        )
+        draw_bev(
+            points,
+            superpoint_labels,
+            out / "bev_superpoint_sam_open_vocab_labels.png",
+            "Superpoint-overlap SAM open-vocabulary point labels",
+        )
+        write_ply(points, superpoint_labels, superpoint_scores, out / "superpoint_sam_open_vocab_labeled_points.ply")
+        superpoint_bev_paths.append(out / "bev_superpoint_sam_open_vocab_labels.png")
     draw_gt_bev(points, gt, idx2name, out / "bev_lidarseg_gt_reference.png")
     write_ply(points, sam_labels, sam_scores, out / "sam_open_vocab_labeled_points.ply")
     make_montage(mask_paths, out / "montage_sam_clip_masks.jpg")
@@ -730,6 +808,7 @@ def process_sample(
 
     eval_box = evaluate_point_labels(box_labels, gt, gt_sets)
     eval_sam = evaluate_point_labels(sam_labels, gt, gt_sets)
+    eval_superpoint = evaluate_point_labels(superpoint_labels, gt, gt_sets) if superpoint_labels is not None else None
     summary = {
         "status": "OK",
         "sample_index": sample_index,
@@ -738,17 +817,22 @@ def process_sample(
         "points_total": int(points.shape[0]),
         "box_label_histogram": label_hist(box_labels),
         "sam_label_histogram": label_hist(sam_labels),
+        "superpoint_label_histogram": label_hist(superpoint_labels) if superpoint_labels is not None else {},
         "box_eval": eval_box,
         "sam_eval": eval_sam,
+        "superpoint_eval": eval_superpoint,
+        "superpoint_stats": superpoint_stats,
         "camera_summaries": camera_summaries,
         "outputs": {
             "bev_box": str(out / "bev_box_open_vocab_labels.png"),
             "bev_sam": str(out / "bev_sam_open_vocab_labels.png"),
+            "bev_superpoint": str(out / "bev_superpoint_sam_open_vocab_labels.png") if superpoint_labels is not None else None,
             "bev_gt": str(out / "bev_lidarseg_gt_reference.png"),
             "montage_masks": str(out / "montage_sam_clip_masks.jpg"),
             "montage_box_projection": str(out / "montage_box_point_projection.jpg"),
             "montage_sam_projection": str(out / "montage_sam_point_projection.jpg"),
             "ply": str(out / "sam_open_vocab_labeled_points.ply"),
+            "superpoint_ply": str(out / "superpoint_sam_open_vocab_labeled_points.ply") if superpoint_labels is not None else None,
         },
         "config": {
             "label_mode": args.label_mode,
@@ -756,11 +840,18 @@ def process_sample(
             "owl_threshold": args.owl_threshold,
             "min_clip_score": args.min_clip_score,
             "max_detections_per_camera": args.max_detections_per_camera,
+            "enable_superpoints": bool(args.enable_superpoints),
+            "superpoint_voxel_size": args.superpoint_voxel_size,
+            "superpoint_min_points": args.superpoint_min_points,
+            "superpoint_min_purity": args.superpoint_min_purity,
+            "superpoint_min_score": args.superpoint_min_score,
         },
     }
     with open(out / "summary.json", "w") as f:
         json.dump(summary, f, indent=2)
-    return summary, global_points, sam_labels, sam_scores, gt
+    output_labels = superpoint_labels if superpoint_labels is not None else sam_labels
+    output_scores = superpoint_scores if superpoint_scores is not None else sam_scores
+    return summary, global_points, output_labels, output_scores, gt
 
 
 def make_contact_sheet(base: Path, summaries: Sequence[dict]) -> None:
@@ -799,6 +890,9 @@ def make_contact_sheet(base: Path, summaries: Sequence[dict]) -> None:
         proj_labels.append(f"{sid} SAM point projection")
         bev_paths += [Path(outputs["bev_sam"]), Path(outputs["bev_gt"])]
         bev_labels += [f"{sid} SAM BEV", f"{sid} lidarseg GT"]
+        if outputs.get("bev_superpoint"):
+            bev_paths.append(Path(outputs["bev_superpoint"]))
+            bev_labels.append(f"{sid} superpoint SAM BEV")
     tile(mask_paths, mask_labels, base / "contact_sheet_sam_clip_masks.jpg", 760)
     tile(proj_paths, proj_labels, base / "contact_sheet_sam_point_projection.jpg", 760)
     tile(bev_paths, bev_labels, base / "contact_sheet_sam_bev_vs_gt.jpg", 560)
@@ -829,12 +923,14 @@ def make_multiframe_outputs(
 def write_report(out_dir: Path, summaries: Sequence[dict], multiframe_outputs: Dict[str, str]) -> None:
     rows = []
     for s in summaries:
+        super_eval = s.get("superpoint_eval")
         rows.append(
-            "| sample_{:03d} | {} | {:.3f} | {:.3f} | {} | {} |".format(
+            "| sample_{:03d} | {} | {:.3f} | {:.3f} | {} | {} | {} | {} |".format(
                 s["sample_index"],
                 s["points_total"],
                 s["box_eval"]["assigned_ratio"],
                 s["sam_eval"]["assigned_ratio"],
+                "n/a" if super_eval is None else f"{super_eval['assigned_ratio']:.3f}",
                 (
                     "n/a"
                     if s["box_eval"]["mapped_assigned_accuracy"] is None
@@ -845,6 +941,11 @@ def write_report(out_dir: Path, summaries: Sequence[dict], multiframe_outputs: D
                     if s["sam_eval"]["mapped_assigned_accuracy"] is None
                     else f"{s['sam_eval']['mapped_assigned_accuracy']:.3f}"
                 ),
+                (
+                    "n/a"
+                    if super_eval is None or super_eval["mapped_assigned_accuracy"] is None
+                    else f"{super_eval['mapped_assigned_accuracy']:.3f}"
+                ),
             )
         )
     report = f"""# SAM / CLIP / Evaluation / Multi-frame Results
@@ -854,15 +955,16 @@ This run upgrades the initial OWL-ViT box scaffold in four ways:
 1. OWL-ViT boxes are refined with SAM masks.
 2. CLIP crop tags are recorded as RAM-style automatic labels.
 3. Open-vocabulary point labels are mapped to nuScenes lidarseg classes for a lightweight quality check.
-4. Per-frame predictions are fused into a multi-frame global-coordinate semantic map.
+4. Optional 3D superpoint overlap voting smooths SAM point labels in an official-like post-processing step.
+5. Per-frame predictions are fused into a multi-frame global-coordinate semantic map.
 
 ## Summary
 
 Config: `label_mode={summaries[0].get('config', {}).get('label_mode', 'hybrid')}`,
 `merge_person_labels={summaries[0].get('config', {}).get('merge_person_labels', False)}`.
 
-| Sample | Points | Box assigned ratio | SAM assigned ratio | Box mapped accuracy | SAM mapped accuracy |
-| --- | ---: | ---: | ---: | ---: | ---: |
+| Sample | Points | Box assigned ratio | SAM assigned ratio | Superpoint assigned ratio | Box mapped accuracy | SAM mapped accuracy | Superpoint mapped accuracy |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 {chr(10).join(rows)}
 
 ## Visualizations
@@ -880,6 +982,9 @@ The assigned ratio can drop after SAM refinement, which is healthy when box labe
 over-covering background points. The mapped accuracy is only a lightweight diagnostic:
 open-vocabulary labels do not perfectly match nuScenes lidarseg classes, and unmapped
 labels such as road sign / traffic light are ignored by the current metric.
+Superpoint voting is a precision-oriented post-processing step. If its assigned ratio drops
+while mapped accuracy rises, it is filtering noisy point-level mask spillover. If both drop,
+the superpoint thresholds are too strict for the current sparse LiDAR sampling.
 """
     (out_dir / "SAM_CLIP_EVAL_MULTIFRAME_REPORT.md").write_text(report)
 
@@ -914,6 +1019,11 @@ def main() -> None:
     ap.add_argument("--clip-batch-size", type=int, default=16)
     ap.add_argument("--label-mode", choices=["hybrid", "owl", "clip"], default="hybrid")
     ap.add_argument("--merge-person-labels", action="store_true")
+    ap.add_argument("--enable-superpoints", action="store_true")
+    ap.add_argument("--superpoint-voxel-size", type=float, default=0.75)
+    ap.add_argument("--superpoint-min-points", type=int, default=4)
+    ap.add_argument("--superpoint-min-purity", type=float, default=0.55)
+    ap.add_argument("--superpoint-min-score", type=float, default=0.02)
     ap.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     args = ap.parse_args()
 

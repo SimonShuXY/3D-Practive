@@ -93,6 +93,14 @@ SAM run reaches `0.413` micro IoU and `0.350` macro IoU across
 `barrier / car / pedestrian / traffic cone / truck`. See
 `results/ovsam3d_metric_ablation_report/OBJECT_ONLY_DIAGNOSTIC_REPORT.md`.
 
+### Official-Like Superpoint Step
+
+The first official-like step adds 3D superpoint overlap voting after OWL-only + SAM
+projection. On the same five nuScenes-mini samples, the default superpoint setting improves
+object micro IoU from `0.385` to `0.400`, and frequent-object macro IoU from `0.350` to
+`0.375`. A stricter threshold ablation reaches `0.426` object micro IoU, but with lower
+coverage and worse macro balance. See `docs/OFFICIAL_LIKE_SUPERPOINT_EXPERIMENT.md`.
+
 ### Initial OWL-ViT Box Scaffold
 
 Five nuScenes-mini samples were processed. Each sample includes:

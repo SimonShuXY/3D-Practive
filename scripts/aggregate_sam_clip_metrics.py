@@ -245,6 +245,14 @@ def read_run(run_dir: Path) -> dict:
     return data
 
 
+def available_stages(run: dict) -> List[str]:
+    stages = ["box", "sam"]
+    summaries = run.get("summaries") or []
+    if any(sample.get("superpoint_eval") for sample in summaries):
+        stages.append("superpoint")
+    return stages
+
+
 def write_csv(path: Path, rows: Sequence[dict], fields: Sequence[str]) -> None:
     with path.open("w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fields, lineterminator="\n")
@@ -270,14 +278,18 @@ def make_object_only_report(
     group_rows: Sequence[dict],
     per_class_rows: Sequence[dict],
 ) -> None:
-    sam_object_rows = [row for row in group_rows if row["stage"] == "sam" and row["group"] in {"object", "frequent_object"}]
+    object_rows = [
+        row
+        for row in group_rows
+        if row["stage"] in {"sam", "superpoint"} and row["group"] in {"object", "frequent_object"}
+    ]
     best_object = max(
-        (row for row in sam_object_rows if row["group"] == "object" and row["micro_iou"] is not None),
+        (row for row in object_rows if row["group"] == "object" and row["micro_iou"] is not None),
         key=lambda row: row["micro_iou"],
         default=None,
     )
     best_frequent = max(
-        (row for row in sam_object_rows if row["group"] == "frequent_object" and row["micro_iou"] is not None),
+        (row for row in object_rows if row["group"] == "frequent_object" and row["micro_iou"] is not None),
         key=lambda row: row["micro_iou"],
         default=None,
     )
@@ -285,18 +297,19 @@ def make_object_only_report(
     lines = [
         "# Object-Only SAM Diagnostic Report",
         "",
-        "This report intentionally removes stuff/background classes from the main reading. It is a diagnostic for the current object-mask route, not a full-scene semantic segmentation benchmark.",
+        "This report intentionally removes stuff/background classes from the main reading. It is a diagnostic for the current object-mask route, not a full-scene semantic segmentation benchmark. When present, `superpoint` is an official-like 3D overlap-voting post-process over SAM point labels.",
         "",
-        "## SAM Object Groups",
+        "## Object Groups",
         "",
-        "| Run | Label mode | Group | Assigned acc | Micro R | Micro IoU | Macro IoU | Classes | Class list |",
-        "| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- |",
+        "| Run | Label mode | Stage | Group | Assigned acc | Micro R | Micro IoU | Macro IoU | Classes | Class list |",
+        "| --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- |",
     ]
-    for row in sam_object_rows:
+    for row in object_rows:
         lines.append(
-            "| {run} | {label_mode} | {group} | {acc} | {recall} | {miou_micro} | {miou_macro} | {classes} | {class_list} |".format(
+            "| {run} | {label_mode} | {stage} | {group} | {acc} | {recall} | {miou_micro} | {miou_macro} | {classes} | {class_list} |".format(
                 run=short_run_name(row["run"]),
                 label_mode=row.get("label_mode", "unknown"),
+                stage=row["stage"],
                 group=row["group"],
                 acc=fnum(row["assigned_accuracy"]),
                 recall=fnum(row["micro_recall"]),
@@ -313,6 +326,7 @@ def make_object_only_report(
             "## Best Object-Only Route",
             "",
             "- Best object-only run: `{}`.".format(best_object["run"]),
+            "- Best object-only stage: `{}`.".format(best_object["stage"]),
             "- Object assigned accuracy: `{}`.".format(fnum(best_object["assigned_accuracy"])),
             "- Object micro IoU: `{}`.".format(fnum(best_object["micro_iou"])),
             "- Object macro IoU: `{}`.".format(fnum(best_object["macro_iou"])),
@@ -325,6 +339,7 @@ def make_object_only_report(
             "`frequent_object` keeps object classes with enough ground-truth support in this mini split. It is useful for checking whether the object-mask chain works before long-tail classes dominate the macro average.",
             "",
             "- Best frequent-object run: `{}`.".format(best_frequent["run"]),
+            "- Best frequent-object stage: `{}`.".format(best_frequent["stage"]),
             "- Frequent-object assigned accuracy: `{}`.".format(fnum(best_frequent["assigned_accuracy"])),
             "- Frequent-object micro IoU: `{}`.".format(fnum(best_frequent["micro_iou"])),
             "- Frequent-object macro IoU: `{}`.".format(fnum(best_frequent["macro_iou"])),
@@ -335,7 +350,7 @@ def make_object_only_report(
         best_classes = [
             row
             for row in per_class_rows
-            if row["run"] == best_object["run"] and row["stage"] == "sam" and row["class"] in OBJECT_CLASSES
+            if row["run"] == best_object["run"] and row["stage"] == best_object["stage"] and row["class"] in OBJECT_CLASSES
         ]
         best_classes.sort(key=lambda row: (row["iou"] or 0.0), reverse=True)
         lines += [
@@ -401,18 +416,19 @@ def make_report(
         "",
         "## Split Metrics",
         "",
-        "This table separates the SAM-stage score into all mapped classes, object-like prompts, frequent object classes, and stuff/background classes. `Assigned acc` is micro precision over the points assigned to that group.",
+        "This table separates the SAM/superpoint-stage score into all mapped classes, object-like prompts, frequent object classes, and stuff/background classes. `Assigned acc` is micro precision over the points assigned to that group.",
         "",
-        "| Run | Label mode | Group | Coverage | Group pred ratio | Assigned acc | Micro R | Micro IoU | Macro IoU | Classes |",
-        "| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
+        "| Run | Label mode | Stage | Group | Coverage | Group pred ratio | Assigned acc | Micro R | Micro IoU | Macro IoU | Classes |",
+        "| --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
     ]
     for row in group_rows:
-        if row["stage"] != "sam":
+        if row["stage"] not in {"sam", "superpoint"}:
             continue
         lines.append(
-            "| {run} | {label_mode} | {group} | {coverage} | {pred_ratio} | {acc} | {recall} | {miou_micro} | {miou_macro} | {classes} |".format(
+            "| {run} | {label_mode} | {stage} | {group} | {coverage} | {pred_ratio} | {acc} | {recall} | {miou_micro} | {miou_macro} | {classes} |".format(
                 run=row["run"],
                 label_mode=row.get("label_mode", "unknown"),
+                stage=row["stage"],
                 group=row["group"],
                 coverage=fnum(row["assigned_ratio"]),
                 pred_ratio=fnum(row["group_pred_ratio"]),
@@ -433,6 +449,7 @@ def make_report(
         "- Use merged-person rows as the default diagnostic when matching nuScenes lidarseg because `person` and `pedestrian` share the same closed-set target.",
         "- Read the full macro IoU together with object/stuff split metrics. The current prompt route is object-centric, so missing stuff predictions can depress full-scene macro IoU even when object assigned accuracy is improving.",
         "- Read `frequent_object` as the cleanest current object-mask diagnostic: it removes background and also avoids tiny long-tail classes dominating a five-sample mini split.",
+        "- Compare `sam` with `superpoint` rows to test whether 3D overlap voting improves precision enough to offset lower coverage.",
         "",
         "## Lowest SAM IoU Classes",
         "",
@@ -508,7 +525,8 @@ def main() -> None:
         merge_in_run = bool(config.get("merge_person_labels", False))
         min_clip_score = config.get("min_clip_score")
         owl_threshold = config.get("owl_threshold")
-        for stage in ("box", "sam"):
+        stages = available_stages(run)
+        for stage in stages:
             row, class_rows = summarize_eval(run["summaries"], stage, args.merge_person_labels)
             meta = {
                 "run": name,
@@ -536,7 +554,7 @@ def main() -> None:
                     }
                 )
         for sample in run["summaries"]:
-            for stage in ("box", "sam"):
+            for stage in stages:
                 sample_rows.append(
                     {
                         "run": name,

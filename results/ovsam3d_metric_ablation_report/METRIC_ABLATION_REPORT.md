@@ -21,38 +21,38 @@
 
 ## Split Metrics
 
-This table separates the SAM-stage score into all mapped classes, object-like prompts, frequent object classes, and stuff/background classes. `Assigned acc` is micro precision over the points assigned to that group.
+This table separates the SAM/superpoint-stage score into all mapped classes, object-like prompts, frequent object classes, and stuff/background classes. `Assigned acc` is micro precision over the points assigned to that group.
 
-| Run | Label mode | Group | Coverage | Group pred ratio | Assigned acc | Micro R | Micro IoU | Macro IoU | Classes |
-| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-| ovsam3d_sam_clip_eval_nuscenes_mini | unknown | full | 0.201 | 0.200 | 0.304 | 0.088 | 0.073 | 0.092 | 14 |
-| ovsam3d_sam_clip_eval_nuscenes_mini | unknown | object | 0.201 | 0.184 | 0.269 | 0.368 | 0.184 | 0.125 | 10 |
-| ovsam3d_sam_clip_eval_nuscenes_mini | unknown | stuff | 0.201 | 0.017 | 0.680 | 0.021 | 0.020 | 0.008 | 4 |
-| ovsam3d_sam_clip_eval_nuscenes_mini | unknown | frequent_object | 0.201 | 0.149 | 0.331 | 0.369 | 0.211 | 0.250 | 5 |
-| ovsam3d_ablation_hybrid_merge_person_nuscenes_mini | hybrid | full | 0.201 | 0.200 | 0.304 | 0.088 | 0.073 | 0.092 | 14 |
-| ovsam3d_ablation_hybrid_merge_person_nuscenes_mini | hybrid | object | 0.201 | 0.184 | 0.269 | 0.368 | 0.184 | 0.125 | 10 |
-| ovsam3d_ablation_hybrid_merge_person_nuscenes_mini | hybrid | stuff | 0.201 | 0.017 | 0.680 | 0.021 | 0.020 | 0.008 | 4 |
-| ovsam3d_ablation_hybrid_merge_person_nuscenes_mini | hybrid | frequent_object | 0.201 | 0.149 | 0.331 | 0.369 | 0.211 | 0.250 | 5 |
-| ovsam3d_ablation_owl_merge_person_nuscenes_mini | owl | full | 0.201 | 0.200 | 0.464 | 0.134 | 0.116 | 0.134 | 13 |
-| ovsam3d_ablation_owl_merge_person_nuscenes_mini | owl | object | 0.201 | 0.200 | 0.464 | 0.692 | 0.385 | 0.194 | 9 |
-| ovsam3d_ablation_owl_merge_person_nuscenes_mini | owl | stuff | 0.201 | 0.000 | n/a | 0.000 | 0.000 | 0.000 | 4 |
-| ovsam3d_ablation_owl_merge_person_nuscenes_mini | owl | frequent_object | 0.201 | 0.184 | 0.506 | 0.694 | 0.413 | 0.350 | 5 |
-| ovsam3d_ablation_clip_merge_person_nuscenes_mini | clip | full | 0.201 | 0.200 | 0.298 | 0.086 | 0.071 | 0.091 | 14 |
-| ovsam3d_ablation_clip_merge_person_nuscenes_mini | clip | object | 0.201 | 0.184 | 0.262 | 0.359 | 0.179 | 0.124 | 10 |
-| ovsam3d_ablation_clip_merge_person_nuscenes_mini | clip | stuff | 0.201 | 0.017 | 0.680 | 0.021 | 0.020 | 0.008 | 4 |
-| ovsam3d_ablation_clip_merge_person_nuscenes_mini | clip | frequent_object | 0.201 | 0.148 | 0.325 | 0.360 | 0.206 | 0.248 | 5 |
-| ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini | hybrid | full | 0.201 | 0.200 | 0.305 | 0.088 | 0.073 | 0.100 | 13 |
-| ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini | hybrid | object | 0.201 | 0.184 | 0.271 | 0.371 | 0.186 | 0.141 | 9 |
-| ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini | hybrid | stuff | 0.201 | 0.017 | 0.679 | 0.020 | 0.020 | 0.008 | 4 |
-| ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini | hybrid | frequent_object | 0.201 | 0.134 | 0.372 | 0.372 | 0.228 | 0.255 | 5 |
-| ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini | hybrid | full | 0.201 | 0.200 | 0.329 | 0.095 | 0.080 | 0.126 | 13 |
-| ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini | hybrid | object | 0.201 | 0.184 | 0.297 | 0.406 | 0.207 | 0.178 | 9 |
-| ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini | hybrid | stuff | 0.201 | 0.017 | 0.679 | 0.020 | 0.020 | 0.008 | 4 |
-| ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini | hybrid | frequent_object | 0.201 | 0.134 | 0.407 | 0.407 | 0.256 | 0.320 | 5 |
-| ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini | hybrid | full | 0.201 | 0.200 | 0.356 | 0.103 | 0.087 | 0.098 | 13 |
-| ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini | hybrid | object | 0.201 | 0.200 | 0.356 | 0.531 | 0.271 | 0.142 | 9 |
-| ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini | hybrid | stuff | 0.201 | 0.000 | n/a | 0.000 | 0.000 | 0.000 | 4 |
-| ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini | hybrid | frequent_object | 0.201 | 0.169 | 0.421 | 0.533 | 0.307 | 0.255 | 5 |
+| Run | Label mode | Stage | Group | Coverage | Group pred ratio | Assigned acc | Micro R | Micro IoU | Macro IoU | Classes |
+| --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| ovsam3d_sam_clip_eval_nuscenes_mini | unknown | sam | full | 0.201 | 0.200 | 0.304 | 0.088 | 0.073 | 0.092 | 14 |
+| ovsam3d_sam_clip_eval_nuscenes_mini | unknown | sam | object | 0.201 | 0.184 | 0.269 | 0.368 | 0.184 | 0.125 | 10 |
+| ovsam3d_sam_clip_eval_nuscenes_mini | unknown | sam | stuff | 0.201 | 0.017 | 0.680 | 0.021 | 0.020 | 0.008 | 4 |
+| ovsam3d_sam_clip_eval_nuscenes_mini | unknown | sam | frequent_object | 0.201 | 0.149 | 0.331 | 0.369 | 0.211 | 0.250 | 5 |
+| ovsam3d_ablation_hybrid_merge_person_nuscenes_mini | hybrid | sam | full | 0.201 | 0.200 | 0.304 | 0.088 | 0.073 | 0.092 | 14 |
+| ovsam3d_ablation_hybrid_merge_person_nuscenes_mini | hybrid | sam | object | 0.201 | 0.184 | 0.269 | 0.368 | 0.184 | 0.125 | 10 |
+| ovsam3d_ablation_hybrid_merge_person_nuscenes_mini | hybrid | sam | stuff | 0.201 | 0.017 | 0.680 | 0.021 | 0.020 | 0.008 | 4 |
+| ovsam3d_ablation_hybrid_merge_person_nuscenes_mini | hybrid | sam | frequent_object | 0.201 | 0.149 | 0.331 | 0.369 | 0.211 | 0.250 | 5 |
+| ovsam3d_ablation_owl_merge_person_nuscenes_mini | owl | sam | full | 0.201 | 0.200 | 0.464 | 0.134 | 0.116 | 0.134 | 13 |
+| ovsam3d_ablation_owl_merge_person_nuscenes_mini | owl | sam | object | 0.201 | 0.200 | 0.464 | 0.692 | 0.385 | 0.194 | 9 |
+| ovsam3d_ablation_owl_merge_person_nuscenes_mini | owl | sam | stuff | 0.201 | 0.000 | n/a | 0.000 | 0.000 | 0.000 | 4 |
+| ovsam3d_ablation_owl_merge_person_nuscenes_mini | owl | sam | frequent_object | 0.201 | 0.184 | 0.506 | 0.694 | 0.413 | 0.350 | 5 |
+| ovsam3d_ablation_clip_merge_person_nuscenes_mini | clip | sam | full | 0.201 | 0.200 | 0.298 | 0.086 | 0.071 | 0.091 | 14 |
+| ovsam3d_ablation_clip_merge_person_nuscenes_mini | clip | sam | object | 0.201 | 0.184 | 0.262 | 0.359 | 0.179 | 0.124 | 10 |
+| ovsam3d_ablation_clip_merge_person_nuscenes_mini | clip | sam | stuff | 0.201 | 0.017 | 0.680 | 0.021 | 0.020 | 0.008 | 4 |
+| ovsam3d_ablation_clip_merge_person_nuscenes_mini | clip | sam | frequent_object | 0.201 | 0.148 | 0.325 | 0.360 | 0.206 | 0.248 | 5 |
+| ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini | hybrid | sam | full | 0.201 | 0.200 | 0.305 | 0.088 | 0.073 | 0.100 | 13 |
+| ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini | hybrid | sam | object | 0.201 | 0.184 | 0.271 | 0.371 | 0.186 | 0.141 | 9 |
+| ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini | hybrid | sam | stuff | 0.201 | 0.017 | 0.679 | 0.020 | 0.020 | 0.008 | 4 |
+| ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini | hybrid | sam | frequent_object | 0.201 | 0.134 | 0.372 | 0.372 | 0.228 | 0.255 | 5 |
+| ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini | hybrid | sam | full | 0.201 | 0.200 | 0.329 | 0.095 | 0.080 | 0.126 | 13 |
+| ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini | hybrid | sam | object | 0.201 | 0.184 | 0.297 | 0.406 | 0.207 | 0.178 | 9 |
+| ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini | hybrid | sam | stuff | 0.201 | 0.017 | 0.679 | 0.020 | 0.020 | 0.008 | 4 |
+| ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini | hybrid | sam | frequent_object | 0.201 | 0.134 | 0.407 | 0.407 | 0.256 | 0.320 | 5 |
+| ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini | hybrid | sam | full | 0.201 | 0.200 | 0.356 | 0.103 | 0.087 | 0.098 | 13 |
+| ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini | hybrid | sam | object | 0.201 | 0.200 | 0.356 | 0.531 | 0.271 | 0.142 | 9 |
+| ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini | hybrid | sam | stuff | 0.201 | 0.000 | n/a | 0.000 | 0.000 | 0.000 | 4 |
+| ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini | hybrid | sam | frequent_object | 0.201 | 0.169 | 0.421 | 0.533 | 0.307 | 0.255 | 5 |
 
 ## Main Reading
 
@@ -61,6 +61,7 @@ This table separates the SAM-stage score into all mapped classes, object-like pr
 - Use merged-person rows as the default diagnostic when matching nuScenes lidarseg because `person` and `pedestrian` share the same closed-set target.
 - Read the full macro IoU together with object/stuff split metrics. The current prompt route is object-centric, so missing stuff predictions can depress full-scene macro IoU even when object assigned accuracy is improving.
 - Read `frequent_object` as the cleanest current object-mask diagnostic: it removes background and also avoids tiny long-tail classes dominating a five-sample mini split.
+- Compare `sam` with `superpoint` rows to test whether 3D overlap voting improves precision enough to offset lower coverage.
 
 ## Lowest SAM IoU Classes
 
