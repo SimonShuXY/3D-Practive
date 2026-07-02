@@ -1,0 +1,114 @@
+[
+  {
+    "box": [
+      1007.6715698242188,
+      607.0474853515625,
+      1108.3231201171875,
+      751.9384765625
+    ],
+    "owl_label": "traffic cone",
+    "owl_score": 0.4400046765804291,
+    "clip_label": "traffic cone",
+    "clip_score": 0.9987661838531494,
+    "final_label": "traffic cone",
+    "final_score": 0.4400046765804291,
+    "sam_iou": 0.949265718460083,
+    "mask_pixels": 4414
+  },
+  {
+    "box": [
+      1.5766620635986328,
+      560.854248046875,
+      892.0116577148438,
+      824.9725341796875
+    ],
+    "owl_label": "barrier",
+    "owl_score": 0.1566920280456543,
+    "clip_label": "construction vehicle",
+    "clip_score": 0.6245295405387878,
+    "final_label": "barrier",
+    "final_score": 0.1566920280456543,
+    "sam_iou": 0.9762256145477295,
+    "mask_pixels": 186521
+  },
+  {
+    "box": [
+      1403.9244384765625,
+      514.575927734375,
+      1471.8839111328125,
+      580.0992431640625
+    ],
+    "owl_label": "road sign",
+    "owl_score": 0.12886834144592285,
+    "clip_label": "traffic cone",
+    "clip_score": 0.6439033150672913,
+    "final_label": "road sign",
+    "final_score": 0.12886834144592285,
+    "sam_iou": 0.9578182101249695,
+    "mask_pixels": 2892
+  },
+  {
+    "box": [
+      540.322998046875,
+      566.6038818359375,
+      939.4945068359375,
+      779.3460693359375
+    ],
+    "owl_label": "barrier",
+    "owl_score": 0.10531281679868698,
+    "clip_label": "barrier",
+    "clip_score": 0.6917373538017273,
+    "final_label": "barrier",
+    "final_score": 0.10531281679868698,
+    "sam_iou": 0.9753807783126831,
+    "mask_pixels": 68346
+  },
+  {
+    "box": [
+      1014.6769409179688,
+      647.277099609375,
+      1592.9652099609375,
+      738.9744262695312
+    ],
+    "owl_label": "barrier",
+    "owl_score": 0.0964561477303505,
+    "clip_label": "barrier",
+    "clip_score": 0.34219977259635925,
+    "final_label": "barrier",
+    "final_score": 0.0964561477303505,
+    "sam_iou": 0.9319654703140259,
+    "mask_pixels": 26130
+  },
+  {
+    "box": [
+      94.02532958984375,
+      578.9932250976562,
+      588.4564208984375,
+      815.7054443359375
+    ],
+    "owl_label": "barrier",
+    "owl_score": 0.07455863058567047,
+    "clip_label": "construction vehicle",
+    "clip_score": 0.38626793026924133,
+    "final_label": "barrier",
+    "final_score": 0.07455863058567047,
+    "sam_iou": 0.9812409281730652,
+    "mask_pixels": 85755
+  },
+  {
+    "box": [
+      10.440301895141602,
+      619.3982543945312,
+      1599.0,
+      899.0
+    ],
+    "owl_label": "barrier",
+    "owl_score": 0.06529950350522995,
+    "clip_label": "barrier",
+    "clip_score": 0.3850588798522949,
+    "final_label": "barrier",
+    "final_score": 0.06529950350522995,
+    "sam_iou": 0.9701869487762451,
+    "mask_pixels": 240290
+  }
+]

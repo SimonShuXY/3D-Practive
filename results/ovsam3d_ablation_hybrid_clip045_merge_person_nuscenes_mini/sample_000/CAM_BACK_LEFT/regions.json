@@ -1,0 +1,50 @@
+[
+  {
+    "box": [
+      0.0,
+      752.01513671875,
+      1571.093505859375,
+      899.0
+    ],
+    "owl_label": "barrier",
+    "owl_score": 0.09390076249837875,
+    "clip_label": "barrier",
+    "clip_score": 0.4860766530036926,
+    "final_label": "barrier",
+    "final_score": 0.4860766530036926,
+    "sam_iou": 0.9475844502449036,
+    "mask_pixels": 64506
+  },
+  {
+    "box": [
+      23.3358154296875,
+      566.24755859375,
+      631.8115234375,
+      752.9550170898438
+    ],
+    "owl_label": "barrier",
+    "owl_score": 0.08529268205165863,
+    "clip_label": "barrier",
+    "clip_score": 0.8041498064994812,
+    "final_label": "barrier",
+    "final_score": 0.8041498064994812,
+    "sam_iou": 0.9889011979103088,
+    "mask_pixels": 75724
+  },
+  {
+    "box": [
+      588.1663208007812,
+      609.7103271484375,
+      1232.287353515625,
+      644.2704467773438
+    ],
+    "owl_label": "barrier",
+    "owl_score": 0.07229991257190704,
+    "clip_label": "barrier",
+    "clip_score": 0.48856738209724426,
+    "final_label": "barrier",
+    "final_score": 0.48856738209724426,
+    "sam_iou": 0.9245529174804688,
+    "mask_pixels": 9774
+  }
+]

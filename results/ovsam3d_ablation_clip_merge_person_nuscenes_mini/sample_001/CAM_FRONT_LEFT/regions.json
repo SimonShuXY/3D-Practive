@@ -1,0 +1,162 @@
+[
+  {
+    "box": [
+      1129.298828125,
+      0.0,
+      1597.9581298828125,
+      703.2373657226562
+    ],
+    "owl_label": "truck",
+    "owl_score": 0.44059836864471436,
+    "clip_label": "truck",
+    "clip_score": 0.40691491961479187,
+    "final_label": "truck",
+    "final_score": 0.40691491961479187,
+    "sam_iou": 0.9841766953468323,
+    "mask_pixels": 246734
+  },
+  {
+    "box": [
+      2.569580078125,
+      0.0,
+      1597.041015625,
+      891.9092407226562
+    ],
+    "owl_label": "trailer",
+    "owl_score": 0.10131368786096573,
+    "clip_label": "barrier",
+    "clip_score": 0.2519509196281433,
+    "final_label": "barrier",
+    "final_score": 0.2519509196281433,
+    "sam_iou": 0.8851087689399719,
+    "mask_pixels": 860375
+  },
+  {
+    "box": [
+      0.0,
+      654.2847900390625,
+      1061.724853515625,
+      899.0
+    ],
+    "owl_label": "barrier",
+    "owl_score": 0.09675243496894836,
+    "clip_label": "barrier",
+    "clip_score": 0.4463258683681488,
+    "final_label": "barrier",
+    "final_score": 0.4463258683681488,
+    "sam_iou": 0.9435004591941833,
+    "mask_pixels": 44289
+  },
+  {
+    "box": [
+      1156.88623046875,
+      196.17794799804688,
+      1588.669921875,
+      584.4142456054688
+    ],
+    "owl_label": "trailer",
+    "owl_score": 0.09287399053573608,
+    "clip_label": "truck",
+    "clip_score": 0.6793885231018066,
+    "final_label": "truck",
+    "final_score": 0.6793885231018066,
+    "sam_iou": 0.9648416638374329,
+    "mask_pixels": 132965
+  },
+  {
+    "box": [
+      581.3348999023438,
+      413.4713439941406,
+      624.3557739257812,
+      456.860595703125
+    ],
+    "owl_label": "road sign",
+    "owl_score": 0.0883873850107193,
+    "clip_label": "person",
+    "clip_score": 0.2186286896467209,
+    "final_label": "pedestrian",
+    "final_score": 0.2186286896467209,
+    "sam_iou": 0.8941181302070618,
+    "mask_pixels": 1699
+  },
+  {
+    "box": [
+      1157.2626953125,
+      173.23373413085938,
+      1590.904541015625,
+      591.328125
+    ],
+    "owl_label": "trailer",
+    "owl_score": 0.0780239999294281,
+    "clip_label": "truck",
+    "clip_score": 0.6285085678100586,
+    "final_label": "truck",
+    "final_score": 0.6285085678100586,
+    "sam_iou": 0.9649882316589355,
+    "mask_pixels": 133753
+  },
+  {
+    "box": [
+      273.8692626953125,
+      406.1174011230469,
+      325.88592529296875,
+      508.93890380859375
+    ],
+    "owl_label": "person",
+    "owl_score": 0.07619746029376984,
+    "clip_label": "person",
+    "clip_score": 0.3669305741786957,
+    "final_label": "pedestrian",
+    "final_score": 0.3669305741786957,
+    "sam_iou": 0.8636205792427063,
+    "mask_pixels": 2473
+  },
+  {
+    "box": [
+      10.203170776367188,
+      554.678466796875,
+      962.168701171875,
+      663.91015625
+    ],
+    "owl_label": "barrier",
+    "owl_score": 0.0667281374335289,
+    "clip_label": "barrier",
+    "clip_score": 0.6157109141349792,
+    "final_label": "barrier",
+    "final_score": 0.6157109141349792,
+    "sam_iou": 0.9018030762672424,
+    "mask_pixels": 13751
+  },
+  {
+    "box": [
+      7.494449615478516,
+      551.601806640625,
+      1597.4737548828125,
+      898.7241821289062
+    ],
+    "owl_label": "barrier",
+    "owl_score": 0.06665488332509995,
+    "clip_label": "barrier",
+    "clip_score": 0.1696430742740631,
+    "final_label": "barrier",
+    "final_score": 0.1696430742740631,
+    "sam_iou": 0.8098808526992798,
+    "mask_pixels": 257387
+  },
+  {
+    "box": [
+      1130.7254638671875,
+      0.430789589881897,
+      1599.0,
+      680.62255859375
+    ],
+    "owl_label": "truck",
+    "owl_score": 0.06328040361404419,
+    "clip_label": "trailer",
+    "clip_score": 0.726691722869873,
+    "final_label": "trailer",
+    "final_score": 0.726691722869873,
+    "sam_iou": 0.980876624584198,
+    "mask_pixels": 245551
+  }
+]

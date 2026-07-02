@@ -1,0 +1,50 @@
+[
+  {
+    "box": [
+      8.714771270751953,
+      577.6693115234375,
+      1597.7889404296875,
+      899.0
+    ],
+    "owl_label": "barrier",
+    "owl_score": 0.09671326726675034,
+    "clip_label": "barrier",
+    "clip_score": 0.7156103849411011,
+    "final_label": "barrier",
+    "final_score": 0.7156103849411011,
+    "sam_iou": 0.8523379564285278,
+    "mask_pixels": 54673
+  },
+  {
+    "box": [
+      16.13459587097168,
+      475.40948486328125,
+      1599.0,
+      895.1697387695312
+    ],
+    "owl_label": "barrier",
+    "owl_score": 0.08222451061010361,
+    "clip_label": "barrier",
+    "clip_score": 0.28320714831352234,
+    "final_label": "barrier",
+    "final_score": 0.08222451061010361,
+    "sam_iou": 0.844989538192749,
+    "mask_pixels": 220969
+  },
+  {
+    "box": [
+      569.3492431640625,
+      420.52142333984375,
+      618.724853515625,
+      497.4433288574219
+    ],
+    "owl_label": "person",
+    "owl_score": 0.07001633942127228,
+    "clip_label": "traffic cone",
+    "clip_score": 0.4044921100139618,
+    "final_label": "traffic cone",
+    "final_score": 0.4044921100139618,
+    "sam_iou": 0.8688703775405884,
+    "mask_pixels": 1623
+  }
+]

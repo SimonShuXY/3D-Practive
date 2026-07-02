@@ -1,0 +1,98 @@
+[
+  {
+    "box": [
+      1459.724365234375,
+      514.7568969726562,
+      1538.482421875,
+      627.0059204101562
+    ],
+    "owl_label": "person",
+    "owl_score": 0.109659843146801,
+    "clip_label": "pedestrian",
+    "clip_score": 0.7145829796791077,
+    "final_label": "pedestrian",
+    "final_score": 0.109659843146801,
+    "sam_iou": 0.9141603112220764,
+    "mask_pixels": 3440
+  },
+  {
+    "box": [
+      0.0,
+      646.5208129882812,
+      1586.5098876953125,
+      848.6608276367188
+    ],
+    "owl_label": "barrier",
+    "owl_score": 0.09346473962068558,
+    "clip_label": "barrier",
+    "clip_score": 0.5576097369194031,
+    "final_label": "barrier",
+    "final_score": 0.09346473962068558,
+    "sam_iou": 0.8732834458351135,
+    "mask_pixels": 96408
+  },
+  {
+    "box": [
+      941.257568359375,
+      483.3716125488281,
+      974.6331176757812,
+      539.223388671875
+    ],
+    "owl_label": "person",
+    "owl_score": 0.09320845454931259,
+    "clip_label": "pedestrian",
+    "clip_score": 0.4310512840747833,
+    "final_label": "pedestrian",
+    "final_score": 0.09320845454931259,
+    "sam_iou": 0.9008769392967224,
+    "mask_pixels": 895
+  },
+  {
+    "box": [
+      844.8042602539062,
+      527.77001953125,
+      895.9151000976562,
+      610.5639038085938
+    ],
+    "owl_label": "traffic cone",
+    "owl_score": 0.07170029729604721,
+    "clip_label": "traffic cone",
+    "clip_score": 0.483561247587204,
+    "final_label": "traffic cone",
+    "final_score": 0.07170029729604721,
+    "sam_iou": 0.9297323822975159,
+    "mask_pixels": 2084
+  },
+  {
+    "box": [
+      1048.0501708984375,
+      480.8730773925781,
+      1075.6436767578125,
+      519.820068359375
+    ],
+    "owl_label": "person",
+    "owl_score": 0.061829790472984314,
+    "clip_label": "traffic cone",
+    "clip_score": 0.3935953378677368,
+    "final_label": "pedestrian",
+    "final_score": 0.061829790472984314,
+    "sam_iou": 0.9058135151863098,
+    "mask_pixels": 699
+  },
+  {
+    "box": [
+      4.804849624633789,
+      670.0770874023438,
+      1584.8731689453125,
+      841.3954467773438
+    ],
+    "owl_label": "barrier",
+    "owl_score": 0.06176753342151642,
+    "clip_label": "barrier",
+    "clip_score": 0.3294353783130646,
+    "final_label": "barrier",
+    "final_score": 0.06176753342151642,
+    "sam_iou": 0.9122539758682251,
+    "mask_pixels": 139440
+  }
+]

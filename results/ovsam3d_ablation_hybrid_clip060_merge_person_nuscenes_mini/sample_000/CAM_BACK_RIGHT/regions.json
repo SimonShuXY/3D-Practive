@@ -1,0 +1,50 @@
+[
+  {
+    "box": [
+      1079.3531494140625,
+      503.974853515625,
+      1148.830078125,
+      621.181884765625
+    ],
+    "owl_label": "person",
+    "owl_score": 0.09909597039222717,
+    "clip_label": "pedestrian",
+    "clip_score": 0.7205610871315002,
+    "final_label": "pedestrian",
+    "final_score": 0.7205610871315002,
+    "sam_iou": 0.915695309638977,
+    "mask_pixels": 3375
+  },
+  {
+    "box": [
+      17.847871780395508,
+      634.2470703125,
+      1599.0,
+      869.8915405273438
+    ],
+    "owl_label": "barrier",
+    "owl_score": 0.08487267047166824,
+    "clip_label": "barrier",
+    "clip_score": 0.4873177111148834,
+    "final_label": "barrier",
+    "final_score": 0.08487267047166824,
+    "sam_iou": 0.7371518015861511,
+    "mask_pixels": 151936
+  },
+  {
+    "box": [
+      775.147705078125,
+      477.7127380371094,
+      805.8229370117188,
+      531.9610595703125
+    ],
+    "owl_label": "person",
+    "owl_score": 0.06267231702804565,
+    "clip_label": "person",
+    "clip_score": 0.3446829617023468,
+    "final_label": "pedestrian",
+    "final_score": 0.06267231702804565,
+    "sam_iou": 0.8987282514572144,
+    "mask_pixels": 1150
+  }
+]

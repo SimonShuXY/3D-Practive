@@ -1,0 +1,98 @@
+[
+  {
+    "box": [
+      282.21258544921875,
+      548.9094848632812,
+      357.4487609863281,
+      662.7799072265625
+    ],
+    "owl_label": "traffic cone",
+    "owl_score": 0.1511809527873993,
+    "clip_label": "traffic cone",
+    "clip_score": 0.9989356398582458,
+    "final_label": "traffic cone",
+    "final_score": 0.9989356398582458,
+    "sam_iou": 0.9152615666389465,
+    "mask_pixels": 3120
+  },
+  {
+    "box": [
+      2.084076404571533,
+      505.8967590332031,
+      366.6012878417969,
+      652.5848388671875
+    ],
+    "owl_label": "barrier",
+    "owl_score": 0.09830841422080994,
+    "clip_label": "barrier",
+    "clip_score": 0.4130459427833557,
+    "final_label": "barrier",
+    "final_score": 0.09830841422080994,
+    "sam_iou": 0.9414365291595459,
+    "mask_pixels": 41062
+  },
+  {
+    "box": [
+      1545.310546875,
+      374.07061767578125,
+      1599.0,
+      519.1625366210938
+    ],
+    "owl_label": "traffic light",
+    "owl_score": 0.08332982659339905,
+    "clip_label": "road sign",
+    "clip_score": 0.19899626076221466,
+    "final_label": "traffic light",
+    "final_score": 0.08332982659339905,
+    "sam_iou": 0.7929840087890625,
+    "mask_pixels": 2808
+  },
+  {
+    "box": [
+      1095.718994140625,
+      395.5563659667969,
+      1148.202880859375,
+      448.6781005859375
+    ],
+    "owl_label": "road sign",
+    "owl_score": 0.0806226134300232,
+    "clip_label": "traffic light",
+    "clip_score": 0.1544162929058075,
+    "final_label": "road sign",
+    "final_score": 0.0806226134300232,
+    "sam_iou": 0.9773035049438477,
+    "mask_pixels": 2298
+  },
+  {
+    "box": [
+      287.4562072753906,
+      593.3642578125,
+      345.9075622558594,
+      660.9429931640625
+    ],
+    "owl_label": "traffic cone",
+    "owl_score": 0.06946758925914764,
+    "clip_label": "traffic cone",
+    "clip_score": 0.9996423721313477,
+    "final_label": "traffic cone",
+    "final_score": 0.9996423721313477,
+    "sam_iou": 0.9288097620010376,
+    "mask_pixels": 2258
+  },
+  {
+    "box": [
+      1.813119649887085,
+      506.697509765625,
+      149.13540649414062,
+      634.1826782226562
+    ],
+    "owl_label": "barrier",
+    "owl_score": 0.06361107528209686,
+    "clip_label": "barrier",
+    "clip_score": 0.34816232323646545,
+    "final_label": "barrier",
+    "final_score": 0.06361107528209686,
+    "sam_iou": 0.9410487413406372,
+    "mask_pixels": 9312
+  }
+]

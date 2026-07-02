@@ -1,0 +1,194 @@
+[
+  {
+    "box": [
+      719.6270751953125,
+      577.0234375,
+      810.3200073242188,
+      722.6341552734375
+    ],
+    "owl_label": "traffic cone",
+    "owl_score": 0.3752160966396332,
+    "clip_label": "traffic cone",
+    "clip_score": 0.9988783001899719,
+    "final_label": "traffic cone",
+    "final_score": 0.9988783001899719,
+    "sam_iou": 0.9570232629776001,
+    "mask_pixels": 4175
+  },
+  {
+    "box": [
+      0.0,
+      510.1965637207031,
+      741.3740234375,
+      708.4290771484375
+    ],
+    "owl_label": "barrier",
+    "owl_score": 0.2530531585216522,
+    "clip_label": "barrier",
+    "clip_score": 0.29998135566711426,
+    "final_label": "barrier",
+    "final_score": 0.2530531585216522,
+    "sam_iou": 0.968472957611084,
+    "mask_pixels": 90904
+  },
+  {
+    "box": [
+      0.0,
+      494.4172058105469,
+      1585.9520263671875,
+      855.3344116210938
+    ],
+    "owl_label": "barrier",
+    "owl_score": 0.17030693590641022,
+    "clip_label": "barrier",
+    "clip_score": 0.5019915103912354,
+    "final_label": "barrier",
+    "final_score": 0.5019915103912354,
+    "sam_iou": 0.8553857803344727,
+    "mask_pixels": 321104
+  },
+  {
+    "box": [
+      7.919549942016602,
+      479.85577392578125,
+      130.6156768798828,
+      517.7160034179688
+    ],
+    "owl_label": "car",
+    "owl_score": 0.11991984397172928,
+    "clip_label": "barrier",
+    "clip_score": 0.1897289901971817,
+    "final_label": "car",
+    "final_score": 0.11991984397172928,
+    "sam_iou": 0.925011157989502,
+    "mask_pixels": 2725
+  },
+  {
+    "box": [
+      725.1515502929688,
+      623.5836791992188,
+      799.8610229492188,
+      716.144775390625
+    ],
+    "owl_label": "traffic cone",
+    "owl_score": 0.11032288521528244,
+    "clip_label": "traffic cone",
+    "clip_score": 0.9994565844535828,
+    "final_label": "traffic cone",
+    "final_score": 0.9994565844535828,
+    "sam_iou": 0.9573707580566406,
+    "mask_pixels": 3396
+  },
+  {
+    "box": [
+      232.69776916503906,
+      475.9447326660156,
+      377.3820495605469,
+      513.2078247070312
+    ],
+    "owl_label": "car",
+    "owl_score": 0.09031262248754501,
+    "clip_label": "car",
+    "clip_score": 0.17144015431404114,
+    "final_label": "car",
+    "final_score": 0.09031262248754501,
+    "sam_iou": 0.8905868530273438,
+    "mask_pixels": 3053
+  },
+  {
+    "box": [
+      0.0,
+      506.7359619140625,
+      768.2269287109375,
+      720.5804443359375
+    ],
+    "owl_label": "barrier",
+    "owl_score": 0.08949055522680283,
+    "clip_label": "construction vehicle",
+    "clip_score": 0.2019082009792328,
+    "final_label": "barrier",
+    "final_score": 0.08949055522680283,
+    "sam_iou": 0.9777899980545044,
+    "mask_pixels": 92393
+  },
+  {
+    "box": [
+      1455.2486572265625,
+      387.6327209472656,
+      1520.307861328125,
+      449.8375244140625
+    ],
+    "owl_label": "road sign",
+    "owl_score": 0.08807583898305893,
+    "clip_label": "traffic light",
+    "clip_score": 0.22841192781925201,
+    "final_label": "road sign",
+    "final_score": 0.08807583898305893,
+    "sam_iou": 0.9800904393196106,
+    "mask_pixels": 3567
+  },
+  {
+    "box": [
+      772.3047485351562,
+      638.946044921875,
+      1594.9552001953125,
+      838.2801513671875
+    ],
+    "owl_label": "barrier",
+    "owl_score": 0.08644306659698486,
+    "clip_label": "barrier",
+    "clip_score": 0.5289947986602783,
+    "final_label": "barrier",
+    "final_score": 0.5289947986602783,
+    "sam_iou": 0.9272593259811401,
+    "mask_pixels": 47728
+  },
+  {
+    "box": [
+      13.37730884552002,
+      507.39569091796875,
+      463.50640869140625,
+      677.5198364257812
+    ],
+    "owl_label": "barrier",
+    "owl_score": 0.07958821207284927,
+    "clip_label": "barrier",
+    "clip_score": 0.3912317454814911,
+    "final_label": "barrier",
+    "final_score": 0.07958821207284927,
+    "sam_iou": 0.9666752219200134,
+    "mask_pixels": 55333
+  },
+  {
+    "box": [
+      1455.8642578125,
+      381.1354675292969,
+      1528.8369140625,
+      603.0592041015625
+    ],
+    "owl_label": "road sign",
+    "owl_score": 0.07331468909978867,
+    "clip_label": "barrier",
+    "clip_score": 0.17199841141700745,
+    "final_label": "road sign",
+    "final_score": 0.07331468909978867,
+    "sam_iou": 0.9616665244102478,
+    "mask_pixels": 5039
+  },
+  {
+    "box": [
+      9.482002258300781,
+      530.4805908203125,
+      1599.0,
+      895.6671142578125
+    ],
+    "owl_label": "barrier",
+    "owl_score": 0.07074455171823502,
+    "clip_label": "barrier",
+    "clip_score": 0.5461173057556152,
+    "final_label": "barrier",
+    "final_score": 0.5461173057556152,
+    "sam_iou": 0.970430314540863,
+    "mask_pixels": 339239
+  }
+]

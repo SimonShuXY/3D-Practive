@@ -1,0 +1,194 @@
+[
+  {
+    "box": [
+      0.0,
+      0.0,
+      1588.8875732421875,
+      889.0784912109375
+    ],
+    "owl_label": "car",
+    "owl_score": 0.142530158162117,
+    "clip_label": "road",
+    "clip_score": 0.45983701944351196,
+    "final_label": "road",
+    "final_score": 0.45983701944351196,
+    "sam_iou": 0.9429643154144287,
+    "mask_pixels": 964165
+  },
+  {
+    "box": [
+      378.56982421875,
+      529.0911865234375,
+      506.95458984375,
+      606.3197021484375
+    ],
+    "owl_label": "barrier",
+    "owl_score": 0.094666488468647,
+    "clip_label": "person",
+    "clip_score": 0.4059603810310364,
+    "final_label": "barrier",
+    "final_score": 0.094666488468647,
+    "sam_iou": 0.9561327695846558,
+    "mask_pixels": 7189
+  },
+  {
+    "box": [
+      29.17173194885254,
+      524.9752197265625,
+      100.58182525634766,
+      624.5639038085938
+    ],
+    "owl_label": "person",
+    "owl_score": 0.09008526057004929,
+    "clip_label": "pedestrian",
+    "clip_score": 0.5050393342971802,
+    "final_label": "pedestrian",
+    "final_score": 0.5050393342971802,
+    "sam_iou": 0.9165711998939514,
+    "mask_pixels": 3079
+  },
+  {
+    "box": [
+      860.8878173828125,
+      522.7412719726562,
+      910.048583984375,
+      565.6806640625
+    ],
+    "owl_label": "bicycle",
+    "owl_score": 0.08919890224933624,
+    "clip_label": "barrier",
+    "clip_score": 0.38058382272720337,
+    "final_label": "bicycle",
+    "final_score": 0.08919890224933624,
+    "sam_iou": 0.7050299644470215,
+    "mask_pixels": 631
+  },
+  {
+    "box": [
+      522.6671142578125,
+      520.7145385742188,
+      586.7529907226562,
+      567.2767333984375
+    ],
+    "owl_label": "car",
+    "owl_score": 0.08371832966804504,
+    "clip_label": "barrier",
+    "clip_score": 0.2867557108402252,
+    "final_label": "car",
+    "final_score": 0.08371832966804504,
+    "sam_iou": 0.9081621170043945,
+    "mask_pixels": 1776
+  },
+  {
+    "box": [
+      980.8788452148438,
+      510.5124206542969,
+      1019.703857421875,
+      572.5035400390625
+    ],
+    "owl_label": "pedestrian",
+    "owl_score": 0.08206112682819366,
+    "clip_label": "barrier",
+    "clip_score": 0.2964479923248291,
+    "final_label": "pedestrian",
+    "final_score": 0.08206112682819366,
+    "sam_iou": 0.7986084222793579,
+    "mask_pixels": 1082
+  },
+  {
+    "box": [
+      450.9348449707031,
+      530.3607788085938,
+      558.9793701171875,
+      584.6143188476562
+    ],
+    "owl_label": "car",
+    "owl_score": 0.07259581238031387,
+    "clip_label": "person",
+    "clip_score": 0.35533589124679565,
+    "final_label": "car",
+    "final_score": 0.07259581238031387,
+    "sam_iou": 0.7551414370536804,
+    "mask_pixels": 2593
+  },
+  {
+    "box": [
+      87.91236877441406,
+      842.29345703125,
+      1543.521484375,
+      899.0
+    ],
+    "owl_label": "car",
+    "owl_score": 0.07167530059814453,
+    "clip_label": "barrier",
+    "clip_score": 0.6322792172431946,
+    "final_label": "barrier",
+    "final_score": 0.6322792172431946,
+    "sam_iou": 0.9870968461036682,
+    "mask_pixels": 39709
+  },
+  {
+    "box": [
+      102.58055877685547,
+      443.0019836425781,
+      165.18556213378906,
+      495.2650146484375
+    ],
+    "owl_label": "traffic light",
+    "owl_score": 0.06918365508317947,
+    "clip_label": "vegetation",
+    "clip_score": 0.2403523325920105,
+    "final_label": "traffic light",
+    "final_score": 0.06918365508317947,
+    "sam_iou": 0.88632732629776,
+    "mask_pixels": 2264
+  },
+  {
+    "box": [
+      535.053466796875,
+      498.79931640625,
+      585.39453125,
+      520.5250854492188
+    ],
+    "owl_label": "car",
+    "owl_score": 0.06883081793785095,
+    "clip_label": "construction vehicle",
+    "clip_score": 0.17664651572704315,
+    "final_label": "car",
+    "final_score": 0.06883081793785095,
+    "sam_iou": 0.9085095524787903,
+    "mask_pixels": 780
+  },
+  {
+    "box": [
+      909.493896484375,
+      504.1749267578125,
+      958.3848266601562,
+      530.363037109375
+    ],
+    "owl_label": "car",
+    "owl_score": 0.06691929697990417,
+    "clip_label": "construction vehicle",
+    "clip_score": 0.14459051191806793,
+    "final_label": "car",
+    "final_score": 0.06691929697990417,
+    "sam_iou": 0.8296964764595032,
+    "mask_pixels": 1250
+  },
+  {
+    "box": [
+      852.05029296875,
+      514.3759765625,
+      891.7706298828125,
+      562.099853515625
+    ],
+    "owl_label": "bicycle",
+    "owl_score": 0.06675906479358673,
+    "clip_label": "person",
+    "clip_score": 0.2983494997024536,
+    "final_label": "bicycle",
+    "final_score": 0.06675906479358673,
+    "sam_iou": 0.7052139639854431,
+    "mask_pixels": 896
+  }
+]

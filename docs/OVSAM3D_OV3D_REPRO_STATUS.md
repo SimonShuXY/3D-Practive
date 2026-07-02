@@ -27,6 +27,24 @@ Run directory:
 
 The SAM mask stage consistently lowers the assigned-point ratio while improving mapped accuracy. This means the mask stage is removing box spillover and keeping cleaner 2D-to-3D evidence. The metric is intentionally lightweight: it only scores open-vocabulary labels that can be mapped to nuScenes lidarseg class names, so it should be used for route diagnosis rather than headline benchmark comparison.
 
+## Label-source ablation
+
+The follow-up ablation compares OWL-only, CLIP-only, and hybrid label sources using the same
+SAM masks and the same five samples. The best current setting is OWL-only labels with SAM masks
+and a `person` to `pedestrian` merge:
+
+| Run | Label source | CLIP min | SAM mapped accuracy | SAM macro IoU |
+| --- | --- | ---: | ---: | ---: |
+| hybrid merge | hybrid | 0.12 | 0.304 | 0.092 |
+| owl merge | OWL-only | 0.12 | 0.464 | 0.134 |
+| clip merge | CLIP-only | 0.12 | 0.298 | 0.091 |
+| hybrid clip045 | hybrid | 0.45 | 0.329 | 0.126 |
+| hybrid clip060 | hybrid | 0.60 | 0.356 | 0.098 |
+
+Conclusion: the current bottleneck is label selection. CLIP crop retagging changes many OWL labels
+and hurts nuScenes-mapped quality. The next expansion should keep OWL-only labels unless a stronger
+tag calibration rule is added.
+
 Main files:
 
 - `contact_sheet_sam_clip_masks.jpg`: six-camera SAM mask overlays with CLIP-style tags.

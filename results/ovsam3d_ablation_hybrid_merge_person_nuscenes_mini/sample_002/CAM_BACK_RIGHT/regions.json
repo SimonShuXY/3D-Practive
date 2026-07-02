@@ -1,0 +1,34 @@
+[
+  {
+    "box": [
+      206.01901245117188,
+      655.26318359375,
+      353.27471923828125,
+      817.0548706054688
+    ],
+    "owl_label": "traffic cone",
+    "owl_score": 0.4306457042694092,
+    "clip_label": "traffic cone",
+    "clip_score": 0.9993871450424194,
+    "final_label": "traffic cone",
+    "final_score": 0.9993871450424194,
+    "sam_iou": 0.9566881060600281,
+    "mask_pixels": 7246
+  },
+  {
+    "box": [
+      1166.903076171875,
+      505.037841796875,
+      1229.598876953125,
+      587.8662109375
+    ],
+    "owl_label": "traffic cone",
+    "owl_score": 0.076207734644413,
+    "clip_label": "traffic cone",
+    "clip_score": 0.7913872003555298,
+    "final_label": "traffic cone",
+    "final_score": 0.7913872003555298,
+    "sam_iou": 0.9454049468040466,
+    "mask_pixels": 2714
+  }
+]

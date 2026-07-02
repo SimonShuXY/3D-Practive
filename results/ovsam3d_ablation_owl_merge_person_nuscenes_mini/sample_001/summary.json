@@ -1,0 +1,376 @@
+{
+  "status": "OK",
+  "sample_index": 1,
+  "sample_token": "39586f9d59004284a7114a68825e8eec",
+  "scene_token": "cc8c0bf57f984915a77078b10eb33198",
+  "points_total": 34720,
+  "box_label_histogram": {
+    "car": 4875,
+    "truck": 1323,
+    "trailer": 2968,
+    "pedestrian": 11,
+    "traffic cone": 75,
+    "barrier": 3548,
+    "road sign": 77
+  },
+  "sam_label_histogram": {
+    "car": 2993,
+    "truck": 1030,
+    "trailer": 1160,
+    "pedestrian": 41,
+    "bicycle": 8,
+    "traffic cone": 29,
+    "barrier": 3273,
+    "road sign": 66,
+    "traffic light": 12
+  },
+  "box_eval": {
+    "assigned_points": 12877,
+    "assigned_ratio": 0.37088133640552995,
+    "mapped_assigned_points": 12800,
+    "mapped_assigned_accuracy": 0.116171875,
+    "per_label": {
+      "car": {
+        "tp": 24,
+        "pred": 4875,
+        "gt": 37,
+        "precision": 0.004923076923076923,
+        "recall": 0.6486486486486487,
+        "iou": 0.004909983633387889
+      },
+      "truck": {
+        "tp": 1040,
+        "pred": 1323,
+        "gt": 1062,
+        "precision": 0.7860922146636432,
+        "recall": 0.9792843691148776,
+        "iou": 0.7732342007434945
+      },
+      "trailer": {
+        "tp": 0,
+        "pred": 2968,
+        "gt": 0,
+        "precision": 0.0,
+        "recall": null,
+        "iou": 0.0
+      },
+      "construction vehicle": {
+        "tp": 0,
+        "pred": 0,
+        "gt": 8,
+        "precision": null,
+        "recall": 0.0,
+        "iou": 0.0
+      },
+      "pedestrian": {
+        "tp": 3,
+        "pred": 11,
+        "gt": 97,
+        "precision": 0.2727272727272727,
+        "recall": 0.030927835051546393,
+        "iou": 0.02857142857142857
+      },
+      "person": {
+        "tp": 0,
+        "pred": 0,
+        "gt": 97,
+        "precision": null,
+        "recall": 0.0,
+        "iou": 0.0
+      },
+      "bicycle": {
+        "tp": 0,
+        "pred": 0,
+        "gt": 2,
+        "precision": null,
+        "recall": 0.0,
+        "iou": 0.0
+      },
+      "traffic cone": {
+        "tp": 18,
+        "pred": 75,
+        "gt": 25,
+        "precision": 0.24,
+        "recall": 0.72,
+        "iou": 0.21951219512195122
+      },
+      "barrier": {
+        "tp": 402,
+        "pred": 3548,
+        "gt": 469,
+        "precision": 0.1133032694475761,
+        "recall": 0.8571428571428571,
+        "iou": 0.11120331950207468
+      },
+      "road": {
+        "tp": 0,
+        "pred": 0,
+        "gt": 12508,
+        "precision": null,
+        "recall": 0.0,
+        "iou": 0.0
+      },
+      "sidewalk": {
+        "tp": 0,
+        "pred": 0,
+        "gt": 684,
+        "precision": null,
+        "recall": 0.0,
+        "iou": 0.0
+      },
+      "building": {
+        "tp": 0,
+        "pred": 0,
+        "gt": 4804,
+        "precision": null,
+        "recall": 0.0,
+        "iou": 0.0
+      },
+      "vegetation": {
+        "tp": 0,
+        "pred": 0,
+        "gt": 3520,
+        "precision": null,
+        "recall": 0.0,
+        "iou": 0.0
+      }
+    }
+  },
+  "sam_eval": {
+    "assigned_points": 8612,
+    "assigned_ratio": 0.24804147465437787,
+    "mapped_assigned_points": 8534,
+    "mapped_assigned_accuracy": 0.173072416217483,
+    "per_label": {
+      "car": {
+        "tp": 24,
+        "pred": 2993,
+        "gt": 37,
+        "precision": 0.008018710324089542,
+        "recall": 0.6486486486486487,
+        "iou": 0.007984031936127744
+      },
+      "truck": {
+        "tp": 980,
+        "pred": 1030,
+        "gt": 1062,
+        "precision": 0.9514563106796117,
+        "recall": 0.9227871939736346,
+        "iou": 0.8812949640287769
+      },
+      "trailer": {
+        "tp": 0,
+        "pred": 1160,
+        "gt": 0,
+        "precision": 0.0,
+        "recall": null,
+        "iou": 0.0
+      },
+      "construction vehicle": {
+        "tp": 0,
+        "pred": 0,
+        "gt": 8,
+        "precision": null,
+        "recall": 0.0,
+        "iou": 0.0
+      },
+      "pedestrian": {
+        "tp": 19,
+        "pred": 41,
+        "gt": 97,
+        "precision": 0.4634146341463415,
+        "recall": 0.1958762886597938,
+        "iou": 0.15966386554621848
+      },
+      "person": {
+        "tp": 0,
+        "pred": 0,
+        "gt": 97,
+        "precision": null,
+        "recall": 0.0,
+        "iou": 0.0
+      },
+      "bicycle": {
+        "tp": 0,
+        "pred": 8,
+        "gt": 2,
+        "precision": 0.0,
+        "recall": 0.0,
+        "iou": 0.0
+      },
+      "traffic cone": {
+        "tp": 16,
+        "pred": 29,
+        "gt": 25,
+        "precision": 0.5517241379310345,
+        "recall": 0.64,
+        "iou": 0.42105263157894735
+      },
+      "barrier": {
+        "tp": 438,
+        "pred": 3273,
+        "gt": 469,
+        "precision": 0.13382218148487626,
+        "recall": 0.9339019189765458,
+        "iou": 0.13256658595641646
+      },
+      "road": {
+        "tp": 0,
+        "pred": 0,
+        "gt": 12508,
+        "precision": null,
+        "recall": 0.0,
+        "iou": 0.0
+      },
+      "sidewalk": {
+        "tp": 0,
+        "pred": 0,
+        "gt": 684,
+        "precision": null,
+        "recall": 0.0,
+        "iou": 0.0
+      },
+      "building": {
+        "tp": 0,
+        "pred": 0,
+        "gt": 4804,
+        "precision": null,
+        "recall": 0.0,
+        "iou": 0.0
+      },
+      "vegetation": {
+        "tp": 0,
+        "pred": 0,
+        "gt": 3520,
+        "precision": null,
+        "recall": 0.0,
+        "iou": 0.0
+      }
+    }
+  },
+  "camera_summaries": [
+    {
+      "camera": "CAM_FRONT",
+      "image": "samples/CAM_FRONT/n015-2018-07-24-11-22-45+0800__CAM_FRONT__1532402928112460.jpg",
+      "projected_points": 2977,
+      "regions": 12,
+      "owl_labels": {
+        "barrier": 1,
+        "car": 8,
+        "traffic light": 1,
+        "truck": 2
+      },
+      "final_labels": {
+        "barrier": 1,
+        "car": 8,
+        "traffic light": 1,
+        "truck": 2
+      }
+    },
+    {
+      "camera": "CAM_FRONT_LEFT",
+      "image": "samples/CAM_FRONT_LEFT/n015-2018-07-24-11-22-45+0800__CAM_FRONT_LEFT__1532402928104844.jpg",
+      "projected_points": 3730,
+      "regions": 10,
+      "owl_labels": {
+        "barrier": 3,
+        "person": 1,
+        "road sign": 1,
+        "trailer": 3,
+        "truck": 2
+      },
+      "final_labels": {
+        "barrier": 3,
+        "pedestrian": 1,
+        "road sign": 1,
+        "trailer": 3,
+        "truck": 2
+      }
+    },
+    {
+      "camera": "CAM_FRONT_RIGHT",
+      "image": "samples/CAM_FRONT_RIGHT/n015-2018-07-24-11-22-45+0800__CAM_FRONT_RIGHT__1532402928120339.jpg",
+      "projected_points": 3208,
+      "regions": 12,
+      "owl_labels": {
+        "barrier": 6,
+        "car": 2,
+        "road sign": 2,
+        "traffic cone": 2
+      },
+      "final_labels": {
+        "barrier": 6,
+        "car": 2,
+        "road sign": 2,
+        "traffic cone": 2
+      }
+    },
+    {
+      "camera": "CAM_BACK",
+      "image": "samples/CAM_BACK/n015-2018-07-24-11-22-45+0800__CAM_BACK__1532402928137525.jpg",
+      "projected_points": 4884,
+      "regions": 12,
+      "owl_labels": {
+        "barrier": 1,
+        "bicycle": 2,
+        "car": 6,
+        "pedestrian": 1,
+        "person": 1,
+        "traffic light": 1
+      },
+      "final_labels": {
+        "barrier": 1,
+        "bicycle": 2,
+        "car": 6,
+        "pedestrian": 2,
+        "traffic light": 1
+      }
+    },
+    {
+      "camera": "CAM_BACK_LEFT",
+      "image": "samples/CAM_BACK_LEFT/n015-2018-07-24-11-22-45+0800__CAM_BACK_LEFT__1532402928147423.jpg",
+      "projected_points": 4284,
+      "regions": 3,
+      "owl_labels": {
+        "person": 1,
+        "road sign": 2
+      },
+      "final_labels": {
+        "pedestrian": 1,
+        "road sign": 2
+      }
+    },
+    {
+      "camera": "CAM_BACK_RIGHT",
+      "image": "samples/CAM_BACK_RIGHT/n015-2018-07-24-11-22-45+0800__CAM_BACK_RIGHT__1532402928127893.jpg",
+      "projected_points": 3429,
+      "regions": 6,
+      "owl_labels": {
+        "barrier": 2,
+        "person": 3,
+        "traffic cone": 1
+      },
+      "final_labels": {
+        "barrier": 2,
+        "pedestrian": 3,
+        "traffic cone": 1
+      }
+    }
+  ],
+  "outputs": {
+    "bev_box": "outputs/ovsam3d_ablation_owl_merge_person_nuscenes_mini/sample_001/bev_box_open_vocab_labels.png",
+    "bev_sam": "outputs/ovsam3d_ablation_owl_merge_person_nuscenes_mini/sample_001/bev_sam_open_vocab_labels.png",
+    "bev_gt": "outputs/ovsam3d_ablation_owl_merge_person_nuscenes_mini/sample_001/bev_lidarseg_gt_reference.png",
+    "montage_masks": "outputs/ovsam3d_ablation_owl_merge_person_nuscenes_mini/sample_001/montage_sam_clip_masks.jpg",
+    "montage_box_projection": "outputs/ovsam3d_ablation_owl_merge_person_nuscenes_mini/sample_001/montage_box_point_projection.jpg",
+    "montage_sam_projection": "outputs/ovsam3d_ablation_owl_merge_person_nuscenes_mini/sample_001/montage_sam_point_projection.jpg",
+    "ply": "outputs/ovsam3d_ablation_owl_merge_person_nuscenes_mini/sample_001/sam_open_vocab_labeled_points.ply"
+  },
+  "config": {
+    "label_mode": "owl",
+    "merge_person_labels": true,
+    "owl_threshold": 0.06,
+    "min_clip_score": 0.12,
+    "max_detections_per_camera": 12
+  }
+}

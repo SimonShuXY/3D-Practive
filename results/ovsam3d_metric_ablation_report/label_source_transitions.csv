@@ -1,0 +1,302 @@
+run,regions,changed_from_owl,changed_ratio,clip_wins,owl_wins,top_final_labels,owl_label,clip_label,final_label,count
+ovsam3d_sam_clip_eval_nuscenes_mini,193,87,0.45077720207253885,87,106,"barrier:57, pedestrian:38, car:21, traffic cone:20, traffic light:15, trailer:15, truck:13, construction vehicle:10",,,,
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,barrier,barrier,barrier,36
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,pedestrian,pedestrian,pedestrian,22
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,car,car,car,18
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,car,barrier,barrier,13
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,truck,truck,truck,11
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,traffic cone,traffic cone,traffic cone,11
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,truck,trailer,trailer,8
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,traffic light,traffic light,traffic light,8
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,car,pedestrian,pedestrian,7
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,car,trailer,trailer,6
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,car,construction vehicle,construction vehicle,5
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,pedestrian,traffic cone,traffic cone,4
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,road sign,traffic light,traffic light,4
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,barrier,construction vehicle,construction vehicle,4
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,car,traffic light,traffic light,3
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,truck,car,car,3
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,traffic light,pedestrian,pedestrian,2
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,road sign,pedestrian,pedestrian,2
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,car,traffic cone,traffic cone,2
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,trailer,barrier,barrier,2
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,trailer,truck,truck,2
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,road sign,barrier,barrier,2
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,truck,barrier,barrier,2
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,trailer,pedestrian,pedestrian,2
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,traffic light,road sign,road sign,1
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,car,road,road,1
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,barrier,pedestrian,pedestrian,1
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,bicycle,barrier,barrier,1
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,pedestrian,barrier,barrier,1
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,traffic light,vegetation,vegetation,1
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,bicycle,pedestrian,pedestrian,1
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,car,motorcycle,motorcycle,1
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,pedestrian,construction vehicle,construction vehicle,1
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,bicycle,traffic cone,traffic cone,1
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,barrier,traffic cone,traffic cone,1
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,road sign,traffic cone,traffic cone,1
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,bus,trailer,trailer,1
+ovsam3d_sam_clip_eval_nuscenes_mini,,,,,,,truck,pedestrian,pedestrian,1
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,193,87,0.45077720207253885,87,106,"barrier:57, pedestrian:38, car:21, traffic cone:20, traffic light:15, trailer:15, truck:13, construction vehicle:10",,,,
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,barrier,barrier,barrier,36
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,pedestrian,pedestrian,pedestrian,22
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,car,car,car,18
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,car,barrier,barrier,13
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,truck,truck,truck,11
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,traffic cone,traffic cone,traffic cone,11
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,truck,trailer,trailer,8
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,traffic light,traffic light,traffic light,8
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,car,pedestrian,pedestrian,7
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,car,trailer,trailer,6
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,car,construction vehicle,construction vehicle,5
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,pedestrian,traffic cone,traffic cone,4
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,road sign,traffic light,traffic light,4
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,barrier,construction vehicle,construction vehicle,4
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,car,traffic light,traffic light,3
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,truck,car,car,3
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,traffic light,pedestrian,pedestrian,2
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,road sign,pedestrian,pedestrian,2
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,car,traffic cone,traffic cone,2
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,trailer,barrier,barrier,2
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,trailer,truck,truck,2
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,road sign,barrier,barrier,2
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,truck,barrier,barrier,2
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,trailer,pedestrian,pedestrian,2
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,traffic light,road sign,road sign,1
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,car,road,road,1
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,barrier,pedestrian,pedestrian,1
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,bicycle,barrier,barrier,1
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,pedestrian,barrier,barrier,1
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,traffic light,vegetation,vegetation,1
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,bicycle,pedestrian,pedestrian,1
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,car,motorcycle,motorcycle,1
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,pedestrian,construction vehicle,construction vehicle,1
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,bicycle,traffic cone,traffic cone,1
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,barrier,traffic cone,traffic cone,1
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,road sign,traffic cone,traffic cone,1
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,bus,trailer,trailer,1
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,,,,,,,truck,pedestrian,pedestrian,1
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,193,0,0.0,0,193,"car:56, barrier:42, pedestrian:28, truck:25, traffic light:12, traffic cone:11, road sign:9, trailer:6",,,,
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,barrier,barrier,barrier,36
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,pedestrian,pedestrian,pedestrian,22
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,car,car,car,18
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,car,barrier,car,13
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,truck,truck,truck,11
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,traffic cone,traffic cone,traffic cone,11
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,truck,trailer,truck,8
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,traffic light,traffic light,traffic light,8
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,car,pedestrian,car,7
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,car,trailer,car,6
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,car,construction vehicle,car,5
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,pedestrian,traffic cone,pedestrian,4
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,road sign,traffic light,road sign,4
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,barrier,construction vehicle,barrier,4
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,car,traffic light,car,3
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,truck,car,truck,3
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,traffic light,pedestrian,traffic light,2
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,road sign,pedestrian,road sign,2
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,car,traffic cone,car,2
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,trailer,barrier,trailer,2
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,trailer,truck,trailer,2
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,road sign,barrier,road sign,2
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,truck,barrier,truck,2
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,trailer,pedestrian,trailer,2
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,traffic light,road sign,traffic light,1
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,car,road,car,1
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,barrier,pedestrian,barrier,1
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,bicycle,barrier,bicycle,1
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,pedestrian,barrier,pedestrian,1
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,traffic light,vegetation,traffic light,1
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,bicycle,pedestrian,bicycle,1
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,car,motorcycle,car,1
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,pedestrian,construction vehicle,pedestrian,1
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,bicycle,traffic cone,bicycle,1
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,barrier,traffic cone,barrier,1
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,road sign,traffic cone,road sign,1
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,bus,trailer,bus,1
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,truck,pedestrian,truck,1
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,193,87,0.45077720207253885,87,106,"barrier:57, pedestrian:38, car:21, traffic cone:20, traffic light:15, trailer:15, truck:13, construction vehicle:10",,,,
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,barrier,barrier,barrier,36
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,pedestrian,pedestrian,pedestrian,22
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,car,car,car,18
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,car,barrier,barrier,13
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,truck,truck,truck,11
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,traffic cone,traffic cone,traffic cone,11
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,truck,trailer,trailer,8
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,traffic light,traffic light,traffic light,8
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,car,pedestrian,pedestrian,7
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,car,trailer,trailer,6
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,car,construction vehicle,construction vehicle,5
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,pedestrian,traffic cone,traffic cone,4
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,road sign,traffic light,traffic light,4
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,barrier,construction vehicle,construction vehicle,4
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,car,traffic light,traffic light,3
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,truck,car,car,3
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,traffic light,pedestrian,pedestrian,2
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,road sign,pedestrian,pedestrian,2
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,car,traffic cone,traffic cone,2
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,trailer,barrier,barrier,2
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,trailer,truck,truck,2
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,road sign,barrier,barrier,2
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,truck,barrier,barrier,2
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,trailer,pedestrian,pedestrian,2
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,traffic light,road sign,road sign,1
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,car,road,road,1
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,barrier,pedestrian,pedestrian,1
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,bicycle,barrier,barrier,1
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,pedestrian,barrier,barrier,1
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,traffic light,vegetation,vegetation,1
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,bicycle,pedestrian,pedestrian,1
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,car,motorcycle,motorcycle,1
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,pedestrian,construction vehicle,construction vehicle,1
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,bicycle,traffic cone,traffic cone,1
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,barrier,traffic cone,traffic cone,1
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,road sign,traffic cone,traffic cone,1
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,bus,trailer,trailer,1
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,,,,,,,truck,pedestrian,pedestrian,1
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,193,46,0.23834196891191708,46,147,"barrier:47, car:46, pedestrian:34, traffic cone:17, truck:14, trailer:13, traffic light:11, road sign:5",,,,
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,barrier,barrier,barrier,36
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,pedestrian,pedestrian,pedestrian,22
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,car,car,car,18
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,truck,truck,truck,11
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,traffic cone,traffic cone,traffic cone,11
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,truck,trailer,trailer,8
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,traffic light,traffic light,traffic light,8
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,car,barrier,car,7
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,car,barrier,barrier,6
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,car,construction vehicle,car,5
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,car,trailer,car,4
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,car,pedestrian,car,4
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,car,traffic light,car,3
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,car,pedestrian,pedestrian,3
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,pedestrian,traffic cone,traffic cone,3
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,truck,car,car,3
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,road sign,traffic light,road sign,3
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,barrier,construction vehicle,construction vehicle,3
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,traffic light,pedestrian,pedestrian,2
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,trailer,truck,truck,2
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,car,trailer,trailer,2
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,traffic light,road sign,traffic light,1
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,car,road,road,1
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,barrier,pedestrian,pedestrian,1
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,bicycle,barrier,barrier,1
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,pedestrian,barrier,pedestrian,1
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,traffic light,vegetation,traffic light,1
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,bicycle,pedestrian,bicycle,1
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,road sign,traffic light,traffic light,1
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,road sign,pedestrian,pedestrian,1
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,car,traffic cone,car,1
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,car,motorcycle,car,1
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,trailer,barrier,trailer,1
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,road sign,pedestrian,road sign,1
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,barrier,construction vehicle,barrier,1
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,road sign,barrier,road sign,1
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,pedestrian,construction vehicle,pedestrian,1
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,bicycle,traffic cone,bicycle,1
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,road sign,barrier,barrier,1
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,car,traffic cone,traffic cone,1
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,barrier,traffic cone,traffic cone,1
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,road sign,traffic cone,traffic cone,1
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,bus,trailer,trailer,1
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,trailer,barrier,barrier,1
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,truck,barrier,barrier,1
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,truck,barrier,truck,1
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,pedestrian,traffic cone,pedestrian,1
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,trailer,pedestrian,trailer,1
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,trailer,pedestrian,pedestrian,1
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,,,,,,,truck,pedestrian,pedestrian,1
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,193,24,0.12435233160621761,24,169,"car:54, barrier:45, pedestrian:32, truck:15, traffic cone:13, traffic light:11, trailer:10, road sign:7",,,,
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,barrier,barrier,barrier,36
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,pedestrian,pedestrian,pedestrian,22
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,car,car,car,18
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,car,barrier,car,11
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,truck,truck,truck,11
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,traffic cone,traffic cone,traffic cone,11
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,traffic light,traffic light,traffic light,8
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,truck,trailer,trailer,7
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,car,trailer,car,6
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,car,pedestrian,car,6
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,car,construction vehicle,car,5
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,pedestrian,traffic cone,pedestrian,4
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,road sign,traffic light,road sign,4
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,car,traffic light,car,3
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,truck,car,car,3
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,barrier,construction vehicle,barrier,3
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,car,barrier,barrier,2
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,trailer,truck,truck,2
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,road sign,barrier,road sign,2
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,trailer,pedestrian,trailer,2
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,traffic light,pedestrian,traffic light,1
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,car,pedestrian,pedestrian,1
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,traffic light,road sign,traffic light,1
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,car,road,road,1
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,barrier,pedestrian,barrier,1
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,bicycle,barrier,bicycle,1
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,pedestrian,barrier,pedestrian,1
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,traffic light,vegetation,traffic light,1
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,bicycle,pedestrian,bicycle,1
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,road sign,pedestrian,pedestrian,1
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,car,traffic cone,car,1
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,car,motorcycle,car,1
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,trailer,barrier,trailer,1
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,road sign,pedestrian,road sign,1
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,pedestrian,construction vehicle,pedestrian,1
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,bicycle,traffic cone,bicycle,1
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,car,traffic cone,traffic cone,1
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,barrier,traffic cone,barrier,1
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,barrier,construction vehicle,construction vehicle,1
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,road sign,traffic cone,traffic cone,1
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,bus,trailer,bus,1
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,trailer,barrier,barrier,1
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,truck,barrier,barrier,1
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,truck,barrier,truck,1
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,truck,trailer,truck,1
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,traffic light,pedestrian,pedestrian,1
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,,,,,,,truck,pedestrian,pedestrian,1
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,193,16,0.08290155440414508,16,177,"car:56, barrier:43, pedestrian:31, truck:20, traffic cone:13, traffic light:12, road sign:7, trailer:6",,,,
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,barrier,barrier,barrier,36
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,pedestrian,pedestrian,pedestrian,22
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,car,car,car,18
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,car,barrier,car,12
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,truck,truck,truck,11
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,traffic cone,traffic cone,traffic cone,11
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,traffic light,traffic light,traffic light,8
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,car,trailer,car,6
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,car,pedestrian,car,6
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,car,construction vehicle,car,5
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,truck,trailer,truck,5
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,pedestrian,traffic cone,pedestrian,4
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,road sign,traffic light,road sign,4
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,car,traffic light,car,3
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,truck,car,car,3
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,truck,trailer,trailer,3
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,barrier,construction vehicle,barrier,3
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,traffic light,pedestrian,traffic light,2
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,trailer,truck,truck,2
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,road sign,barrier,road sign,2
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,truck,barrier,truck,2
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,trailer,pedestrian,trailer,2
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,car,pedestrian,pedestrian,1
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,traffic light,road sign,traffic light,1
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,car,road,car,1
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,barrier,pedestrian,barrier,1
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,bicycle,barrier,bicycle,1
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,pedestrian,barrier,pedestrian,1
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,car,barrier,barrier,1
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,traffic light,vegetation,traffic light,1
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,bicycle,pedestrian,bicycle,1
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,road sign,pedestrian,pedestrian,1
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,car,traffic cone,car,1
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,car,motorcycle,car,1
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,trailer,barrier,trailer,1
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,road sign,pedestrian,road sign,1
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,pedestrian,construction vehicle,pedestrian,1
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,bicycle,traffic cone,bicycle,1
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,car,traffic cone,traffic cone,1
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,barrier,traffic cone,barrier,1
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,barrier,construction vehicle,construction vehicle,1
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,road sign,traffic cone,traffic cone,1
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,bus,trailer,bus,1
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,trailer,barrier,barrier,1
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,,,,,,,truck,pedestrian,pedestrian,1

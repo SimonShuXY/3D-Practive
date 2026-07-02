@@ -1,0 +1,82 @@
+[
+  {
+    "box": [
+      200.17413330078125,
+      6.197243690490723,
+      1020.8563842773438,
+      896.0382080078125
+    ],
+    "owl_label": "truck",
+    "owl_score": 0.29439210891723633,
+    "clip_label": "truck",
+    "clip_score": 0.6500901579856873,
+    "final_label": "truck",
+    "final_score": 0.6500901579856873,
+    "sam_iou": 0.9863381385803223,
+    "mask_pixels": 499529
+  },
+  {
+    "box": [
+      1.2000083923339844,
+      2.2101938724517822,
+      1595.76708984375,
+      896.2671508789062
+    ],
+    "owl_label": "truck",
+    "owl_score": 0.19498880207538605,
+    "clip_label": "truck",
+    "clip_score": 0.5930604934692383,
+    "final_label": "truck",
+    "final_score": 0.5930604934692383,
+    "sam_iou": 0.9220621585845947,
+    "mask_pixels": 1013357
+  },
+  {
+    "box": [
+      298.9577331542969,
+      608.0009155273438,
+      1599.0,
+      899.0
+    ],
+    "owl_label": "barrier",
+    "owl_score": 0.10368604958057404,
+    "clip_label": "barrier",
+    "clip_score": 0.3438658118247986,
+    "final_label": "barrier",
+    "final_score": 0.3438658118247986,
+    "sam_iou": 0.9155287742614746,
+    "mask_pixels": 215781
+  },
+  {
+    "box": [
+      0.0,
+      0.0,
+      342.1391906738281,
+      893.5134887695312
+    ],
+    "owl_label": "trailer",
+    "owl_score": 0.08296484500169754,
+    "clip_label": "pedestrian",
+    "clip_score": 0.3458279073238373,
+    "final_label": "pedestrian",
+    "final_score": 0.3458279073238373,
+    "sam_iou": 0.915188193321228,
+    "mask_pixels": 261601
+  },
+  {
+    "box": [
+      0.0,
+      9.979131698608398,
+      475.673095703125,
+      899.0
+    ],
+    "owl_label": "truck",
+    "owl_score": 0.06237129494547844,
+    "clip_label": "pedestrian",
+    "clip_score": 0.6242205500602722,
+    "final_label": "pedestrian",
+    "final_score": 0.6242205500602722,
+    "sam_iou": 0.9251399040222168,
+    "mask_pixels": 297105
+  }
+]

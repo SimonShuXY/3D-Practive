@@ -1,0 +1,18 @@
+[
+  {
+    "box": [
+      0.0,
+      512.3004760742188,
+      1500.0379638671875,
+      809.9252319335938
+    ],
+    "owl_label": "barrier",
+    "owl_score": 0.1421852558851242,
+    "clip_label": "traffic cone",
+    "clip_score": 0.3282206356525421,
+    "final_label": "barrier",
+    "final_score": 0.1421852558851242,
+    "sam_iou": 0.975154459476471,
+    "mask_pixels": 233255
+  }
+]

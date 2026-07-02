@@ -1,0 +1,186 @@
+run,label_mode,merge_person_labels,min_clip_score,owl_threshold,posthoc_merge_person,stage,class,tp,pred,gt,precision,recall,iou
+ovsam3d_sam_clip_eval_nuscenes_mini,unknown,False,,,True,box,barrier,3565,20453,5072,0.1743020583777441,0.7028785488958991,0.16234061930783242
+ovsam3d_sam_clip_eval_nuscenes_mini,unknown,False,,,True,box,bicycle,0,0,10,,0.0,0.0
+ovsam3d_sam_clip_eval_nuscenes_mini,unknown,False,,,True,box,building,0,0,19685,,0.0,0.0
+ovsam3d_sam_clip_eval_nuscenes_mini,unknown,False,,,True,box,bus,0,0,8,,0.0,0.0
+ovsam3d_sam_clip_eval_nuscenes_mini,unknown,False,,,True,box,car,196,283,271,0.6925795053003534,0.7232472324723247,0.547486033519553
+ovsam3d_sam_clip_eval_nuscenes_mini,unknown,False,,,True,box,construction vehicle,0,737,32,0.0,0.0,0.0
+ovsam3d_sam_clip_eval_nuscenes_mini,unknown,False,,,True,box,pedestrian,864,10787,1558,0.08009641234819691,0.5545571245186136,0.07525476874836687
+ovsam3d_sam_clip_eval_nuscenes_mini,unknown,False,,,True,box,road,2067,4706,59005,0.43922651933701656,0.035030929582238794,0.03353124391668289
+ovsam3d_sam_clip_eval_nuscenes_mini,unknown,False,,,True,box,sidewalk,0,0,2277,,0.0,0.0
+ovsam3d_sam_clip_eval_nuscenes_mini,unknown,False,,,True,box,traffic cone,67,1972,104,0.03397565922920893,0.6442307692307693,0.03334992533598805
+ovsam3d_sam_clip_eval_nuscenes_mini,unknown,False,,,True,box,trailer,0,6725,0,0.0,,0.0
+ovsam3d_sam_clip_eval_nuscenes_mini,unknown,False,,,True,box,truck,4006,6706,16239,0.5973754846406203,0.24669006712235975,0.21152119964095253
+ovsam3d_sam_clip_eval_nuscenes_mini,unknown,False,,,True,box,vegetation,0,0,16345,,0.0,0.0
+ovsam3d_sam_clip_eval_nuscenes_mini,unknown,False,,,True,sam,barrier,3456,12758,5072,0.2708888540523593,0.6813880126182965,0.24043411715597607
+ovsam3d_sam_clip_eval_nuscenes_mini,unknown,False,,,True,sam,bicycle,0,0,10,,0.0,0.0
+ovsam3d_sam_clip_eval_nuscenes_mini,unknown,False,,,True,sam,building,0,0,19685,,0.0,0.0
+ovsam3d_sam_clip_eval_nuscenes_mini,unknown,False,,,True,sam,bus,0,0,8,,0.0,0.0
+ovsam3d_sam_clip_eval_nuscenes_mini,unknown,False,,,True,sam,car,190,227,271,0.8370044052863436,0.7011070110701108,0.6168831168831169
+ovsam3d_sam_clip_eval_nuscenes_mini,unknown,False,,,True,sam,construction vehicle,0,457,32,0.0,0.0,0.0
+ovsam3d_sam_clip_eval_nuscenes_mini,unknown,False,,,True,sam,motorcycle,0,4,0,0.0,,0.0
+ovsam3d_sam_clip_eval_nuscenes_mini,unknown,False,,,True,sam,pedestrian,774,6327,1558,0.12233285917496443,0.496790757381258,0.10884545071016735
+ovsam3d_sam_clip_eval_nuscenes_mini,unknown,False,,,True,sam,road,1987,2928,59005,0.6786202185792349,0.03367511227862045,0.03314649851533046
+ovsam3d_sam_clip_eval_nuscenes_mini,unknown,False,,,True,sam,sidewalk,0,0,2277,,0.0,0.0
+ovsam3d_sam_clip_eval_nuscenes_mini,unknown,False,,,True,sam,traffic cone,57,1052,104,0.05418250950570342,0.5480769230769231,0.051865332120109194
+ovsam3d_sam_clip_eval_nuscenes_mini,unknown,False,,,True,sam,trailer,0,5475,0,0.0,,0.0
+ovsam3d_sam_clip_eval_nuscenes_mini,unknown,False,,,True,sam,truck,4097,5553,16239,0.7377993877183504,0.2522938604593879,0.23153433173212773
+ovsam3d_sam_clip_eval_nuscenes_mini,unknown,False,,,True,sam,vegetation,12,12,16345,1.0,0.0007341694707861732,0.0007341694707861732
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,hybrid,True,0.12,0.06,True,box,barrier,3565,20453,5072,0.1743020583777441,0.7028785488958991,0.16234061930783242
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,hybrid,True,0.12,0.06,True,box,bicycle,0,0,10,,0.0,0.0
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,hybrid,True,0.12,0.06,True,box,building,0,0,19685,,0.0,0.0
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,hybrid,True,0.12,0.06,True,box,bus,0,0,8,,0.0,0.0
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,hybrid,True,0.12,0.06,True,box,car,196,283,271,0.6925795053003534,0.7232472324723247,0.547486033519553
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,hybrid,True,0.12,0.06,True,box,construction vehicle,0,737,32,0.0,0.0,0.0
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,hybrid,True,0.12,0.06,True,box,pedestrian,864,10787,1558,0.08009641234819691,0.5545571245186136,0.07525476874836687
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,hybrid,True,0.12,0.06,True,box,road,2067,4706,59005,0.43922651933701656,0.035030929582238794,0.03353124391668289
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,hybrid,True,0.12,0.06,True,box,sidewalk,0,0,2277,,0.0,0.0
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,hybrid,True,0.12,0.06,True,box,traffic cone,67,1972,104,0.03397565922920893,0.6442307692307693,0.03334992533598805
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,hybrid,True,0.12,0.06,True,box,trailer,0,6725,0,0.0,,0.0
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,hybrid,True,0.12,0.06,True,box,truck,4006,6706,16239,0.5973754846406203,0.24669006712235975,0.21152119964095253
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,hybrid,True,0.12,0.06,True,box,vegetation,0,0,16345,,0.0,0.0
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,hybrid,True,0.12,0.06,True,sam,barrier,3456,12758,5072,0.2708888540523593,0.6813880126182965,0.24043411715597607
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,hybrid,True,0.12,0.06,True,sam,bicycle,0,0,10,,0.0,0.0
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,hybrid,True,0.12,0.06,True,sam,building,0,0,19685,,0.0,0.0
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,hybrid,True,0.12,0.06,True,sam,bus,0,0,8,,0.0,0.0
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,hybrid,True,0.12,0.06,True,sam,car,190,227,271,0.8370044052863436,0.7011070110701108,0.6168831168831169
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,hybrid,True,0.12,0.06,True,sam,construction vehicle,0,457,32,0.0,0.0,0.0
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,hybrid,True,0.12,0.06,True,sam,motorcycle,0,4,0,0.0,,0.0
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,hybrid,True,0.12,0.06,True,sam,pedestrian,774,6327,1558,0.12233285917496443,0.496790757381258,0.10884545071016735
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,hybrid,True,0.12,0.06,True,sam,road,1987,2928,59005,0.6786202185792349,0.03367511227862045,0.03314649851533046
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,hybrid,True,0.12,0.06,True,sam,sidewalk,0,0,2277,,0.0,0.0
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,hybrid,True,0.12,0.06,True,sam,traffic cone,57,1052,104,0.05418250950570342,0.5480769230769231,0.051865332120109194
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,hybrid,True,0.12,0.06,True,sam,trailer,0,5475,0,0.0,,0.0
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,hybrid,True,0.12,0.06,True,sam,truck,4097,5553,16239,0.7377993877183504,0.2522938604593879,0.23153433173212773
+ovsam3d_ablation_hybrid_merge_person_nuscenes_mini,hybrid,True,0.12,0.06,True,sam,vegetation,12,12,16345,1.0,0.0007341694707861732,0.0007341694707861732
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,box,barrier,4900,18682,5072,0.26228455197516326,0.9660883280757098,0.2598918001485096
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,box,bicycle,0,1,10,0.0,0.0,0.0
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,box,building,0,0,19685,,0.0,0.0
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,box,bus,0,24,8,0.0,0.0,0.0
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,box,car,199,9710,271,0.020494335736354275,0.7343173431734318,0.020343488039255776
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,box,construction vehicle,0,0,32,,0.0,0.0
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,box,pedestrian,511,1051,1558,0.4862036156041865,0.32798459563543003,0.24356530028598666
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,box,road,0,0,59005,,0.0,0.0
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,box,sidewalk,0,0,2277,,0.0,0.0
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,box,traffic cone,67,305,104,0.21967213114754097,0.6442307692307693,0.195906432748538
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,box,trailer,0,5993,0,0.0,,0.0
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,box,truck,11479,16515,16239,0.6950650923402967,0.7068785023708356,0.5395534665099883
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,box,vegetation,0,0,16345,,0.0,0.0
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,sam,barrier,4629,11778,5072,0.39302088639836985,0.9126577287066246,0.3787742410604697
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,sam,bicycle,0,8,10,0.0,0.0,0.0
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,sam,building,0,0,19685,,0.0,0.0
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,sam,bus,0,53,8,0.0,0.0,0.0
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,sam,car,189,6065,271,0.031162407254740312,0.6974169741697417,0.03074670571010249
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,sam,construction vehicle,0,0,32,,0.0,0.0
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,sam,pedestrian,780,1130,1558,0.6902654867256637,0.5006418485237484,0.4088050314465409
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,sam,road,0,0,59005,,0.0,0.0
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,sam,sidewalk,0,0,2277,,0.0,0.0
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,sam,traffic cone,57,109,104,0.5229357798165137,0.5480769230769231,0.36538461538461536
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,sam,trailer,0,2782,0,0.0,,0.0
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,sam,truck,10471,12801,16239,0.8179829700804625,0.6448057146376008,0.5638968172761053
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,sam,vegetation,0,0,16345,,0.0,0.0
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,clip,True,0.12,0.06,True,box,barrier,3565,20645,5072,0.17268103657059822,0.7028785488958991,0.16093355001805706
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,clip,True,0.12,0.06,True,box,bicycle,0,0,10,,0.0,0.0
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,clip,True,0.12,0.06,True,box,building,0,0,19685,,0.0,0.0
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,clip,True,0.12,0.06,True,box,bus,0,0,8,,0.0,0.0
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,clip,True,0.12,0.06,True,box,car,196,282,271,0.6950354609929078,0.7232472324723247,0.5490196078431373
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,clip,True,0.12,0.06,True,box,construction vehicle,0,737,32,0.0,0.0,0.0
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,clip,True,0.12,0.06,True,box,pedestrian,864,10857,1558,0.0795799944736115,0.5545571245186136,0.07479871872565146
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,clip,True,0.12,0.06,True,box,road,2067,4706,59005,0.43922651933701656,0.035030929582238794,0.03353124391668289
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,clip,True,0.12,0.06,True,box,sidewalk,0,0,2277,,0.0,0.0
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,clip,True,0.12,0.06,True,box,traffic cone,67,1972,104,0.03397565922920893,0.6442307692307693,0.03334992533598805
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,clip,True,0.12,0.06,True,box,trailer,0,7033,0,0.0,,0.0
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,clip,True,0.12,0.06,True,box,truck,3517,6137,16239,0.5730813100863614,0.2165773754541536,0.18648920939604433
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,clip,True,0.12,0.06,True,box,vegetation,0,0,16345,,0.0,0.0
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,clip,True,0.12,0.06,True,sam,barrier,3456,12758,5072,0.2708888540523593,0.6813880126182965,0.24043411715597607
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,clip,True,0.12,0.06,True,sam,bicycle,0,0,10,,0.0,0.0
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,clip,True,0.12,0.06,True,sam,building,0,0,19685,,0.0,0.0
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,clip,True,0.12,0.06,True,sam,bus,0,0,8,,0.0,0.0
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,clip,True,0.12,0.06,True,sam,car,190,227,271,0.8370044052863436,0.7011070110701108,0.6168831168831169
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,clip,True,0.12,0.06,True,sam,construction vehicle,0,457,32,0.0,0.0,0.0
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,clip,True,0.12,0.06,True,sam,motorcycle,0,4,0,0.0,,0.0
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,clip,True,0.12,0.06,True,sam,pedestrian,774,6328,1558,0.12231352718078382,0.496790757381258,0.10883014623172103
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,clip,True,0.12,0.06,True,sam,road,1987,2928,59005,0.6786202185792349,0.03367511227862045,0.03314649851533046
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,clip,True,0.12,0.06,True,sam,sidewalk,0,0,2277,,0.0,0.0
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,clip,True,0.12,0.06,True,sam,traffic cone,57,1052,104,0.05418250950570342,0.5480769230769231,0.051865332120109194
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,clip,True,0.12,0.06,True,sam,trailer,0,5692,0,0.0,,0.0
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,clip,True,0.12,0.06,True,sam,truck,3883,5335,16239,0.7278350515463917,0.23911570909538765,0.2194901362274603
+ovsam3d_ablation_clip_merge_person_nuscenes_mini,clip,True,0.12,0.06,True,sam,vegetation,12,12,16345,1.0,0.0007341694707861732,0.0007341694707861732
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,hybrid,True,0.3,0.06,True,box,barrier,3565,18630,5072,0.19135802469135801,0.7028785488958991,0.1770372945324527
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,hybrid,True,0.3,0.06,True,box,bicycle,0,1,10,0.0,0.0,0.0
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,hybrid,True,0.3,0.06,True,box,building,0,0,19685,,0.0,0.0
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,hybrid,True,0.3,0.06,True,box,bus,0,0,8,,0.0,0.0
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,hybrid,True,0.3,0.06,True,box,car,203,313,271,0.6485623003194888,0.7490774907749077,0.5328083989501312
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,hybrid,True,0.3,0.06,True,box,construction vehicle,0,715,32,0.0,0.0,0.0
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,hybrid,True,0.3,0.06,True,box,pedestrian,869,7776,1558,0.11175411522633745,0.5577663671373556,0.10265800354400473
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,hybrid,True,0.3,0.06,True,box,road,2067,4706,59005,0.43922651933701656,0.035030929582238794,0.03353124391668289
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,hybrid,True,0.3,0.06,True,box,sidewalk,0,0,2277,,0.0,0.0
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,hybrid,True,0.3,0.06,True,box,traffic cone,67,1967,104,0.0340620233858668,0.6442307692307693,0.03343313373253493
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,hybrid,True,0.3,0.06,True,box,trailer,0,11535,0,0.0,,0.0
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,hybrid,True,0.3,0.06,True,box,truck,4006,6715,16239,0.5965748324646314,0.24669006712235975,0.2114207304200971
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,hybrid,True,0.3,0.06,True,box,vegetation,0,0,16345,,0.0,0.0
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,hybrid,True,0.3,0.06,True,sam,barrier,3457,11495,5072,0.3007394519356242,0.6815851735015773,0.2636918382913806
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,hybrid,True,0.3,0.06,True,sam,bicycle,0,5,10,0.0,0.0,0.0
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,hybrid,True,0.3,0.06,True,sam,building,0,0,19685,,0.0,0.0
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,hybrid,True,0.3,0.06,True,sam,bus,0,0,8,,0.0,0.0
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,hybrid,True,0.3,0.06,True,sam,car,210,299,271,0.7023411371237458,0.7749077490774908,0.5833333333333334
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,hybrid,True,0.3,0.06,True,sam,construction vehicle,0,428,32,0.0,0.0,0.0
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,hybrid,True,0.3,0.06,True,sam,pedestrian,780,4761,1558,0.1638311279143037,0.5006418485237484,0.14081964253475357
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,hybrid,True,0.3,0.06,True,sam,road,1987,2928,59005,0.6786202185792349,0.03367511227862045,0.03314649851533046
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,hybrid,True,0.3,0.06,True,sam,sidewalk,0,0,2277,,0.0,0.0
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,hybrid,True,0.3,0.06,True,sam,traffic cone,57,1047,104,0.054441260744985676,0.5480769230769231,0.05210237659963437
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,hybrid,True,0.3,0.06,True,sam,trailer,0,8203,0,0.0,,0.0
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,hybrid,True,0.3,0.06,True,sam,truck,4134,5621,16239,0.7354563244974204,0.2545723258821356,0.23321674376621912
+ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini,hybrid,True,0.3,0.06,True,sam,vegetation,0,0,16345,,0.0,0.0
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,hybrid,True,0.45,0.06,True,box,barrier,4397,19619,5072,0.22411947601814566,0.866916403785489,0.2166650241450675
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,hybrid,True,0.45,0.06,True,box,bicycle,0,1,10,0.0,0.0,0.0
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,hybrid,True,0.45,0.06,True,box,building,0,0,19685,,0.0,0.0
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,hybrid,True,0.45,0.06,True,box,bus,0,22,8,0.0,0.0,0.0
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,hybrid,True,0.45,0.06,True,box,car,203,330,271,0.6151515151515151,0.7490774907749077,0.5100502512562815
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,hybrid,True,0.45,0.06,True,box,construction vehicle,0,577,32,0.0,0.0,0.0
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,hybrid,True,0.45,0.06,True,box,pedestrian,867,7772,1558,0.1115542974781266,0.5564826700898587,0.10244594115561857
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,hybrid,True,0.45,0.06,True,box,road,2067,4706,59005,0.43922651933701656,0.035030929582238794,0.03353124391668289
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,hybrid,True,0.45,0.06,True,box,sidewalk,0,0,2277,,0.0,0.0
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,hybrid,True,0.45,0.06,True,box,traffic cone,67,310,104,0.2161290322580645,0.6442307692307693,0.1930835734870317
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,hybrid,True,0.45,0.06,True,box,trailer,0,12300,0,0.0,,0.0
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,hybrid,True,0.45,0.06,True,box,truck,4006,6715,16239,0.5965748324646314,0.24669006712235975,0.2114207304200971
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,hybrid,True,0.45,0.06,True,box,vegetation,0,0,16345,,0.0,0.0
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,hybrid,True,0.45,0.06,True,sam,barrier,4261,12449,5072,0.34227648807133104,0.840102523659306,0.321342383107089
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,hybrid,True,0.45,0.06,True,sam,bicycle,0,8,10,0.0,0.0,0.0
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,hybrid,True,0.45,0.06,True,sam,building,0,0,19685,,0.0,0.0
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,hybrid,True,0.45,0.06,True,sam,bus,0,25,8,0.0,0.0,0.0
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,hybrid,True,0.45,0.06,True,sam,car,211,326,271,0.647239263803681,0.7785977859778598,0.5466321243523317
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,hybrid,True,0.45,0.06,True,sam,construction vehicle,0,427,32,0.0,0.0,0.0
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,hybrid,True,0.45,0.06,True,sam,pedestrian,796,4721,1558,0.16860834568947258,0.5109114249037228,0.14517599854094473
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,hybrid,True,0.45,0.06,True,sam,road,1987,2928,59005,0.6786202185792349,0.03367511227862045,0.03314649851533046
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,hybrid,True,0.45,0.06,True,sam,sidewalk,0,0,2277,,0.0,0.0
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,hybrid,True,0.45,0.06,True,sam,traffic cone,57,114,104,0.5,0.5480769230769231,0.35403726708074534
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,hybrid,True,0.45,0.06,True,sam,trailer,0,8151,0,0.0,,0.0
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,hybrid,True,0.45,0.06,True,sam,truck,4144,5631,16239,0.735926123246315,0.2551881273477431,0.23378088683290082
+ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini,hybrid,True,0.45,0.06,True,sam,vegetation,0,0,16345,,0.0,0.0
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,hybrid,True,0.6,0.06,True,box,barrier,4397,19510,5072,0.22537160430548436,0.866916403785489,0.21783502600941293
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,hybrid,True,0.6,0.06,True,box,bicycle,0,1,10,0.0,0.0,0.0
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,hybrid,True,0.6,0.06,True,box,building,0,0,19685,,0.0,0.0
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,hybrid,True,0.6,0.06,True,box,bus,0,23,8,0.0,0.0,0.0
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,hybrid,True,0.6,0.06,True,box,car,218,5159,271,0.04225625121147509,0.8044280442804428,0.04182655410590944
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,hybrid,True,0.6,0.06,True,box,construction vehicle,0,577,32,0.0,0.0,0.0
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,hybrid,True,0.6,0.06,True,box,pedestrian,865,6888,1558,0.1255807200929152,0.555198973042362,0.11410104207888142
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,hybrid,True,0.6,0.06,True,box,road,0,0,59005,,0.0,0.0
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,hybrid,True,0.6,0.06,True,box,sidewalk,0,0,2277,,0.0,0.0
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,hybrid,True,0.6,0.06,True,box,traffic cone,67,310,104,0.2161290322580645,0.6442307692307693,0.1930835734870317
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,hybrid,True,0.6,0.06,True,box,trailer,0,9463,0,0.0,,0.0
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,hybrid,True,0.6,0.06,True,box,truck,6785,10421,16239,0.6510891469148834,0.4178212944146807,0.34138364779874214
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,hybrid,True,0.6,0.06,True,box,vegetation,0,0,16345,,0.0,0.0
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,hybrid,True,0.6,0.06,True,sam,barrier,4261,12223,5072,0.34860508876707846,0.840102523659306,0.3269142243363511
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,hybrid,True,0.6,0.06,True,sam,bicycle,0,8,10,0.0,0.0,0.0
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,hybrid,True,0.6,0.06,True,sam,building,0,0,19685,,0.0,0.0
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,hybrid,True,0.6,0.06,True,sam,bus,0,44,8,0.0,0.0,0.0
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,hybrid,True,0.6,0.06,True,sam,car,211,3261,271,0.06470407850352652,0.7785977859778598,0.0635350797952424
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,hybrid,True,0.6,0.06,True,sam,construction vehicle,0,427,32,0.0,0.0,0.0
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,hybrid,True,0.6,0.06,True,sam,pedestrian,796,4678,1558,0.17015818725951262,0.5109114249037228,0.1463235294117647
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,hybrid,True,0.6,0.06,True,sam,road,0,0,59005,,0.0,0.0
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,hybrid,True,0.6,0.06,True,sam,sidewalk,0,0,2277,,0.0,0.0
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,hybrid,True,0.6,0.06,True,sam,traffic cone,57,114,104,0.5,0.5480769230769231,0.35403726708074534
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,hybrid,True,0.6,0.06,True,sam,trailer,0,4900,0,0.0,,0.0
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,hybrid,True,0.6,0.06,True,sam,truck,7054,9125,16239,0.7730410958904109,0.4343863538395221,0.38525395958492625
+ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini,hybrid,True,0.6,0.06,True,sam,vegetation,0,0,16345,,0.0,0.0

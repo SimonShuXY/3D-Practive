@@ -1,0 +1,82 @@
+[
+  {
+    "box": [
+      912.5729370117188,
+      498.51129150390625,
+      958.7229614257812,
+      547.3488159179688
+    ],
+    "owl_label": "pedestrian",
+    "owl_score": 0.08441188186407089,
+    "clip_label": "construction vehicle",
+    "clip_score": 0.18981392681598663,
+    "final_label": "pedestrian",
+    "final_score": 0.08441188186407089,
+    "sam_iou": 0.7889993190765381,
+    "mask_pixels": 1343
+  },
+  {
+    "box": [
+      825.22314453125,
+      486.8700866699219,
+      870.7477416992188,
+      544.719970703125
+    ],
+    "owl_label": "pedestrian",
+    "owl_score": 0.07918265461921692,
+    "clip_label": "person",
+    "clip_score": 0.39480459690093994,
+    "final_label": "pedestrian",
+    "final_score": 0.07918265461921692,
+    "sam_iou": 0.8332527875900269,
+    "mask_pixels": 1611
+  },
+  {
+    "box": [
+      333.61590576171875,
+      509.984375,
+      376.89593505859375,
+      574.5555419921875
+    ],
+    "owl_label": "pedestrian",
+    "owl_score": 0.07594142109155655,
+    "clip_label": "person",
+    "clip_score": 0.5604625344276428,
+    "final_label": "pedestrian",
+    "final_score": 0.5604625344276428,
+    "sam_iou": 0.8850052356719971,
+    "mask_pixels": 1327
+  },
+  {
+    "box": [
+      831.4564819335938,
+      513.3568115234375,
+      869.6841430664062,
+      549.1522216796875
+    ],
+    "owl_label": "bicycle",
+    "owl_score": 0.07569395750761032,
+    "clip_label": "traffic cone",
+    "clip_score": 0.24349986016750336,
+    "final_label": "bicycle",
+    "final_score": 0.07569395750761032,
+    "sam_iou": 0.7552778720855713,
+    "mask_pixels": 575
+  },
+  {
+    "box": [
+      508.010009765625,
+      511.8206787109375,
+      617.6154174804688,
+      571.8046264648438
+    ],
+    "owl_label": "barrier",
+    "owl_score": 0.06469736993312836,
+    "clip_label": "barrier",
+    "clip_score": 0.30012205243110657,
+    "final_label": "barrier",
+    "final_score": 0.06469736993312836,
+    "sam_iou": 0.941923201084137,
+    "mask_pixels": 3430
+  }
+]

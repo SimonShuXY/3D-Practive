@@ -153,6 +153,12 @@ class DetectedRegion:
     mask: Optional[np.ndarray] = None
 
 
+def normalize_label(label: str, merge_person_labels: bool = False) -> str:
+    if merge_person_labels and label == "person":
+        return "pedestrian"
+    return label
+
+
 def ensure_dir(path: Path) -> None:
     path.mkdir(parents=True, exist_ok=True)
 
@@ -285,6 +291,8 @@ def clip_tag_regions(
     candidates: Sequence[str],
     batch_size: int = 16,
     min_clip_score: float = 0.12,
+    label_mode: str = "hybrid",
+    merge_person_labels: bool = False,
 ) -> None:
     if not regions:
         return
@@ -301,12 +309,18 @@ def clip_tag_regions(
             clip_score = float(row[best])
             region.clip_label = clip_label
             region.clip_score = clip_score
-            # CLIP is treated as a RAM-style tag candidate. Keep OWL if CLIP is weak.
-            if clip_score >= min_clip_score and clip_label in LABELS:
-                region.final_label = clip_label
+            if label_mode == "owl":
+                region.final_label = normalize_label(region.owl_label, merge_person_labels)
+                region.final_score = region.owl_score
+            elif label_mode == "clip":
+                region.final_label = normalize_label(clip_label, merge_person_labels)
+                region.final_score = clip_score
+            elif clip_score >= min_clip_score and clip_label in LABELS:
+                # CLIP is treated as a RAM-style tag candidate. Keep OWL if CLIP is weak.
+                region.final_label = normalize_label(clip_label, merge_person_labels)
                 region.final_score = float(max(region.owl_score, clip_score))
             else:
-                region.final_label = region.owl_label
+                region.final_label = normalize_label(region.owl_label, merge_person_labels)
                 region.final_score = region.owl_score
 
 
@@ -659,6 +673,8 @@ def process_sample(
             LABELS,
             args.clip_batch_size,
             args.min_clip_score,
+            args.label_mode,
+            args.merge_person_labels,
         )
         assign_regions_to_points(uv, visible_mask, regions, box_labels, box_scores, sam_labels, sam_scores)
 
@@ -733,6 +749,13 @@ def process_sample(
             "montage_box_projection": str(out / "montage_box_point_projection.jpg"),
             "montage_sam_projection": str(out / "montage_sam_point_projection.jpg"),
             "ply": str(out / "sam_open_vocab_labeled_points.ply"),
+        },
+        "config": {
+            "label_mode": args.label_mode,
+            "merge_person_labels": bool(args.merge_person_labels),
+            "owl_threshold": args.owl_threshold,
+            "min_clip_score": args.min_clip_score,
+            "max_detections_per_camera": args.max_detections_per_camera,
         },
     }
     with open(out / "summary.json", "w") as f:
@@ -835,6 +858,9 @@ This run upgrades the initial OWL-ViT box scaffold in four ways:
 
 ## Summary
 
+Config: `label_mode={summaries[0].get('config', {}).get('label_mode', 'hybrid')}`,
+`merge_person_labels={summaries[0].get('config', {}).get('merge_person_labels', False)}`.
+
 | Sample | Points | Box assigned ratio | SAM assigned ratio | Box mapped accuracy | SAM mapped accuracy |
 | --- | ---: | ---: | ---: | ---: | ---: |
 {chr(10).join(rows)}
@@ -886,6 +912,8 @@ def main() -> None:
     ap.add_argument("--max-detections-per-camera", type=int, default=18)
     ap.add_argument("--sam-batch-size", type=int, default=8)
     ap.add_argument("--clip-batch-size", type=int, default=16)
+    ap.add_argument("--label-mode", choices=["hybrid", "owl", "clip"], default="hybrid")
+    ap.add_argument("--merge-person-labels", action="store_true")
     ap.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     args = ap.parse_args()
 
@@ -925,6 +953,13 @@ def main() -> None:
             {
                 "status": "OK",
                 "sample_indices": parse_sample_indices(args.sample_indices),
+                "config": {
+                    "label_mode": args.label_mode,
+                    "merge_person_labels": bool(args.merge_person_labels),
+                    "owl_threshold": args.owl_threshold,
+                    "min_clip_score": args.min_clip_score,
+                    "max_detections_per_camera": args.max_detections_per_camera,
+                },
                 "summaries": summaries,
                 "multiframe_outputs": multiframe_outputs,
             },

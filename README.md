@@ -23,10 +23,13 @@ This is not yet a faithful official OV-SAM3D implementation. It uses OWL-ViT as 
 
 - `scripts/run_open_vocab_nuscenes_owlvit.py`: runnable nuScenes-mini open-vocabulary 2D-to-3D visualization scaffold.
 - `scripts/run_sam_clip_eval_multiframe.py`: SAM-refined masks, CLIP crop tags, lidarseg mapped diagnostics, and multi-frame semantic fusion.
+- `scripts/aggregate_sam_clip_metrics.py`: aggregates run-level, sample-level, per-class, and label-source ablation metrics.
 - `docs/DATA_MANIFEST.md`: remote data symlink layout and isolation policy.
 - `docs/OVSAM3D_OV3D_REPRO_STATUS.md`: current result summary, limitations, and next steps.
+- `docs/SAM_CLIP_LABEL_ABLATION.md`: label-source ablation conclusion after comparing OWL-only, CLIP-only, and hybrid labels.
 - `results/ovsam3d_owlvit_nuscenes_mini/`: generated visualizations for five nuScenes-mini samples.
 - `results/ovsam3d_sam_clip_eval_nuscenes_mini/`: SAM/CLIP upgraded visualizations and diagnostics for five nuScenes-mini samples.
+- `results/ovsam3d_metric_ablation_report/`: aggregate metric and label-source diagnosis tables.
 
 ## Main Results
 
@@ -60,6 +63,23 @@ Key visualizations:
 ![Multi-frame SAM open-vocabulary map](results/ovsam3d_sam_clip_eval_nuscenes_mini/multiframe_sam_open_vocab_bev.png)
 
 See `results/ovsam3d_sam_clip_eval_nuscenes_mini/SAM_CLIP_EVAL_MULTIFRAME_REPORT.md` for the compact run report and `run_summary.json` for per-region diagnostics.
+
+### Label-Source Ablation
+
+The latest diagnosis compares OWL-only, CLIP-only, and hybrid labels under the same SAM masks.
+The best current route is `OWL-ViT label -> SAM mask -> person/pedestrian merge -> 3D projection`.
+
+| Run | Label source | CLIP min | SAM mapped accuracy | SAM macro IoU |
+| --- | --- | ---: | ---: | ---: |
+| hybrid merge | hybrid | 0.12 | 0.304 | 0.092 |
+| owl merge | OWL-only | 0.12 | 0.464 | 0.134 |
+| clip merge | CLIP-only | 0.12 | 0.298 | 0.091 |
+| hybrid clip045 | hybrid | 0.45 | 0.329 | 0.126 |
+| hybrid clip060 | hybrid | 0.60 | 0.356 | 0.098 |
+
+CLIP crop retagging is currently not reliable enough for these outdoor driving crops. Raising
+the CLIP takeover threshold helps hybrid labels, but OWL-only still wins on both mapped accuracy
+and macro IoU. See `docs/SAM_CLIP_LABEL_ABLATION.md` for the full table and interpretation.
 
 ### Initial OWL-ViT Box Scaffold
 
@@ -122,7 +142,7 @@ TRANSFORMERS_CACHE=/root/autodl-tmp/open_vocab3d_repro/weights/hf_cache \
 
 ## Next Steps
 
-1. Calibrate prompt-to-class mapping, especially `person`/`pedestrian`, trailer, construction vehicle, and barrier.
-2. Add per-class IoU / precision / recall summaries after label merging.
+1. Use OWL-only labels plus SAM masks as the default branch for larger nuScenes-mini split expansion.
+2. Improve stuff-class coverage with a separate road/building/sidewalk/vegetation route instead of object boxes only.
 3. Add SemanticKITTI front-camera mode for comparison with prior closed-set experiments.
 4. If official OV-SAM3D/OV3D code becomes available, adapt its 2D mask/tag stage into this output interface.
