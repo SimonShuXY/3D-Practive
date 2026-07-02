@@ -81,6 +81,12 @@ CLIP crop retagging is currently not reliable enough for these outdoor driving c
 the CLIP takeover threshold helps hybrid labels, but OWL-only still wins on both mapped accuracy
 and macro IoU. See `docs/SAM_CLIP_LABEL_ABLATION.md` for the full table and interpretation.
 
+The low full-scene macro IoU is mostly a split-metric issue. For the best OWL-only SAM run,
+object assigned accuracy is `0.464`, object micro IoU is `0.385`, and object macro IoU is
+`0.194`; the stuff/background group is `0.000` because the current route does not segment
+road/building/sidewalk/vegetation. See
+`results/ovsam3d_metric_ablation_report/group_metrics.csv` for the full split.
+
 ### Initial OWL-ViT Box Scaffold
 
 Five nuScenes-mini samples were processed. Each sample includes:

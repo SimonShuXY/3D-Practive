@@ -32,6 +32,33 @@ def safe_div(num: float, den: float) -> Optional[float]:
     return None if den == 0 else num / den
 
 
+OBJECT_CLASSES = {
+    "barrier",
+    "bicycle",
+    "bus",
+    "car",
+    "construction vehicle",
+    "motorcycle",
+    "pedestrian",
+    "traffic cone",
+    "trailer",
+    "truck",
+}
+
+STUFF_CLASSES = {
+    "building",
+    "road",
+    "sidewalk",
+    "vegetation",
+}
+
+CLASS_GROUPS: Tuple[Tuple[str, Optional[set[str]]], ...] = (
+    ("full", None),
+    ("object", OBJECT_CLASSES),
+    ("stuff", STUFF_CLASSES),
+)
+
+
 def summarize_eval(
     summaries: Sequence[dict],
     stage: str,
@@ -91,6 +118,53 @@ def summarize_eval(
         "classes_scored": len(scored),
     }
     return run_row, class_rows
+
+
+def summarize_group_metrics(run_row: dict, class_rows: Dict[str, dict]) -> List[dict]:
+    rows = []
+    total_points = int(run_row["total_points"])
+    assigned_points = int(run_row["assigned_points"])
+
+    for group, class_filter in CLASS_GROUPS:
+        scored = [
+            row
+            for cls, row in class_rows.items()
+            if (class_filter is None or cls in class_filter) and (row["pred"] > 0 or row["gt"] > 0)
+        ]
+        tp = sum(row["tp"] for row in scored)
+        pred = sum(row["pred"] for row in scored)
+        gt = sum(row["gt"] for row in scored)
+        micro_precision = safe_div(tp, pred)
+        micro_recall = safe_div(tp, gt)
+        micro_iou = safe_div(tp, pred + gt - tp)
+        macro_precision = safe_div(sum(row["precision"] or 0.0 for row in scored), len(scored))
+        macro_recall = safe_div(sum(row["recall"] or 0.0 for row in scored), len(scored))
+        macro_iou = safe_div(sum(row["iou"] or 0.0 for row in scored), len(scored))
+
+        rows.append(
+            {
+                "group": group,
+                "total_points": total_points,
+                "assigned_points": assigned_points,
+                "assigned_ratio": safe_div(assigned_points, total_points),
+                "group_pred_points": pred,
+                "group_pred_ratio": safe_div(pred, total_points),
+                "group_gt_points": gt,
+                "group_gt_ratio": safe_div(gt, total_points),
+                "tp": tp,
+                "assigned_accuracy": micro_precision,
+                "micro_precision": micro_precision,
+                "micro_recall": micro_recall,
+                "micro_iou": micro_iou,
+                "macro_precision": macro_precision,
+                "macro_recall": macro_recall,
+                "macro_iou": macro_iou,
+                "classes_scored": len(scored),
+                "classes": ", ".join(row["class"] for row in scored),
+            }
+        )
+
+    return rows
 
 
 def summarize_sample(sample: dict, stage: str, merge_person_labels: bool) -> dict:
@@ -175,6 +249,7 @@ def make_report(
     out_dir: Path,
     run_rows: Sequence[dict],
     sample_rows: Sequence[dict],
+    group_rows: Sequence[dict],
     per_class_rows: Sequence[dict],
     transition_rows: Sequence[dict],
 ) -> None:
@@ -207,11 +282,39 @@ def make_report(
 
     lines += [
         "",
+        "## Split Metrics",
+        "",
+        "This table separates the SAM-stage score into all mapped classes, object-like prompts, and stuff/background classes. `Assigned acc` is micro precision over the points assigned to that group.",
+        "",
+        "| Run | Label mode | Group | Coverage | Group pred ratio | Assigned acc | Micro R | Micro IoU | Macro IoU | Classes |",
+        "| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
+    ]
+    for row in group_rows:
+        if row["stage"] != "sam":
+            continue
+        lines.append(
+            "| {run} | {label_mode} | {group} | {coverage} | {pred_ratio} | {acc} | {recall} | {miou_micro} | {miou_macro} | {classes} |".format(
+                run=row["run"],
+                label_mode=row.get("label_mode", "unknown"),
+                group=row["group"],
+                coverage=fnum(row["assigned_ratio"]),
+                pred_ratio=fnum(row["group_pred_ratio"]),
+                acc=fnum(row["assigned_accuracy"]),
+                recall=fnum(row["micro_recall"]),
+                miou_micro=fnum(row["micro_iou"]),
+                miou_macro=fnum(row["macro_iou"]),
+                classes=row["classes_scored"],
+            )
+        )
+
+    lines += [
+        "",
         "## Main Reading",
         "",
         "- Compare `box` and `sam` rows inside the same run to estimate how much SAM reduces box spillover.",
         "- Compare `hybrid`, `owl`, and `clip` runs to estimate whether the label bottleneck comes from the detector label or CLIP crop retagging.",
         "- Use merged-person rows as the default diagnostic when matching nuScenes lidarseg because `person` and `pedestrian` share the same closed-set target.",
+        "- Read the full macro IoU together with object/stuff split metrics. The current prompt route is object-centric, so missing stuff predictions can depress full-scene macro IoU even when object assigned accuracy is improving.",
         "",
         "## Lowest SAM IoU Classes",
         "",
@@ -250,6 +353,7 @@ def make_report(
         "",
         "- `run_level_metrics.csv`",
         "- `sample_level_metrics.csv`",
+        "- `group_metrics.csv`",
         "- `per_class_metrics.csv`",
         "- `label_source_transitions.csv`",
     ]
@@ -268,6 +372,7 @@ def main() -> None:
 
     run_rows: List[dict] = []
     sample_rows: List[dict] = []
+    group_rows: List[dict] = []
     per_class_rows: List[dict] = []
     transition_rows: List[dict] = []
 
@@ -280,18 +385,18 @@ def main() -> None:
         owl_threshold = config.get("owl_threshold")
         for stage in ("box", "sam"):
             row, class_rows = summarize_eval(run["summaries"], stage, args.merge_person_labels)
-            run_rows.append(
-                {
-                    "run": name,
-                    "label_mode": label_mode,
-                    "merge_person_labels": merge_in_run,
-                    "min_clip_score": min_clip_score,
-                    "owl_threshold": owl_threshold,
-                    "posthoc_merge_person": args.merge_person_labels,
-                    "stage": stage,
-                    **row,
-                }
-            )
+            meta = {
+                "run": name,
+                "label_mode": label_mode,
+                "merge_person_labels": merge_in_run,
+                "min_clip_score": min_clip_score,
+                "owl_threshold": owl_threshold,
+                "posthoc_merge_person": args.merge_person_labels,
+                "stage": stage,
+            }
+            run_rows.append({**meta, **row})
+            for group_row in summarize_group_metrics(row, class_rows):
+                group_rows.append({**meta, **group_row})
             for cls, cls_row in class_rows.items():
                 per_class_rows.append(
                     {
@@ -344,6 +449,37 @@ def main() -> None:
             "macro_recall",
             "macro_iou",
             "classes_scored",
+        ],
+    )
+    write_csv(
+        args.out_dir / "group_metrics.csv",
+        group_rows,
+        [
+            "run",
+            "label_mode",
+            "merge_person_labels",
+            "min_clip_score",
+            "owl_threshold",
+            "posthoc_merge_person",
+            "stage",
+            "group",
+            "total_points",
+            "assigned_points",
+            "assigned_ratio",
+            "group_pred_points",
+            "group_pred_ratio",
+            "group_gt_points",
+            "group_gt_ratio",
+            "tp",
+            "assigned_accuracy",
+            "micro_precision",
+            "micro_recall",
+            "micro_iou",
+            "macro_precision",
+            "macro_recall",
+            "macro_iou",
+            "classes_scored",
+            "classes",
         ],
     )
     write_csv(
@@ -405,12 +541,13 @@ def main() -> None:
             "count",
         ],
     )
-    make_report(args.out_dir, run_rows, sample_rows, per_class_rows, transition_rows)
+    make_report(args.out_dir, run_rows, sample_rows, group_rows, per_class_rows, transition_rows)
     with (args.out_dir / "metrics_summary.json").open("w") as f:
         json.dump(
             {
                 "run_level": run_rows,
                 "sample_level": sample_rows,
+                "group_level": group_rows,
                 "per_class": per_class_rows,
                 "label_source": transition_rows,
             },

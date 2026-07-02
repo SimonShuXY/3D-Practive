@@ -32,6 +32,34 @@ CLIP takeover threshold.
 | hybrid clip045 | hybrid | 0.45 | sam | 0.201 | 0.329 | 0.126 |
 | hybrid clip060 | hybrid | 0.60 | sam | 0.201 | 0.356 | 0.098 |
 
+## Split Metric Diagnosis
+
+The low full-scene macro IoU should be read with split metrics, because the current
+pipeline is an object-prompt route. It uses OWL-ViT boxes and SAM masks, so it
+naturally finds discrete objects better than road/building/sidewalk/vegetation.
+
+Best current run, `ovsam3d_ablation_owl_merge_person_nuscenes_mini`, SAM stage:
+
+| Group | Coverage | Group pred ratio | Assigned acc | Micro recall | Micro IoU | Macro IoU | Classes |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| full | 0.201 | 0.200 | 0.464 | 0.134 | 0.116 | 0.134 | 13 |
+| object | 0.201 | 0.200 | 0.464 | 0.692 | 0.385 | 0.194 | 9 |
+| stuff | 0.201 | 0.000 | n/a | 0.000 | 0.000 | 0.000 | 4 |
+
+Interpretation:
+
+- The object route is useful: among points assigned to object labels, `46.4%` are
+  correct, and object micro IoU reaches `0.385`.
+- Object macro IoU is still only `0.194` because rare or hard classes such as
+  `bus`, `bicycle`, `construction vehicle`, and `trailer` receive little or no
+  correct support in this five-sample mini split.
+- Stuff classes are not solved by the current object-centric detector/mask route.
+  In the best OWL-only run, `road`, `building`, `sidewalk`, and `vegetation` get
+  zero predicted support, so they pull the full-scene macro IoU down.
+- Hybrid/CLIP runs sometimes assign a small number of stuff points, but the stuff
+  recall remains about `0.02` and stuff macro IoU stays around `0.008`, so this is
+  not a real background segmentation solution.
+
 ## Conclusion
 
 The best current route is:
@@ -65,6 +93,7 @@ takeover and improves hybrid accuracy, but none of the hybrid thresholds beats O
 
 - Aggregate report: `results/ovsam3d_metric_ablation_report/METRIC_ABLATION_REPORT.md`
 - Run-level CSV: `results/ovsam3d_metric_ablation_report/run_level_metrics.csv`
+- Split metric CSV: `results/ovsam3d_metric_ablation_report/group_metrics.csv`
 - Per-class CSV: `results/ovsam3d_metric_ablation_report/per_class_metrics.csv`
 - Label transition CSV: `results/ovsam3d_metric_ablation_report/label_source_transitions.csv`
 
@@ -85,4 +114,6 @@ Best-current visualization set:
 Use `OWL-only + SAM + person/pedestrian merge` as the default branch for the next split expansion.
 Do not use CLIP crop retagging as the primary label source unless it is constrained by a stronger
 calibration rule. The next experiment should expand from five samples to a larger nuScenes-mini
-subset and report per-class precision / recall / IoU using the same aggregation script.
+subset, but the metric should always be reported as full/object/stuff splits. To improve the full
+macro IoU, add a separate stuff-class route instead of expecting object boxes to recover road,
+building, sidewalk, and vegetation.

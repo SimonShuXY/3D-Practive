@@ -19,11 +19,40 @@
 | ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini | hybrid | True | 0.60 | box | 0.302 | 0.236 | 0.097 | 0.253 | 0.070 | 13 |
 | ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini | hybrid | True | 0.60 | sam | 0.201 | 0.356 | 0.143 | 0.239 | 0.098 | 13 |
 
+## Split Metrics
+
+This table separates the SAM-stage score into all mapped classes, object-like prompts, and stuff/background classes. `Assigned acc` is micro precision over the points assigned to that group.
+
+| Run | Label mode | Group | Coverage | Group pred ratio | Assigned acc | Micro R | Micro IoU | Macro IoU | Classes |
+| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| ovsam3d_sam_clip_eval_nuscenes_mini | unknown | full | 0.201 | 0.200 | 0.304 | 0.088 | 0.073 | 0.092 | 14 |
+| ovsam3d_sam_clip_eval_nuscenes_mini | unknown | object | 0.201 | 0.184 | 0.269 | 0.368 | 0.184 | 0.125 | 10 |
+| ovsam3d_sam_clip_eval_nuscenes_mini | unknown | stuff | 0.201 | 0.017 | 0.680 | 0.021 | 0.020 | 0.008 | 4 |
+| ovsam3d_ablation_hybrid_merge_person_nuscenes_mini | hybrid | full | 0.201 | 0.200 | 0.304 | 0.088 | 0.073 | 0.092 | 14 |
+| ovsam3d_ablation_hybrid_merge_person_nuscenes_mini | hybrid | object | 0.201 | 0.184 | 0.269 | 0.368 | 0.184 | 0.125 | 10 |
+| ovsam3d_ablation_hybrid_merge_person_nuscenes_mini | hybrid | stuff | 0.201 | 0.017 | 0.680 | 0.021 | 0.020 | 0.008 | 4 |
+| ovsam3d_ablation_owl_merge_person_nuscenes_mini | owl | full | 0.201 | 0.200 | 0.464 | 0.134 | 0.116 | 0.134 | 13 |
+| ovsam3d_ablation_owl_merge_person_nuscenes_mini | owl | object | 0.201 | 0.200 | 0.464 | 0.692 | 0.385 | 0.194 | 9 |
+| ovsam3d_ablation_owl_merge_person_nuscenes_mini | owl | stuff | 0.201 | 0.000 | n/a | 0.000 | 0.000 | 0.000 | 4 |
+| ovsam3d_ablation_clip_merge_person_nuscenes_mini | clip | full | 0.201 | 0.200 | 0.298 | 0.086 | 0.071 | 0.091 | 14 |
+| ovsam3d_ablation_clip_merge_person_nuscenes_mini | clip | object | 0.201 | 0.184 | 0.262 | 0.359 | 0.179 | 0.124 | 10 |
+| ovsam3d_ablation_clip_merge_person_nuscenes_mini | clip | stuff | 0.201 | 0.017 | 0.680 | 0.021 | 0.020 | 0.008 | 4 |
+| ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini | hybrid | full | 0.201 | 0.200 | 0.305 | 0.088 | 0.073 | 0.100 | 13 |
+| ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini | hybrid | object | 0.201 | 0.184 | 0.271 | 0.371 | 0.186 | 0.141 | 9 |
+| ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini | hybrid | stuff | 0.201 | 0.017 | 0.679 | 0.020 | 0.020 | 0.008 | 4 |
+| ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini | hybrid | full | 0.201 | 0.200 | 0.329 | 0.095 | 0.080 | 0.126 | 13 |
+| ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini | hybrid | object | 0.201 | 0.184 | 0.297 | 0.406 | 0.207 | 0.178 | 9 |
+| ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini | hybrid | stuff | 0.201 | 0.017 | 0.679 | 0.020 | 0.020 | 0.008 | 4 |
+| ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini | hybrid | full | 0.201 | 0.200 | 0.356 | 0.103 | 0.087 | 0.098 | 13 |
+| ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini | hybrid | object | 0.201 | 0.200 | 0.356 | 0.531 | 0.271 | 0.142 | 9 |
+| ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini | hybrid | stuff | 0.201 | 0.000 | n/a | 0.000 | 0.000 | 0.000 | 4 |
+
 ## Main Reading
 
 - Compare `box` and `sam` rows inside the same run to estimate how much SAM reduces box spillover.
 - Compare `hybrid`, `owl`, and `clip` runs to estimate whether the label bottleneck comes from the detector label or CLIP crop retagging.
 - Use merged-person rows as the default diagnostic when matching nuScenes lidarseg because `person` and `pedestrian` share the same closed-set target.
+- Read the full macro IoU together with object/stuff split metrics. The current prompt route is object-centric, so missing stuff predictions can depress full-scene macro IoU even when object assigned accuracy is improving.
 
 ## Lowest SAM IoU Classes
 
@@ -70,5 +99,6 @@ CSV files:
 
 - `run_level_metrics.csv`
 - `sample_level_metrics.csv`
+- `group_metrics.csv`
 - `per_class_metrics.csv`
 - `label_source_transitions.csv`
