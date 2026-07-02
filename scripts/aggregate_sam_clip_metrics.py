@@ -3,7 +3,8 @@
 
 The input is one or more directories produced by
 `run_sam_clip_eval_multiframe.py`. The script writes a compact report plus CSV
-tables for run-level, sample-level, per-class, and label-source diagnostics.
+tables for run-level, sample-level, class-group, per-class, and label-source
+diagnostics.
 """
 
 from __future__ import annotations
@@ -52,7 +53,7 @@ STUFF_CLASSES = {
     "vegetation",
 }
 
-CLASS_GROUPS: Tuple[Tuple[str, Optional[set[str]]], ...] = (
+BASE_CLASS_GROUPS: Tuple[Tuple[str, Optional[set[str]]], ...] = (
     ("full", None),
     ("object", OBJECT_CLASSES),
     ("stuff", STUFF_CLASSES),
@@ -120,12 +121,18 @@ def summarize_eval(
     return run_row, class_rows
 
 
-def summarize_group_metrics(run_row: dict, class_rows: Dict[str, dict]) -> List[dict]:
+def summarize_group_metrics(run_row: dict, class_rows: Dict[str, dict], frequent_object_min_gt: int) -> List[dict]:
     rows = []
     total_points = int(run_row["total_points"])
     assigned_points = int(run_row["assigned_points"])
+    frequent_object_classes = {
+        cls
+        for cls, row in class_rows.items()
+        if cls in OBJECT_CLASSES and int(row["gt"]) >= frequent_object_min_gt
+    }
+    group_specs = (*BASE_CLASS_GROUPS, ("frequent_object", frequent_object_classes))
 
-    for group, class_filter in CLASS_GROUPS:
+    for group, class_filter in group_specs:
         scored = [
             row
             for cls, row in class_rows.items()
@@ -160,6 +167,7 @@ def summarize_group_metrics(run_row: dict, class_rows: Dict[str, dict]) -> List[
                 "macro_recall": macro_recall,
                 "macro_iou": macro_iou,
                 "classes_scored": len(scored),
+                "frequent_object_min_gt": frequent_object_min_gt if group == "frequent_object" else None,
                 "classes": ", ".join(row["class"] for row in scored),
             }
         )
@@ -245,6 +253,115 @@ def write_csv(path: Path, rows: Sequence[dict], fields: Sequence[str]) -> None:
             writer.writerow({field: row.get(field) for field in fields})
 
 
+def short_run_name(name: str) -> str:
+    if name == "ovsam3d_sam_clip_eval_nuscenes_mini":
+        return "baseline"
+    prefix = "ovsam3d_ablation_"
+    suffix = "_merge_person_nuscenes_mini"
+    if name.startswith(prefix):
+        name = name[len(prefix) :]
+    if name.endswith(suffix):
+        name = name[: -len(suffix)]
+    return name
+
+
+def make_object_only_report(
+    out_dir: Path,
+    group_rows: Sequence[dict],
+    per_class_rows: Sequence[dict],
+) -> None:
+    sam_object_rows = [row for row in group_rows if row["stage"] == "sam" and row["group"] in {"object", "frequent_object"}]
+    best_object = max(
+        (row for row in sam_object_rows if row["group"] == "object" and row["micro_iou"] is not None),
+        key=lambda row: row["micro_iou"],
+        default=None,
+    )
+    best_frequent = max(
+        (row for row in sam_object_rows if row["group"] == "frequent_object" and row["micro_iou"] is not None),
+        key=lambda row: row["micro_iou"],
+        default=None,
+    )
+
+    lines = [
+        "# Object-Only SAM Diagnostic Report",
+        "",
+        "This report intentionally removes stuff/background classes from the main reading. It is a diagnostic for the current object-mask route, not a full-scene semantic segmentation benchmark.",
+        "",
+        "## SAM Object Groups",
+        "",
+        "| Run | Label mode | Group | Assigned acc | Micro R | Micro IoU | Macro IoU | Classes | Class list |",
+        "| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- |",
+    ]
+    for row in sam_object_rows:
+        lines.append(
+            "| {run} | {label_mode} | {group} | {acc} | {recall} | {miou_micro} | {miou_macro} | {classes} | {class_list} |".format(
+                run=short_run_name(row["run"]),
+                label_mode=row.get("label_mode", "unknown"),
+                group=row["group"],
+                acc=fnum(row["assigned_accuracy"]),
+                recall=fnum(row["micro_recall"]),
+                miou_micro=fnum(row["micro_iou"]),
+                miou_macro=fnum(row["macro_iou"]),
+                classes=row["classes_scored"],
+                class_list=row["classes"],
+            )
+        )
+
+    if best_object:
+        lines += [
+            "",
+            "## Best Object-Only Route",
+            "",
+            "- Best object-only run: `{}`.".format(best_object["run"]),
+            "- Object assigned accuracy: `{}`.".format(fnum(best_object["assigned_accuracy"])),
+            "- Object micro IoU: `{}`.".format(fnum(best_object["micro_iou"])),
+            "- Object macro IoU: `{}`.".format(fnum(best_object["macro_iou"])),
+        ]
+    if best_frequent:
+        lines += [
+            "",
+            "## Frequent-Object Reading",
+            "",
+            "`frequent_object` keeps object classes with enough ground-truth support in this mini split. It is useful for checking whether the object-mask chain works before long-tail classes dominate the macro average.",
+            "",
+            "- Best frequent-object run: `{}`.".format(best_frequent["run"]),
+            "- Frequent-object assigned accuracy: `{}`.".format(fnum(best_frequent["assigned_accuracy"])),
+            "- Frequent-object micro IoU: `{}`.".format(fnum(best_frequent["micro_iou"])),
+            "- Frequent-object macro IoU: `{}`.".format(fnum(best_frequent["macro_iou"])),
+            "- Frequent-object classes: `{}`.".format(best_frequent["classes"]),
+        ]
+
+    if best_object:
+        best_classes = [
+            row
+            for row in per_class_rows
+            if row["run"] == best_object["run"] and row["stage"] == "sam" and row["class"] in OBJECT_CLASSES
+        ]
+        best_classes.sort(key=lambda row: (row["iou"] or 0.0), reverse=True)
+        lines += [
+            "",
+            "## Best Run Per-Object Classes",
+            "",
+            "| Class | TP | Pred | GT | Precision | Recall | IoU |",
+            "| --- | ---: | ---: | ---: | ---: | ---: | ---: |",
+        ]
+        for row in best_classes:
+            lines.append(
+                f"| {row['class']} | {row['tp']} | {row['pred']} | {row['gt']} | "
+                f"{fnum(row['precision'])} | {fnum(row['recall'])} | {fnum(row['iou'])} |"
+            )
+
+    lines += [
+        "",
+        "## Reading Rule",
+        "",
+        "- Use `object` to evaluate the object-mask route without background classes.",
+        "- Use `frequent_object` to inspect classes with enough support in the current mini split.",
+        "- Keep `full` and `stuff` metrics visible elsewhere so the report does not claim full-scene segmentation.",
+    ]
+    (out_dir / "OBJECT_ONLY_DIAGNOSTIC_REPORT.md").write_text("\n".join(lines) + "\n")
+
+
 def make_report(
     out_dir: Path,
     run_rows: Sequence[dict],
@@ -284,7 +401,7 @@ def make_report(
         "",
         "## Split Metrics",
         "",
-        "This table separates the SAM-stage score into all mapped classes, object-like prompts, and stuff/background classes. `Assigned acc` is micro precision over the points assigned to that group.",
+        "This table separates the SAM-stage score into all mapped classes, object-like prompts, frequent object classes, and stuff/background classes. `Assigned acc` is micro precision over the points assigned to that group.",
         "",
         "| Run | Label mode | Group | Coverage | Group pred ratio | Assigned acc | Micro R | Micro IoU | Macro IoU | Classes |",
         "| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
@@ -315,6 +432,7 @@ def make_report(
         "- Compare `hybrid`, `owl`, and `clip` runs to estimate whether the label bottleneck comes from the detector label or CLIP crop retagging.",
         "- Use merged-person rows as the default diagnostic when matching nuScenes lidarseg because `person` and `pedestrian` share the same closed-set target.",
         "- Read the full macro IoU together with object/stuff split metrics. The current prompt route is object-centric, so missing stuff predictions can depress full-scene macro IoU even when object assigned accuracy is improving.",
+        "- Read `frequent_object` as the cleanest current object-mask diagnostic: it removes background and also avoids tiny long-tail classes dominating a five-sample mini split.",
         "",
         "## Lowest SAM IoU Classes",
         "",
@@ -354,6 +472,7 @@ def make_report(
         "- `run_level_metrics.csv`",
         "- `sample_level_metrics.csv`",
         "- `group_metrics.csv`",
+        "- `OBJECT_ONLY_DIAGNOSTIC_REPORT.md`",
         "- `per_class_metrics.csv`",
         "- `label_source_transitions.csv`",
     ]
@@ -365,6 +484,12 @@ def main() -> None:
     ap.add_argument("run_dirs", nargs="+", type=Path)
     ap.add_argument("--out-dir", type=Path, default=Path("results/ovsam3d_metric_ablation_report"))
     ap.add_argument("--merge-person-labels", action="store_true")
+    ap.add_argument(
+        "--frequent-object-min-gt",
+        type=int,
+        default=100,
+        help="Minimum GT points for a class to enter the frequent_object diagnostic group.",
+    )
     args = ap.parse_args()
 
     args.out_dir.mkdir(parents=True, exist_ok=True)
@@ -395,7 +520,7 @@ def main() -> None:
                 "stage": stage,
             }
             run_rows.append({**meta, **row})
-            for group_row in summarize_group_metrics(row, class_rows):
+            for group_row in summarize_group_metrics(row, class_rows, args.frequent_object_min_gt):
                 group_rows.append({**meta, **group_row})
             for cls, cls_row in class_rows.items():
                 per_class_rows.append(
@@ -479,6 +604,7 @@ def main() -> None:
             "macro_recall",
             "macro_iou",
             "classes_scored",
+            "frequent_object_min_gt",
             "classes",
         ],
     )
@@ -542,6 +668,7 @@ def main() -> None:
         ],
     )
     make_report(args.out_dir, run_rows, sample_rows, group_rows, per_class_rows, transition_rows)
+    make_object_only_report(args.out_dir, group_rows, per_class_rows)
     with (args.out_dir / "metrics_summary.json").open("w") as f:
         json.dump(
             {

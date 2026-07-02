@@ -87,6 +87,12 @@ object assigned accuracy is `0.464`, object micro IoU is `0.385`, and object mac
 road/building/sidewalk/vegetation. See
 `results/ovsam3d_metric_ablation_report/group_metrics.csv` for the full split.
 
+For a stricter object-mask diagnostic, `frequent_object` keeps only object classes with at
+least `100` GT points in the five-sample mini split. On that protocol, the best OWL-only
+SAM run reaches `0.413` micro IoU and `0.350` macro IoU across
+`barrier / car / pedestrian / traffic cone / truck`. See
+`results/ovsam3d_metric_ablation_report/OBJECT_ONLY_DIAGNOSTIC_REPORT.md`.
+
 ### Initial OWL-ViT Box Scaffold
 
 Five nuScenes-mini samples were processed. Each sample includes:

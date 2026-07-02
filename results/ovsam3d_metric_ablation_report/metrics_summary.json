@@ -1681,6 +1681,7 @@
       "macro_recall": 0.2235872824478619,
       "macro_iou": 0.08180644542072123,
       "classes_scored": 13,
+      "frequent_object_min_gt": null,
       "classes": "barrier, bicycle, building, bus, car, construction vehicle, pedestrian, road, sidewalk, traffic cone, trailer, truck, vegetation"
     },
     {
@@ -1708,6 +1709,7 @@
       "macro_recall": 0.3190670824711074,
       "macro_iou": 0.1144391718391881,
       "classes_scored": 9,
+      "frequent_object_min_gt": null,
       "classes": "barrier, bicycle, bus, car, construction vehicle, pedestrian, traffic cone, trailer, truck"
     },
     {
@@ -1735,7 +1737,36 @@
       "macro_recall": 0.008757732395559699,
       "macro_iou": 0.008382810979170723,
       "classes_scored": 4,
+      "frequent_object_min_gt": null,
       "classes": "building, road, sidewalk, vegetation"
+    },
+    {
+      "run": "ovsam3d_sam_clip_eval_nuscenes_mini",
+      "label_mode": "unknown",
+      "merge_person_labels": false,
+      "min_clip_score": null,
+      "owl_threshold": null,
+      "posthoc_merge_person": true,
+      "stage": "box",
+      "group": "frequent_object",
+      "total_points": 173568,
+      "assigned_points": 52428,
+      "assigned_ratio": 0.3020602876106195,
+      "group_pred_points": 40201,
+      "group_pred_ratio": 0.23161527470501475,
+      "group_gt_points": 23244,
+      "group_gt_ratio": 0.1339186946902655,
+      "tp": 8698,
+      "assigned_accuracy": 0.21636277704534712,
+      "micro_precision": 0.21636277704534712,
+      "micro_recall": 0.37420409568060575,
+      "micro_iou": 0.15887628545856394,
+      "macro_precision": 0.31566582397922477,
+      "macro_recall": 0.5743207484479933,
+      "macro_iou": 0.20599050931053858,
+      "classes_scored": 5,
+      "frequent_object_min_gt": 100,
+      "classes": "barrier, car, pedestrian, traffic cone, truck"
     },
     {
       "run": "ovsam3d_sam_clip_eval_nuscenes_mini",
@@ -1762,6 +1793,7 @@
       "macro_recall": 0.19386184616824167,
       "macro_iou": 0.09167450118482956,
       "classes_scored": 14,
+      "frequent_object_min_gt": null,
       "classes": "barrier, bicycle, building, bus, car, construction vehicle, motorcycle, pedestrian, road, sidewalk, traffic cone, trailer, truck, vegetation"
     },
     {
@@ -1789,6 +1821,7 @@
       "macro_recall": 0.26796565646059767,
       "macro_iou": 0.12495623486014973,
       "classes_scored": 10,
+      "frequent_object_min_gt": null,
       "classes": "barrier, bicycle, bus, car, construction vehicle, motorcycle, pedestrian, traffic cone, trailer, truck"
     },
     {
@@ -1816,7 +1849,36 @@
       "macro_recall": 0.008602320437351657,
       "macro_iou": 0.008470166996529159,
       "classes_scored": 4,
+      "frequent_object_min_gt": null,
       "classes": "building, road, sidewalk, vegetation"
+    },
+    {
+      "run": "ovsam3d_sam_clip_eval_nuscenes_mini",
+      "label_mode": "unknown",
+      "merge_person_labels": false,
+      "min_clip_score": null,
+      "owl_threshold": null,
+      "posthoc_merge_person": true,
+      "stage": "sam",
+      "group": "frequent_object",
+      "total_points": 173568,
+      "assigned_points": 34847,
+      "assigned_ratio": 0.20076857485250738,
+      "group_pred_points": 25917,
+      "group_pred_ratio": 0.14931899889380532,
+      "group_gt_points": 23244,
+      "group_gt_ratio": 0.1339186946902655,
+      "tp": 8574,
+      "assigned_accuracy": 0.33082532700544043,
+      "micro_precision": 0.33082532700544043,
+      "micro_recall": 0.36886938564790916,
+      "micro_iou": 0.21124990760588366,
+      "macro_precision": 0.4044416031475442,
+      "macro_recall": 0.5359313129211953,
+      "macro_iou": 0.24991246972029946,
+      "classes_scored": 5,
+      "frequent_object_min_gt": 100,
+      "classes": "barrier, car, pedestrian, traffic cone, truck"
     },
     {
       "run": "ovsam3d_ablation_hybrid_merge_person_nuscenes_mini",
@@ -1843,6 +1905,7 @@
       "macro_recall": 0.2235872824478619,
       "macro_iou": 0.08180644542072123,
       "classes_scored": 13,
+      "frequent_object_min_gt": null,
       "classes": "barrier, bicycle, building, bus, car, construction vehicle, pedestrian, road, sidewalk, traffic cone, trailer, truck, vegetation"
     },
     {
@@ -1870,6 +1933,7 @@
       "macro_recall": 0.3190670824711074,
       "macro_iou": 0.1144391718391881,
       "classes_scored": 9,
+      "frequent_object_min_gt": null,
       "classes": "barrier, bicycle, bus, car, construction vehicle, pedestrian, traffic cone, trailer, truck"
     },
     {
@@ -1897,7 +1961,36 @@
       "macro_recall": 0.008757732395559699,
       "macro_iou": 0.008382810979170723,
       "classes_scored": 4,
+      "frequent_object_min_gt": null,
       "classes": "building, road, sidewalk, vegetation"
+    },
+    {
+      "run": "ovsam3d_ablation_hybrid_merge_person_nuscenes_mini",
+      "label_mode": "hybrid",
+      "merge_person_labels": true,
+      "min_clip_score": 0.12,
+      "owl_threshold": 0.06,
+      "posthoc_merge_person": true,
+      "stage": "box",
+      "group": "frequent_object",
+      "total_points": 173568,
+      "assigned_points": 52428,
+      "assigned_ratio": 0.3020602876106195,
+      "group_pred_points": 40201,
+      "group_pred_ratio": 0.23161527470501475,
+      "group_gt_points": 23244,
+      "group_gt_ratio": 0.1339186946902655,
+      "tp": 8698,
+      "assigned_accuracy": 0.21636277704534712,
+      "micro_precision": 0.21636277704534712,
+      "micro_recall": 0.37420409568060575,
+      "micro_iou": 0.15887628545856394,
+      "macro_precision": 0.31566582397922477,
+      "macro_recall": 0.5743207484479933,
+      "macro_iou": 0.20599050931053858,
+      "classes_scored": 5,
+      "frequent_object_min_gt": 100,
+      "classes": "barrier, car, pedestrian, traffic cone, truck"
     },
     {
       "run": "ovsam3d_ablation_hybrid_merge_person_nuscenes_mini",
@@ -1924,6 +2017,7 @@
       "macro_recall": 0.19386184616824167,
       "macro_iou": 0.09167450118482956,
       "classes_scored": 14,
+      "frequent_object_min_gt": null,
       "classes": "barrier, bicycle, building, bus, car, construction vehicle, motorcycle, pedestrian, road, sidewalk, traffic cone, trailer, truck, vegetation"
     },
     {
@@ -1951,6 +2045,7 @@
       "macro_recall": 0.26796565646059767,
       "macro_iou": 0.12495623486014973,
       "classes_scored": 10,
+      "frequent_object_min_gt": null,
       "classes": "barrier, bicycle, bus, car, construction vehicle, motorcycle, pedestrian, traffic cone, trailer, truck"
     },
     {
@@ -1978,7 +2073,36 @@
       "macro_recall": 0.008602320437351657,
       "macro_iou": 0.008470166996529159,
       "classes_scored": 4,
+      "frequent_object_min_gt": null,
       "classes": "building, road, sidewalk, vegetation"
+    },
+    {
+      "run": "ovsam3d_ablation_hybrid_merge_person_nuscenes_mini",
+      "label_mode": "hybrid",
+      "merge_person_labels": true,
+      "min_clip_score": 0.12,
+      "owl_threshold": 0.06,
+      "posthoc_merge_person": true,
+      "stage": "sam",
+      "group": "frequent_object",
+      "total_points": 173568,
+      "assigned_points": 34847,
+      "assigned_ratio": 0.20076857485250738,
+      "group_pred_points": 25917,
+      "group_pred_ratio": 0.14931899889380532,
+      "group_gt_points": 23244,
+      "group_gt_ratio": 0.1339186946902655,
+      "tp": 8574,
+      "assigned_accuracy": 0.33082532700544043,
+      "micro_precision": 0.33082532700544043,
+      "micro_recall": 0.36886938564790916,
+      "micro_iou": 0.21124990760588366,
+      "macro_precision": 0.4044416031475442,
+      "macro_recall": 0.5359313129211953,
+      "macro_iou": 0.24991246972029946,
+      "classes_scored": 5,
+      "frequent_object_min_gt": 100,
+      "classes": "barrier, car, pedestrian, traffic cone, truck"
     },
     {
       "run": "ovsam3d_ablation_owl_merge_person_nuscenes_mini",
@@ -2005,6 +2129,7 @@
       "macro_recall": 0.2599615029604751,
       "macro_iou": 0.09686619136402141,
       "classes_scored": 13,
+      "frequent_object_min_gt": null,
       "classes": "barrier, bicycle, building, bus, car, construction vehicle, pedestrian, road, sidewalk, traffic cone, trailer, truck, vegetation"
     },
     {
@@ -2032,6 +2157,7 @@
       "macro_recall": 0.37549994872068626,
       "macro_iou": 0.13991783197025315,
       "classes_scored": 9,
+      "frequent_object_min_gt": null,
       "classes": "barrier, bicycle, bus, car, construction vehicle, pedestrian, traffic cone, trailer, truck"
     },
     {
@@ -2059,7 +2185,36 @@
       "macro_recall": 0.0,
       "macro_iou": 0.0,
       "classes_scored": 4,
+      "frequent_object_min_gt": null,
       "classes": "building, road, sidewalk, vegetation"
+    },
+    {
+      "run": "ovsam3d_ablation_owl_merge_person_nuscenes_mini",
+      "label_mode": "owl",
+      "merge_person_labels": true,
+      "min_clip_score": 0.12,
+      "owl_threshold": 0.06,
+      "posthoc_merge_person": true,
+      "stage": "box",
+      "group": "frequent_object",
+      "total_points": 173568,
+      "assigned_points": 52428,
+      "assigned_ratio": 0.3020602876106195,
+      "group_pred_points": 46263,
+      "group_pred_ratio": 0.2665410674778761,
+      "group_gt_points": 23244,
+      "group_gt_ratio": 0.1339186946902655,
+      "tp": 17156,
+      "assigned_accuracy": 0.3708363054708947,
+      "micro_precision": 0.3708363054708947,
+      "micro_recall": 0.7380829461366374,
+      "micro_iou": 0.32771102748753606,
+      "macro_precision": 0.33674394536070834,
+      "macro_recall": 0.6758999076972353,
+      "macro_iou": 0.25185209754645566,
+      "classes_scored": 5,
+      "frequent_object_min_gt": 100,
+      "classes": "barrier, car, pedestrian, traffic cone, truck"
     },
     {
       "run": "ovsam3d_ablation_owl_merge_person_nuscenes_mini",
@@ -2086,6 +2241,7 @@
       "macro_recall": 0.2541230145472799,
       "macro_iou": 0.13443133929829493,
       "classes_scored": 13,
+      "frequent_object_min_gt": null,
       "classes": "barrier, bicycle, building, bus, car, construction vehicle, pedestrian, road, sidewalk, traffic cone, trailer, truck, vegetation"
     },
     {
@@ -2113,6 +2269,7 @@
       "macro_recall": 0.3670665765682932,
       "macro_iou": 0.19417860120864822,
       "classes_scored": 9,
+      "frequent_object_min_gt": null,
       "classes": "barrier, bicycle, bus, car, construction vehicle, pedestrian, traffic cone, trailer, truck"
     },
     {
@@ -2140,7 +2297,36 @@
       "macro_recall": 0.0,
       "macro_iou": 0.0,
       "classes_scored": 4,
+      "frequent_object_min_gt": null,
       "classes": "building, road, sidewalk, vegetation"
+    },
+    {
+      "run": "ovsam3d_ablation_owl_merge_person_nuscenes_mini",
+      "label_mode": "owl",
+      "merge_person_labels": true,
+      "min_clip_score": 0.12,
+      "owl_threshold": 0.06,
+      "posthoc_merge_person": true,
+      "stage": "sam",
+      "group": "frequent_object",
+      "total_points": 173568,
+      "assigned_points": 34847,
+      "assigned_ratio": 0.20076857485250738,
+      "group_pred_points": 31883,
+      "group_pred_ratio": 0.18369169432153393,
+      "group_gt_points": 23244,
+      "group_gt_ratio": 0.1339186946902655,
+      "tp": 16126,
+      "assigned_accuracy": 0.5057867829250697,
+      "micro_precision": 0.5057867829250697,
+      "micro_recall": 0.6937704353811737,
+      "micro_iou": 0.41347657752365324,
+      "macro_precision": 0.49107350605515004,
+      "macro_recall": 0.6607198378229279,
+      "macro_iou": 0.3495214821755668,
+      "classes_scored": 5,
+      "frequent_object_min_gt": 100,
+      "classes": "barrier, car, pedestrian, traffic cone, truck"
     },
     {
       "run": "ovsam3d_ablation_clip_merge_person_nuscenes_mini",
@@ -2167,6 +2353,7 @@
       "macro_recall": 0.2212709215503076,
       "macro_iou": 0.07985555809504316,
       "classes_scored": 13,
+      "frequent_object_min_gt": null,
       "classes": "barrier, bicycle, building, bus, car, construction vehicle, pedestrian, road, sidewalk, traffic cone, trailer, truck, vegetation"
     },
     {
@@ -2194,6 +2381,7 @@
       "macro_recall": 0.3157212278413067,
       "macro_iou": 0.11162122347987537,
       "classes_scored": 9,
+      "frequent_object_min_gt": null,
       "classes": "barrier, bicycle, bus, car, construction vehicle, pedestrian, traffic cone, trailer, truck"
     },
     {
@@ -2221,7 +2409,36 @@
       "macro_recall": 0.008757732395559699,
       "macro_iou": 0.008382810979170723,
       "classes_scored": 4,
+      "frequent_object_min_gt": null,
       "classes": "building, road, sidewalk, vegetation"
+    },
+    {
+      "run": "ovsam3d_ablation_clip_merge_person_nuscenes_mini",
+      "label_mode": "clip",
+      "merge_person_labels": true,
+      "min_clip_score": 0.12,
+      "owl_threshold": 0.06,
+      "posthoc_merge_person": true,
+      "stage": "box",
+      "group": "frequent_object",
+      "total_points": 173568,
+      "assigned_points": 52428,
+      "assigned_ratio": 0.3020602876106195,
+      "group_pred_points": 39893,
+      "group_pred_ratio": 0.2298407540560472,
+      "group_gt_points": 23244,
+      "group_gt_ratio": 0.1339186946902655,
+      "tp": 8209,
+      "assigned_accuracy": 0.20577544932694958,
+      "micro_precision": 0.20577544932694958,
+      "micro_recall": 0.35316640853553605,
+      "micro_iou": 0.14945018933877074,
+      "macro_precision": 0.3108706922705376,
+      "macro_recall": 0.568298210114352,
+      "macro_iou": 0.20091820226377566,
+      "classes_scored": 5,
+      "frequent_object_min_gt": 100,
+      "classes": "barrier, car, pedestrian, traffic cone, truck"
     },
     {
       "run": "ovsam3d_ablation_clip_merge_person_nuscenes_mini",
@@ -2248,6 +2465,7 @@
       "macro_recall": 0.19292054964224165,
       "macro_iou": 0.09081310832889287,
       "classes_scored": 14,
+      "frequent_object_min_gt": null,
       "classes": "barrier, bicycle, building, bus, car, construction vehicle, motorcycle, pedestrian, road, sidewalk, traffic cone, trailer, truck, vegetation"
     },
     {
@@ -2275,6 +2493,7 @@
       "macro_recall": 0.2666478413241976,
       "macro_iou": 0.12375028486183837,
       "classes_scored": 10,
+      "frequent_object_min_gt": null,
       "classes": "barrier, bicycle, bus, car, construction vehicle, motorcycle, pedestrian, traffic cone, trailer, truck"
     },
     {
@@ -2302,7 +2521,36 @@
       "macro_recall": 0.008602320437351657,
       "macro_iou": 0.008470166996529159,
       "classes_scored": 4,
+      "frequent_object_min_gt": null,
       "classes": "building, road, sidewalk, vegetation"
+    },
+    {
+      "run": "ovsam3d_ablation_clip_merge_person_nuscenes_mini",
+      "label_mode": "clip",
+      "merge_person_labels": true,
+      "min_clip_score": 0.12,
+      "owl_threshold": 0.06,
+      "posthoc_merge_person": true,
+      "stage": "sam",
+      "group": "frequent_object",
+      "total_points": 173568,
+      "assigned_points": 34847,
+      "assigned_ratio": 0.20076857485250738,
+      "group_pred_points": 25700,
+      "group_pred_ratio": 0.14806876843657818,
+      "group_gt_points": 23244,
+      "group_gt_ratio": 0.1339186946902655,
+      "tp": 8360,
+      "assigned_accuracy": 0.32529182879377433,
+      "micro_precision": 0.32529182879377433,
+      "micro_recall": 0.35966270865599725,
+      "micro_iou": 0.20599250936329588,
+      "macro_precision": 0.4024448695143163,
+      "macro_recall": 0.5332956826483952,
+      "macro_iou": 0.24750056972367673,
+      "classes_scored": 5,
+      "frequent_object_min_gt": 100,
+      "classes": "barrier, car, pedestrian, traffic cone, truck"
     },
     {
       "run": "ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini",
@@ -2329,6 +2577,7 @@
       "macro_recall": 0.22582109021104074,
       "macro_iou": 0.08391452346891566,
       "classes_scored": 13,
+      "frequent_object_min_gt": null,
       "classes": "barrier, bicycle, building, bus, car, construction vehicle, pedestrian, road, sidewalk, traffic cone, trailer, truck, vegetation"
     },
     {
@@ -2356,6 +2605,7 @@
       "macro_recall": 0.32229369368458793,
       "macro_iou": 0.11748417346435786,
       "classes_scored": 9,
+      "frequent_object_min_gt": null,
       "classes": "barrier, bicycle, bus, car, construction vehicle, pedestrian, traffic cone, trailer, truck"
     },
     {
@@ -2383,7 +2633,36 @@
       "macro_recall": 0.008757732395559699,
       "macro_iou": 0.008382810979170723,
       "classes_scored": 4,
+      "frequent_object_min_gt": null,
       "classes": "building, road, sidewalk, vegetation"
+    },
+    {
+      "run": "ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini",
+      "label_mode": "hybrid",
+      "merge_person_labels": true,
+      "min_clip_score": 0.3,
+      "owl_threshold": 0.06,
+      "posthoc_merge_person": true,
+      "stage": "box",
+      "group": "frequent_object",
+      "total_points": 173568,
+      "assigned_points": 52428,
+      "assigned_ratio": 0.3020602876106195,
+      "group_pred_points": 35401,
+      "group_pred_ratio": 0.20396040744837757,
+      "group_gt_points": 23244,
+      "group_gt_ratio": 0.1339186946902655,
+      "tp": 8710,
+      "assigned_accuracy": 0.24603824750713257,
+      "micro_precision": 0.24603824750713257,
+      "micro_recall": 0.37472035794183445,
+      "micro_iou": 0.17442675478121558,
+      "macro_precision": 0.3164622592175365,
+      "macro_recall": 0.5801286486322582,
+      "macro_iou": 0.21147151223584415,
+      "classes_scored": 5,
+      "frequent_object_min_gt": 100,
+      "classes": "barrier, car, pedestrian, traffic cone, truck"
     },
     {
       "run": "ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini",
@@ -2410,6 +2689,7 @@
       "macro_recall": 0.21488147171849967,
       "macro_iou": 0.10048541792620395,
       "classes_scored": 13,
+      "frequent_object_min_gt": null,
       "classes": "barrier, bicycle, building, bus, car, construction vehicle, pedestrian, road, sidewalk, traffic cone, trailer, truck, vegetation"
     },
     {
@@ -2437,6 +2717,7 @@
       "macro_recall": 0.3066426688957639,
       "macro_iou": 0.14146265939170233,
       "classes_scored": 9,
+      "frequent_object_min_gt": null,
       "classes": "barrier, bicycle, bus, car, construction vehicle, pedestrian, traffic cone, trailer, truck"
     },
     {
@@ -2464,7 +2745,36 @@
       "macro_recall": 0.008418778069655113,
       "macro_iou": 0.008286624628832616,
       "classes_scored": 4,
+      "frequent_object_min_gt": null,
       "classes": "building, road, sidewalk, vegetation"
+    },
+    {
+      "run": "ovsam3d_ablation_hybrid_clip030_merge_person_nuscenes_mini",
+      "label_mode": "hybrid",
+      "merge_person_labels": true,
+      "min_clip_score": 0.3,
+      "owl_threshold": 0.06,
+      "posthoc_merge_person": true,
+      "stage": "sam",
+      "group": "frequent_object",
+      "total_points": 173568,
+      "assigned_points": 34847,
+      "assigned_ratio": 0.20076857485250738,
+      "group_pred_points": 23223,
+      "group_pred_ratio": 0.1337977046460177,
+      "group_gt_points": 23244,
+      "group_gt_ratio": 0.1339186946902655,
+      "tp": 8638,
+      "assigned_accuracy": 0.37195883391465356,
+      "micro_precision": 0.37195883391465356,
+      "micro_recall": 0.3716227843744622,
+      "micro_iou": 0.22834333447883898,
+      "macro_precision": 0.39136186044321597,
+      "macro_recall": 0.551956804012375,
+      "macro_iou": 0.2546327869050642,
+      "classes_scored": 5,
+      "frequent_object_min_gt": 100,
+      "classes": "barrier, car, pedestrian, traffic cone, truck"
     },
     {
       "run": "ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini",
@@ -2491,6 +2801,7 @@
       "macro_recall": 0.2383406408142787,
       "macro_iou": 0.09747667418313685,
       "classes_scored": 13,
+      "frequent_object_min_gt": null,
       "classes": "barrier, bicycle, building, bus, car, construction vehicle, pedestrian, road, sidewalk, traffic cone, trailer, truck, vegetation"
     },
     {
@@ -2518,6 +2829,7 @@
       "macro_recall": 0.34037748900037607,
       "macro_iou": 0.13707394671823292,
       "classes_scored": 9,
+      "frequent_object_min_gt": null,
       "classes": "barrier, bicycle, bus, car, construction vehicle, pedestrian, traffic cone, trailer, truck"
     },
     {
@@ -2545,7 +2857,36 @@
       "macro_recall": 0.008757732395559699,
       "macro_iou": 0.008382810979170723,
       "classes_scored": 4,
+      "frequent_object_min_gt": null,
       "classes": "building, road, sidewalk, vegetation"
+    },
+    {
+      "run": "ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini",
+      "label_mode": "hybrid",
+      "merge_person_labels": true,
+      "min_clip_score": 0.45,
+      "owl_threshold": 0.06,
+      "posthoc_merge_person": true,
+      "stage": "box",
+      "group": "frequent_object",
+      "total_points": 173568,
+      "assigned_points": 52428,
+      "assigned_ratio": 0.3020602876106195,
+      "group_pred_points": 34746,
+      "group_pred_ratio": 0.2001866703539823,
+      "group_gt_points": 23244,
+      "group_gt_ratio": 0.1339186946902655,
+      "tp": 9540,
+      "assigned_accuracy": 0.2745639785874633,
+      "micro_precision": 0.2745639785874633,
+      "micro_recall": 0.4104284976768198,
+      "micro_iou": 0.19690402476780186,
+      "macro_precision": 0.35270583067409667,
+      "macro_recall": 0.6126794802006769,
+      "macro_iou": 0.24673310409281926,
+      "classes_scored": 5,
+      "frequent_object_min_gt": 100,
+      "classes": "barrier, car, pedestrian, traffic cone, truck"
     },
     {
       "run": "ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini",
@@ -2572,6 +2913,7 @@
       "macro_recall": 0.22819629978801342,
       "macro_iou": 0.1257011660330263,
       "classes_scored": 13,
+      "frequent_object_min_gt": null,
       "classes": "barrier, bicycle, building, bus, car, construction vehicle, pedestrian, road, sidewalk, traffic cone, trailer, truck, vegetation"
     },
     {
@@ -2599,6 +2941,7 @@
       "macro_recall": 0.32587519832950607,
       "macro_iou": 0.1778854066571124,
       "classes_scored": 9,
+      "frequent_object_min_gt": null,
       "classes": "barrier, bicycle, bus, car, construction vehicle, pedestrian, traffic cone, trailer, truck"
     },
     {
@@ -2626,7 +2969,36 @@
       "macro_recall": 0.008418778069655113,
       "macro_iou": 0.008286624628832616,
       "classes_scored": 4,
+      "frequent_object_min_gt": null,
       "classes": "building, road, sidewalk, vegetation"
+    },
+    {
+      "run": "ovsam3d_ablation_hybrid_clip045_merge_person_nuscenes_mini",
+      "label_mode": "hybrid",
+      "merge_person_labels": true,
+      "min_clip_score": 0.45,
+      "owl_threshold": 0.06,
+      "posthoc_merge_person": true,
+      "stage": "sam",
+      "group": "frequent_object",
+      "total_points": 173568,
+      "assigned_points": 34847,
+      "assigned_ratio": 0.20076857485250738,
+      "group_pred_points": 23241,
+      "group_pred_ratio": 0.1339014103982301,
+      "group_gt_points": 23244,
+      "group_gt_ratio": 0.1339186946902655,
+      "tp": 9469,
+      "assigned_accuracy": 0.4074265307000559,
+      "micro_precision": 0.4074265307000559,
+      "micro_recall": 0.40737394596455,
+      "micro_iou": 0.2558082991138967,
+      "macro_precision": 0.47881004416216,
+      "macro_recall": 0.5865753569931109,
+      "macro_iou": 0.32019373198280227,
+      "classes_scored": 5,
+      "frequent_object_min_gt": 100,
+      "classes": "barrier, car, pedestrian, traffic cone, truck"
     },
     {
       "run": "ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini",
@@ -2653,6 +3025,7 @@
       "macro_recall": 0.25296888344259566,
       "macro_iou": 0.06986383411384443,
       "classes_scored": 13,
+      "frequent_object_min_gt": null,
       "classes": "barrier, bicycle, building, bus, car, construction vehicle, pedestrian, road, sidewalk, traffic cone, trailer, truck, vegetation"
     },
     {
@@ -2680,6 +3053,7 @@
       "macro_recall": 0.3653994983059715,
       "macro_iou": 0.10091442705333084,
       "classes_scored": 9,
+      "frequent_object_min_gt": null,
       "classes": "barrier, bicycle, bus, car, construction vehicle, pedestrian, traffic cone, trailer, truck"
     },
     {
@@ -2707,7 +3081,36 @@
       "macro_recall": 0.0,
       "macro_iou": 0.0,
       "classes_scored": 4,
+      "frequent_object_min_gt": null,
       "classes": "building, road, sidewalk, vegetation"
+    },
+    {
+      "run": "ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini",
+      "label_mode": "hybrid",
+      "merge_person_labels": true,
+      "min_clip_score": 0.6,
+      "owl_threshold": 0.06,
+      "posthoc_merge_person": true,
+      "stage": "box",
+      "group": "frequent_object",
+      "total_points": 173568,
+      "assigned_points": 52428,
+      "assigned_ratio": 0.3020602876106195,
+      "group_pred_points": 42288,
+      "group_pred_ratio": 0.24363938053097345,
+      "group_gt_points": 23244,
+      "group_gt_ratio": 0.1339186946902655,
+      "tp": 12332,
+      "assigned_accuracy": 0.29161937192584186,
+      "micro_precision": 0.29161937192584186,
+      "micro_recall": 0.5305455171226984,
+      "micro_iou": 0.23180451127819549,
+      "macro_precision": 0.2520853509565645,
+      "macro_recall": 0.6577190969507487,
+      "macro_iou": 0.18164596869599553,
+      "classes_scored": 5,
+      "frequent_object_min_gt": 100,
+      "classes": "barrier, car, pedestrian, traffic cone, truck"
     },
     {
       "run": "ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini",
@@ -2734,6 +3137,7 @@
       "macro_recall": 0.23939038549671798,
       "macro_iou": 0.09815877386223307,
       "classes_scored": 13,
+      "frequent_object_min_gt": null,
       "classes": "barrier, bicycle, building, bus, car, construction vehicle, pedestrian, road, sidewalk, traffic cone, trailer, truck, vegetation"
     },
     {
@@ -2761,6 +3165,7 @@
       "macro_recall": 0.3457861123841482,
       "macro_iou": 0.1417848955787811,
       "classes_scored": 9,
+      "frequent_object_min_gt": null,
       "classes": "barrier, bicycle, bus, car, construction vehicle, pedestrian, traffic cone, trailer, truck"
     },
     {
@@ -2788,7 +3193,36 @@
       "macro_recall": 0.0,
       "macro_iou": 0.0,
       "classes_scored": 4,
+      "frequent_object_min_gt": null,
       "classes": "building, road, sidewalk, vegetation"
+    },
+    {
+      "run": "ovsam3d_ablation_hybrid_clip060_merge_person_nuscenes_mini",
+      "label_mode": "hybrid",
+      "merge_person_labels": true,
+      "min_clip_score": 0.6,
+      "owl_threshold": 0.06,
+      "posthoc_merge_person": true,
+      "stage": "sam",
+      "group": "frequent_object",
+      "total_points": 173568,
+      "assigned_points": 34847,
+      "assigned_ratio": 0.20076857485250738,
+      "group_pred_points": 29401,
+      "group_pred_ratio": 0.16939182337758113,
+      "group_gt_points": 23244,
+      "group_gt_ratio": 0.1339186946902655,
+      "tp": 12379,
+      "assigned_accuracy": 0.4210401006768477,
+      "micro_precision": 0.4210401006768477,
+      "micro_recall": 0.5325675443125107,
+      "micro_iou": 0.3074305865991159,
+      "macro_precision": 0.37130169008410563,
+      "macro_recall": 0.6224150022914667,
+      "macro_iou": 0.25521281204180596,
+      "classes_scored": 5,
+      "frequent_object_min_gt": 100,
+      "classes": "barrier, car, pedestrian, traffic cone, truck"
     }
   ],
   "per_class": [

@@ -60,6 +60,34 @@ Interpretation:
   recall remains about `0.02` and stuff macro IoU stays around `0.008`, so this is
   not a real background segmentation solution.
 
+## Object-Only Diagnostic
+
+Since the current route only builds object masks, the fairest stage-one reading is
+an object-only diagnostic. This removes `road`, `building`, `sidewalk`, and
+`vegetation` from the primary score while keeping them visible in the full/stuff
+tables.
+
+`frequent_object` further keeps only object classes with at least `100` GT points
+in this five-sample mini split. Here that means `barrier`, `car`, `pedestrian`,
+`traffic cone`, and `truck`.
+
+| Run | Label source | Object micro IoU | Object macro IoU | Frequent-object micro IoU | Frequent-object macro IoU |
+| --- | --- | ---: | ---: | ---: | ---: |
+| baseline previous hybrid | hybrid | 0.184 | 0.125 | 0.211 | 0.250 |
+| hybrid merge | hybrid | 0.184 | 0.125 | 0.211 | 0.250 |
+| owl merge | OWL-only | 0.385 | 0.194 | 0.413 | 0.350 |
+| clip merge | CLIP-only | 0.179 | 0.124 | 0.206 | 0.248 |
+| hybrid clip030 | hybrid | 0.186 | 0.141 | 0.228 | 0.255 |
+| hybrid clip045 | hybrid | 0.207 | 0.178 | 0.256 | 0.320 |
+| hybrid clip060 | hybrid | 0.271 | 0.142 | 0.307 | 0.255 |
+
+This confirms that the current object-mask chain has real signal. The strongest
+stage-one result is still OWL-only + SAM. Its frequent-object macro IoU rises from
+the full-scene `0.134` to `0.350` after background and tiny long-tail classes are
+removed from the diagnostic. The remaining weak point is not the whole object route;
+it is mainly noisy `car` predictions and missing/rare long-tail objects such as
+`bus`, `bicycle`, `construction vehicle`, and `trailer`.
+
 ## Conclusion
 
 The best current route is:
@@ -92,6 +120,7 @@ takeover and improves hybrid accuracy, but none of the hybrid thresholds beats O
 ## Main Result Files
 
 - Aggregate report: `results/ovsam3d_metric_ablation_report/METRIC_ABLATION_REPORT.md`
+- Object-only report: `results/ovsam3d_metric_ablation_report/OBJECT_ONLY_DIAGNOSTIC_REPORT.md`
 - Run-level CSV: `results/ovsam3d_metric_ablation_report/run_level_metrics.csv`
 - Split metric CSV: `results/ovsam3d_metric_ablation_report/group_metrics.csv`
 - Per-class CSV: `results/ovsam3d_metric_ablation_report/per_class_metrics.csv`
