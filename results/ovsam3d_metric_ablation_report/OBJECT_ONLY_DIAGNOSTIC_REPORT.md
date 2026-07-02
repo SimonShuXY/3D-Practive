@@ -1,6 +1,6 @@
 # Object-Only SAM Diagnostic Report
 
-This report intentionally removes stuff/background classes from the main reading. It is a diagnostic for the current object-mask route, not a full-scene semantic segmentation benchmark. When present, `superpoint` is an official-like 3D overlap-voting post-process over SAM point labels.
+This report intentionally removes stuff/background classes from the main reading. It is a diagnostic for the current object-mask route, not a full-scene semantic segmentation benchmark. When present, `superpoint` is an official-like 3D overlap-voting post-process over SAM point labels. `road_fused` also adds a geometry road prior, so its object rows should be read together with full/stuff metrics.
 
 ## Object Groups
 

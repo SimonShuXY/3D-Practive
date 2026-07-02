@@ -1,0 +1,118 @@
+run,label_mode,merge_person_labels,min_clip_score,owl_threshold,posthoc_merge_person,stage,class,tp,pred,gt,precision,recall,iou
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,box,barrier,4900,18682,5072,0.26228455197516326,0.9660883280757098,0.2598918001485096
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,box,bicycle,0,1,10,0.0,0.0,0.0
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,box,building,0,0,19685,,0.0,0.0
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,box,bus,0,24,8,0.0,0.0,0.0
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,box,car,199,9710,271,0.020494335736354275,0.7343173431734318,0.020343488039255776
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,box,construction vehicle,0,0,32,,0.0,0.0
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,box,pedestrian,511,1051,1558,0.4862036156041865,0.32798459563543003,0.24356530028598666
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,box,road,0,0,59005,,0.0,0.0
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,box,sidewalk,0,0,2277,,0.0,0.0
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,box,traffic cone,67,305,104,0.21967213114754097,0.6442307692307693,0.195906432748538
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,box,trailer,0,5993,0,0.0,,0.0
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,box,truck,11479,16515,16239,0.6950650923402967,0.7068785023708356,0.5395534665099883
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,box,vegetation,0,0,16345,,0.0,0.0
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,sam,barrier,4629,11778,5072,0.39302088639836985,0.9126577287066246,0.3787742410604697
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,sam,bicycle,0,8,10,0.0,0.0,0.0
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,sam,building,0,0,19685,,0.0,0.0
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,sam,bus,0,53,8,0.0,0.0,0.0
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,sam,car,189,6065,271,0.031162407254740312,0.6974169741697417,0.03074670571010249
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,sam,construction vehicle,0,0,32,,0.0,0.0
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,sam,pedestrian,780,1130,1558,0.6902654867256637,0.5006418485237484,0.4088050314465409
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,sam,road,0,0,59005,,0.0,0.0
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,sam,sidewalk,0,0,2277,,0.0,0.0
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,sam,traffic cone,57,109,104,0.5229357798165137,0.5480769230769231,0.36538461538461536
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,sam,trailer,0,2782,0,0.0,,0.0
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,sam,truck,10471,12801,16239,0.8179829700804625,0.6448057146376008,0.5638968172761053
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,owl,True,0.12,0.06,True,sam,vegetation,0,0,16345,,0.0,0.0
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,box,barrier,4900,18682,5072,0.26228455197516326,0.9660883280757098,0.2598918001485096
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,box,bicycle,0,1,10,0.0,0.0,0.0
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,box,building,0,0,19685,,0.0,0.0
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,box,bus,0,24,8,0.0,0.0,0.0
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,box,car,199,9710,271,0.020494335736354275,0.7343173431734318,0.020343488039255776
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,box,construction vehicle,0,0,32,,0.0,0.0
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,box,pedestrian,511,1051,1558,0.4862036156041865,0.32798459563543003,0.24356530028598666
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,box,road,0,0,59005,,0.0,0.0
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,box,sidewalk,0,0,2277,,0.0,0.0
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,box,traffic cone,67,305,104,0.21967213114754097,0.6442307692307693,0.195906432748538
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,box,trailer,0,5993,0,0.0,,0.0
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,box,truck,11479,16515,16239,0.6950650923402967,0.7068785023708356,0.5395534665099883
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,box,vegetation,0,0,16345,,0.0,0.0
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,sam,barrier,4629,11778,5072,0.39302088639836985,0.9126577287066246,0.3787742410604697
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,sam,bicycle,0,8,10,0.0,0.0,0.0
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,sam,building,0,0,19685,,0.0,0.0
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,sam,bus,0,53,8,0.0,0.0,0.0
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,sam,car,189,6065,271,0.031162407254740312,0.6974169741697417,0.03074670571010249
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,sam,construction vehicle,0,0,32,,0.0,0.0
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,sam,pedestrian,780,1130,1558,0.6902654867256637,0.5006418485237484,0.4088050314465409
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,sam,road,0,0,59005,,0.0,0.0
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,sam,sidewalk,0,0,2277,,0.0,0.0
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,sam,traffic cone,57,109,104,0.5229357798165137,0.5480769230769231,0.36538461538461536
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,sam,trailer,0,2782,0,0.0,,0.0
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,sam,truck,10471,12801,16239,0.8179829700804625,0.6448057146376008,0.5638968172761053
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,sam,vegetation,0,0,16345,,0.0,0.0
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,superpoint,barrier,4460,13366,5072,0.3336824779290738,0.8793375394321766,0.3190728287308628
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,superpoint,bicycle,0,0,10,,0.0,0.0
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,superpoint,building,0,0,19685,,0.0,0.0
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,superpoint,bus,0,8,8,0.0,0.0,0.0
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,superpoint,car,75,5378,271,0.013945704722945334,0.2767527675276753,0.013455328310010764
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,superpoint,construction vehicle,0,0,32,,0.0,0.0
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,superpoint,pedestrian,1042,1411,1558,0.738483345145287,0.668806161745828,0.5407368967306694
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,superpoint,road,0,0,59005,,0.0,0.0
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,superpoint,sidewalk,0,0,2277,,0.0,0.0
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,superpoint,traffic cone,49,82,104,0.5975609756097561,0.47115384615384615,0.35766423357664234
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,superpoint,trailer,0,3480,0,0.0,,0.0
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,superpoint,truck,11677,13539,16239,0.8624713789792452,0.7190713713898639,0.6451024805259378
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,superpoint,vegetation,0,0,16345,,0.0,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,box,barrier,4900,18682,5072,0.26228455197516326,0.9660883280757098,0.2598918001485096
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,box,bicycle,0,1,10,0.0,0.0,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,box,building,0,0,19685,,0.0,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,box,bus,0,24,8,0.0,0.0,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,box,car,199,9710,271,0.020494335736354275,0.7343173431734318,0.020343488039255776
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,box,construction vehicle,0,0,32,,0.0,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,box,pedestrian,511,1051,1558,0.4862036156041865,0.32798459563543003,0.24356530028598666
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,box,road,0,0,59005,,0.0,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,box,sidewalk,0,0,2277,,0.0,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,box,traffic cone,67,305,104,0.21967213114754097,0.6442307692307693,0.195906432748538
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,box,trailer,0,5993,0,0.0,,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,box,truck,11479,16515,16239,0.6950650923402967,0.7068785023708356,0.5395534665099883
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,box,vegetation,0,0,16345,,0.0,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,sam,barrier,4629,11778,5072,0.39302088639836985,0.9126577287066246,0.3787742410604697
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,sam,bicycle,0,8,10,0.0,0.0,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,sam,building,0,0,19685,,0.0,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,sam,bus,0,53,8,0.0,0.0,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,sam,car,189,6065,271,0.031162407254740312,0.6974169741697417,0.03074670571010249
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,sam,construction vehicle,0,0,32,,0.0,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,sam,pedestrian,780,1130,1558,0.6902654867256637,0.5006418485237484,0.4088050314465409
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,sam,road,0,0,59005,,0.0,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,sam,sidewalk,0,0,2277,,0.0,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,sam,traffic cone,57,109,104,0.5229357798165137,0.5480769230769231,0.36538461538461536
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,sam,trailer,0,2782,0,0.0,,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,sam,truck,10471,12801,16239,0.8179829700804625,0.6448057146376008,0.5638968172761053
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,sam,vegetation,0,0,16345,,0.0,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,superpoint,barrier,4460,13366,5072,0.3336824779290738,0.8793375394321766,0.3190728287308628
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,superpoint,bicycle,0,0,10,,0.0,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,superpoint,building,0,0,19685,,0.0,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,superpoint,bus,0,8,8,0.0,0.0,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,superpoint,car,75,5378,271,0.013945704722945334,0.2767527675276753,0.013455328310010764
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,superpoint,construction vehicle,0,0,32,,0.0,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,superpoint,pedestrian,1042,1411,1558,0.738483345145287,0.668806161745828,0.5407368967306694
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,superpoint,road,0,0,59005,,0.0,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,superpoint,sidewalk,0,0,2277,,0.0,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,superpoint,traffic cone,49,82,104,0.5975609756097561,0.47115384615384615,0.35766423357664234
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,superpoint,trailer,0,3480,0,0.0,,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,superpoint,truck,11677,13539,16239,0.8624713789792452,0.7190713713898639,0.6451024805259378
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,superpoint,vegetation,0,0,16345,,0.0,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,road_fused,barrier,4460,13366,5072,0.3336824779290738,0.8793375394321766,0.3190728287308628
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,road_fused,bicycle,0,0,10,,0.0,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,road_fused,building,0,0,19685,,0.0,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,road_fused,bus,0,8,8,0.0,0.0,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,road_fused,car,75,5378,271,0.013945704722945334,0.2767527675276753,0.013455328310010764
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,road_fused,construction vehicle,0,0,32,,0.0,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,road_fused,pedestrian,1042,1411,1558,0.738483345145287,0.668806161745828,0.5407368967306694
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,road_fused,road,47867,57812,59005,0.8279768906109458,0.811236335903737,0.6942277012327773
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,road_fused,sidewalk,0,0,2277,,0.0,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,road_fused,traffic cone,49,82,104,0.5975609756097561,0.47115384615384615,0.35766423357664234
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,road_fused,trailer,0,3480,0,0.0,,0.0
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,road_fused,truck,11677,13539,16239,0.8624713789792452,0.7190713713898639,0.6451024805259378
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,owl,True,0.12,0.06,True,road_fused,vegetation,0,0,16345,,0.0,0.0

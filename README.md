@@ -101,6 +101,14 @@ object micro IoU from `0.385` to `0.400`, and frequent-object macro IoU from `0.
 `0.375`. A stricter threshold ablation reaches `0.426` object micro IoU, but with lower
 coverage and worse macro balance. See `docs/OFFICIAL_LIKE_SUPERPOINT_EXPERIMENT.md`.
 
+### Geometry Road Stuff Baseline
+
+A simple LiDAR geometry prior now fills unassigned low local-ground points as `road`.
+This lifts full micro IoU from `0.123` to `0.433`, mapped accuracy from `0.464` to
+`0.685`, and gives `road` an IoU of `0.694`. Full macro IoU is still only `0.198`
+because `building / sidewalk / vegetation` remain unsolved. See
+`docs/GEOMETRY_ROAD_STUFF_BASELINE.md` and `results/ovsam3d_geometry_road_report/`.
+
 ### Initial OWL-ViT Box Scaffold
 
 Five nuScenes-mini samples were processed. Each sample includes:

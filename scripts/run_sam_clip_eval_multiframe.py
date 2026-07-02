@@ -484,6 +484,56 @@ def superpoint_vote_labels(
     return out_labels, out_scores, stats
 
 
+def geometry_road_fill(
+    points: np.ndarray,
+    base_labels: np.ndarray,
+    base_scores: np.ndarray,
+    voxel_size: float,
+    max_height_above_min: float,
+    max_height_above_global_ground: float,
+    min_cell_points: int,
+    score: float,
+) -> Tuple[np.ndarray, np.ndarray, dict]:
+    out_labels = base_labels.copy()
+    out_scores = base_scores.copy()
+    road = label_id("road")
+    coords = np.floor(points[:, :2] / voxel_size).astype(np.int32)
+    _, inverse = np.unique(coords, axis=0, return_inverse=True)
+    z = points[:, 2]
+    global_ground = float(np.percentile(z, 8))
+    candidate = np.zeros(len(points), dtype=bool)
+    total_cells = int(inverse.max() + 1) if len(inverse) else 0
+    used_cells = 0
+    for cid in range(total_cells):
+        idxs = np.where(inverse == cid)[0]
+        if len(idxs) < min_cell_points:
+            continue
+        cell_z = z[idxs]
+        min_z = float(cell_z.min())
+        if min_z > global_ground + max_height_above_global_ground:
+            continue
+        local_ground = idxs[cell_z <= min_z + max_height_above_min]
+        candidate[local_ground] = True
+        used_cells += 1
+
+    fill = candidate & (out_labels < 0)
+    out_labels[fill] = road
+    out_scores[fill] = score
+    stats = {
+        "voxel_size": voxel_size,
+        "max_height_above_min": max_height_above_min,
+        "max_height_above_global_ground": max_height_above_global_ground,
+        "min_cell_points": min_cell_points,
+        "score": score,
+        "global_ground_z": global_ground,
+        "total_cells": total_cells,
+        "used_cells": used_cells,
+        "road_candidate_points": int(candidate.sum()),
+        "road_filled_points": int(fill.sum()),
+    }
+    return out_labels, out_scores, stats
+
+
 def idx_to_name_mapping(nusc: NuScenes) -> Dict[int, str]:
     if hasattr(nusc, "lidarseg_idx2name_mapping"):
         return {int(k): v for k, v in nusc.lidarseg_idx2name_mapping.items()}
@@ -706,6 +756,9 @@ def process_sample(
     superpoint_labels = None
     superpoint_scores = None
     superpoint_stats = None
+    road_fused_labels = None
+    road_fused_scores = None
+    geometry_road_stats = None
 
     mask_paths, box_proj_paths, sam_proj_paths, superpoint_bev_paths = [], [], [], []
     camera_summaries = []
@@ -800,6 +853,26 @@ def process_sample(
         )
         write_ply(points, superpoint_labels, superpoint_scores, out / "superpoint_sam_open_vocab_labeled_points.ply")
         superpoint_bev_paths.append(out / "bev_superpoint_sam_open_vocab_labels.png")
+    if args.enable_geometry_road:
+        road_base_labels = superpoint_labels if superpoint_labels is not None else sam_labels
+        road_base_scores = superpoint_scores if superpoint_scores is not None else sam_scores
+        road_fused_labels, road_fused_scores, geometry_road_stats = geometry_road_fill(
+            points,
+            road_base_labels,
+            road_base_scores,
+            args.road_voxel_size,
+            args.road_max_height_above_min,
+            args.road_max_height_above_global_ground,
+            args.road_min_cell_points,
+            args.road_score,
+        )
+        draw_bev(
+            points,
+            road_fused_labels,
+            out / "bev_geometry_road_fused_labels.png",
+            "Geometry-road fused open-vocabulary point labels",
+        )
+        write_ply(points, road_fused_labels, road_fused_scores, out / "geometry_road_fused_points.ply")
     draw_gt_bev(points, gt, idx2name, out / "bev_lidarseg_gt_reference.png")
     write_ply(points, sam_labels, sam_scores, out / "sam_open_vocab_labeled_points.ply")
     make_montage(mask_paths, out / "montage_sam_clip_masks.jpg")
@@ -809,6 +882,7 @@ def process_sample(
     eval_box = evaluate_point_labels(box_labels, gt, gt_sets)
     eval_sam = evaluate_point_labels(sam_labels, gt, gt_sets)
     eval_superpoint = evaluate_point_labels(superpoint_labels, gt, gt_sets) if superpoint_labels is not None else None
+    eval_road_fused = evaluate_point_labels(road_fused_labels, gt, gt_sets) if road_fused_labels is not None else None
     summary = {
         "status": "OK",
         "sample_index": sample_index,
@@ -818,21 +892,26 @@ def process_sample(
         "box_label_histogram": label_hist(box_labels),
         "sam_label_histogram": label_hist(sam_labels),
         "superpoint_label_histogram": label_hist(superpoint_labels) if superpoint_labels is not None else {},
+        "road_fused_label_histogram": label_hist(road_fused_labels) if road_fused_labels is not None else {},
         "box_eval": eval_box,
         "sam_eval": eval_sam,
         "superpoint_eval": eval_superpoint,
         "superpoint_stats": superpoint_stats,
+        "road_fused_eval": eval_road_fused,
+        "geometry_road_stats": geometry_road_stats,
         "camera_summaries": camera_summaries,
         "outputs": {
             "bev_box": str(out / "bev_box_open_vocab_labels.png"),
             "bev_sam": str(out / "bev_sam_open_vocab_labels.png"),
             "bev_superpoint": str(out / "bev_superpoint_sam_open_vocab_labels.png") if superpoint_labels is not None else None,
+            "bev_road_fused": str(out / "bev_geometry_road_fused_labels.png") if road_fused_labels is not None else None,
             "bev_gt": str(out / "bev_lidarseg_gt_reference.png"),
             "montage_masks": str(out / "montage_sam_clip_masks.jpg"),
             "montage_box_projection": str(out / "montage_box_point_projection.jpg"),
             "montage_sam_projection": str(out / "montage_sam_point_projection.jpg"),
             "ply": str(out / "sam_open_vocab_labeled_points.ply"),
             "superpoint_ply": str(out / "superpoint_sam_open_vocab_labeled_points.ply") if superpoint_labels is not None else None,
+            "road_fused_ply": str(out / "geometry_road_fused_points.ply") if road_fused_labels is not None else None,
         },
         "config": {
             "label_mode": args.label_mode,
@@ -845,12 +924,25 @@ def process_sample(
             "superpoint_min_points": args.superpoint_min_points,
             "superpoint_min_purity": args.superpoint_min_purity,
             "superpoint_min_score": args.superpoint_min_score,
+            "enable_geometry_road": bool(args.enable_geometry_road),
+            "road_voxel_size": args.road_voxel_size,
+            "road_max_height_above_min": args.road_max_height_above_min,
+            "road_max_height_above_global_ground": args.road_max_height_above_global_ground,
+            "road_min_cell_points": args.road_min_cell_points,
+            "road_score": args.road_score,
         },
     }
     with open(out / "summary.json", "w") as f:
         json.dump(summary, f, indent=2)
-    output_labels = superpoint_labels if superpoint_labels is not None else sam_labels
-    output_scores = superpoint_scores if superpoint_scores is not None else sam_scores
+    if road_fused_labels is not None:
+        output_labels = road_fused_labels
+        output_scores = road_fused_scores
+    elif superpoint_labels is not None:
+        output_labels = superpoint_labels
+        output_scores = superpoint_scores
+    else:
+        output_labels = sam_labels
+        output_scores = sam_scores
     return summary, global_points, output_labels, output_scores, gt
 
 
@@ -893,6 +985,9 @@ def make_contact_sheet(base: Path, summaries: Sequence[dict]) -> None:
         if outputs.get("bev_superpoint"):
             bev_paths.append(Path(outputs["bev_superpoint"]))
             bev_labels.append(f"{sid} superpoint SAM BEV")
+        if outputs.get("bev_road_fused"):
+            bev_paths.append(Path(outputs["bev_road_fused"]))
+            bev_labels.append(f"{sid} geometry road fused BEV")
     tile(mask_paths, mask_labels, base / "contact_sheet_sam_clip_masks.jpg", 760)
     tile(proj_paths, proj_labels, base / "contact_sheet_sam_point_projection.jpg", 760)
     tile(bev_paths, bev_labels, base / "contact_sheet_sam_bev_vs_gt.jpg", 560)
@@ -924,13 +1019,15 @@ def write_report(out_dir: Path, summaries: Sequence[dict], multiframe_outputs: D
     rows = []
     for s in summaries:
         super_eval = s.get("superpoint_eval")
+        road_eval = s.get("road_fused_eval")
         rows.append(
-            "| sample_{:03d} | {} | {:.3f} | {:.3f} | {} | {} | {} | {} |".format(
+            "| sample_{:03d} | {} | {:.3f} | {:.3f} | {} | {} | {} | {} | {} | {} |".format(
                 s["sample_index"],
                 s["points_total"],
                 s["box_eval"]["assigned_ratio"],
                 s["sam_eval"]["assigned_ratio"],
                 "n/a" if super_eval is None else f"{super_eval['assigned_ratio']:.3f}",
+                "n/a" if road_eval is None else f"{road_eval['assigned_ratio']:.3f}",
                 (
                     "n/a"
                     if s["box_eval"]["mapped_assigned_accuracy"] is None
@@ -946,6 +1043,11 @@ def write_report(out_dir: Path, summaries: Sequence[dict], multiframe_outputs: D
                     if super_eval is None or super_eval["mapped_assigned_accuracy"] is None
                     else f"{super_eval['mapped_assigned_accuracy']:.3f}"
                 ),
+                (
+                    "n/a"
+                    if road_eval is None or road_eval["mapped_assigned_accuracy"] is None
+                    else f"{road_eval['mapped_assigned_accuracy']:.3f}"
+                ),
             )
         )
     report = f"""# SAM / CLIP / Evaluation / Multi-frame Results
@@ -956,15 +1058,16 @@ This run upgrades the initial OWL-ViT box scaffold in four ways:
 2. CLIP crop tags are recorded as RAM-style automatic labels.
 3. Open-vocabulary point labels are mapped to nuScenes lidarseg classes for a lightweight quality check.
 4. Optional 3D superpoint overlap voting smooths SAM point labels in an official-like post-processing step.
-5. Per-frame predictions are fused into a multi-frame global-coordinate semantic map.
+5. Optional geometry-road filling adds a simple LiDAR ground prior for the `road` class.
+6. Per-frame predictions are fused into a multi-frame global-coordinate semantic map.
 
 ## Summary
 
 Config: `label_mode={summaries[0].get('config', {}).get('label_mode', 'hybrid')}`,
 `merge_person_labels={summaries[0].get('config', {}).get('merge_person_labels', False)}`.
 
-| Sample | Points | Box assigned ratio | SAM assigned ratio | Superpoint assigned ratio | Box mapped accuracy | SAM mapped accuracy | Superpoint mapped accuracy |
-| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Sample | Points | Box assigned ratio | SAM assigned ratio | Superpoint assigned ratio | Road-fused assigned ratio | Box mapped accuracy | SAM mapped accuracy | Superpoint mapped accuracy | Road-fused mapped accuracy |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 {chr(10).join(rows)}
 
 ## Visualizations
@@ -985,6 +1088,8 @@ labels such as road sign / traffic light are ignored by the current metric.
 Superpoint voting is a precision-oriented post-processing step. If its assigned ratio drops
 while mapped accuracy rises, it is filtering noisy point-level mask spillover. If both drop,
 the superpoint thresholds are too strict for the current sparse LiDAR sampling.
+Geometry-road filling is a recall-oriented stuff/background baseline. It should be read as
+an intentionally simple lower bound for `road`, not as a mature dense 2D/3D stuff model.
 """
     (out_dir / "SAM_CLIP_EVAL_MULTIFRAME_REPORT.md").write_text(report)
 
@@ -1024,6 +1129,12 @@ def main() -> None:
     ap.add_argument("--superpoint-min-points", type=int, default=4)
     ap.add_argument("--superpoint-min-purity", type=float, default=0.55)
     ap.add_argument("--superpoint-min-score", type=float, default=0.02)
+    ap.add_argument("--enable-geometry-road", action="store_true")
+    ap.add_argument("--road-voxel-size", type=float, default=1.0)
+    ap.add_argument("--road-max-height-above-min", type=float, default=0.20)
+    ap.add_argument("--road-max-height-above-global-ground", type=float, default=0.65)
+    ap.add_argument("--road-min-cell-points", type=int, default=3)
+    ap.add_argument("--road-score", type=float, default=0.35)
     ap.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     args = ap.parse_args()
 

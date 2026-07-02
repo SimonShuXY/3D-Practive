@@ -1,0 +1,118 @@
+run,regions,changed_from_owl,changed_ratio,clip_wins,owl_wins,top_final_labels,owl_label,clip_label,final_label,count
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,193,0,0.0,0,193,"car:56, barrier:42, pedestrian:28, truck:25, traffic light:12, traffic cone:11, road sign:9, trailer:6",,,,
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,barrier,barrier,barrier,36
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,pedestrian,pedestrian,pedestrian,22
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,car,car,car,18
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,car,barrier,car,13
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,truck,truck,truck,11
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,traffic cone,traffic cone,traffic cone,11
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,truck,trailer,truck,8
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,traffic light,traffic light,traffic light,8
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,car,pedestrian,car,7
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,car,trailer,car,6
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,car,construction vehicle,car,5
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,pedestrian,traffic cone,pedestrian,4
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,road sign,traffic light,road sign,4
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,barrier,construction vehicle,barrier,4
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,car,traffic light,car,3
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,truck,car,truck,3
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,traffic light,pedestrian,traffic light,2
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,road sign,pedestrian,road sign,2
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,car,traffic cone,car,2
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,trailer,barrier,trailer,2
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,trailer,truck,trailer,2
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,road sign,barrier,road sign,2
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,truck,barrier,truck,2
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,trailer,pedestrian,trailer,2
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,traffic light,road sign,traffic light,1
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,car,road,car,1
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,barrier,pedestrian,barrier,1
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,bicycle,barrier,bicycle,1
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,pedestrian,barrier,pedestrian,1
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,traffic light,vegetation,traffic light,1
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,bicycle,pedestrian,bicycle,1
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,car,motorcycle,car,1
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,pedestrian,construction vehicle,pedestrian,1
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,bicycle,traffic cone,bicycle,1
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,barrier,traffic cone,barrier,1
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,road sign,traffic cone,road sign,1
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,bus,trailer,bus,1
+ovsam3d_ablation_owl_merge_person_nuscenes_mini,,,,,,,truck,pedestrian,truck,1
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,193,0,0.0,0,193,"car:56, barrier:42, pedestrian:28, truck:25, traffic light:12, traffic cone:11, road sign:9, trailer:6",,,,
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,barrier,barrier,barrier,36
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,pedestrian,pedestrian,pedestrian,22
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,car,car,car,18
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,car,barrier,car,13
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,truck,truck,truck,11
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,traffic cone,traffic cone,traffic cone,11
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,truck,trailer,truck,8
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,traffic light,traffic light,traffic light,8
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,car,pedestrian,car,7
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,car,trailer,car,6
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,car,construction vehicle,car,5
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,pedestrian,traffic cone,pedestrian,4
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,road sign,traffic light,road sign,4
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,barrier,construction vehicle,barrier,4
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,car,traffic light,car,3
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,truck,car,truck,3
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,traffic light,pedestrian,traffic light,2
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,road sign,pedestrian,road sign,2
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,car,traffic cone,car,2
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,trailer,barrier,trailer,2
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,trailer,truck,trailer,2
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,road sign,barrier,road sign,2
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,truck,barrier,truck,2
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,trailer,pedestrian,trailer,2
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,traffic light,road sign,traffic light,1
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,car,road,car,1
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,barrier,pedestrian,barrier,1
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,bicycle,barrier,bicycle,1
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,pedestrian,barrier,pedestrian,1
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,traffic light,vegetation,traffic light,1
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,bicycle,pedestrian,bicycle,1
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,car,motorcycle,car,1
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,pedestrian,construction vehicle,pedestrian,1
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,bicycle,traffic cone,bicycle,1
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,barrier,traffic cone,barrier,1
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,road sign,traffic cone,road sign,1
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,bus,trailer,bus,1
+ovsam3d_official_like_superpoint_owl_nuscenes_mini,,,,,,,truck,pedestrian,truck,1
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,193,0,0.0,0,193,"car:56, barrier:42, pedestrian:28, truck:25, traffic light:12, traffic cone:11, road sign:9, trailer:6",,,,
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,barrier,barrier,barrier,36
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,pedestrian,pedestrian,pedestrian,22
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,car,car,car,18
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,car,barrier,car,13
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,truck,truck,truck,11
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,traffic cone,traffic cone,traffic cone,11
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,truck,trailer,truck,8
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,traffic light,traffic light,traffic light,8
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,car,pedestrian,car,7
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,car,trailer,car,6
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,car,construction vehicle,car,5
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,pedestrian,traffic cone,pedestrian,4
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,road sign,traffic light,road sign,4
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,barrier,construction vehicle,barrier,4
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,car,traffic light,car,3
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,truck,car,truck,3
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,traffic light,pedestrian,traffic light,2
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,road sign,pedestrian,road sign,2
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,car,traffic cone,car,2
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,trailer,barrier,trailer,2
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,trailer,truck,trailer,2
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,road sign,barrier,road sign,2
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,truck,barrier,truck,2
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,trailer,pedestrian,trailer,2
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,traffic light,road sign,traffic light,1
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,car,road,car,1
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,barrier,pedestrian,barrier,1
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,bicycle,barrier,bicycle,1
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,pedestrian,barrier,pedestrian,1
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,traffic light,vegetation,traffic light,1
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,bicycle,pedestrian,bicycle,1
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,car,motorcycle,car,1
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,pedestrian,construction vehicle,pedestrian,1
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,bicycle,traffic cone,bicycle,1
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,barrier,traffic cone,barrier,1
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,road sign,traffic cone,road sign,1
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,bus,trailer,bus,1
+ovsam3d_geometry_road_superpoint_owl_nuscenes_mini,,,,,,,truck,pedestrian,truck,1

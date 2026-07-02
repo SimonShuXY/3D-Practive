@@ -21,7 +21,7 @@
 
 ## Split Metrics
 
-This table separates the SAM/superpoint-stage score into all mapped classes, object-like prompts, frequent object classes, and stuff/background classes. `Assigned acc` is micro precision over the points assigned to that group.
+This table separates the SAM/superpoint/road-fused stage score into all mapped classes, object-like prompts, frequent object classes, and stuff/background classes. `Assigned acc` is micro precision over the points assigned to that group.
 
 | Run | Label mode | Stage | Group | Coverage | Group pred ratio | Assigned acc | Micro R | Micro IoU | Macro IoU | Classes |
 | --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
@@ -62,6 +62,7 @@ This table separates the SAM/superpoint-stage score into all mapped classes, obj
 - Read the full macro IoU together with object/stuff split metrics. The current prompt route is object-centric, so missing stuff predictions can depress full-scene macro IoU even when object assigned accuracy is improving.
 - Read `frequent_object` as the cleanest current object-mask diagnostic: it removes background and also avoids tiny long-tail classes dominating a five-sample mini split.
 - Compare `sam` with `superpoint` rows to test whether 3D overlap voting improves precision enough to offset lower coverage.
+- Compare `road_fused` with `superpoint` rows to estimate whether a simple geometry prior can lift full/stuff scores before adding a real dense stuff model.
 
 ## Lowest SAM IoU Classes
 

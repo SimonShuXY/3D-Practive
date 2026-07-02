@@ -250,6 +250,8 @@ def available_stages(run: dict) -> List[str]:
     summaries = run.get("summaries") or []
     if any(sample.get("superpoint_eval") for sample in summaries):
         stages.append("superpoint")
+    if any(sample.get("road_fused_eval") for sample in summaries):
+        stages.append("road_fused")
     return stages
 
 
@@ -281,7 +283,7 @@ def make_object_only_report(
     object_rows = [
         row
         for row in group_rows
-        if row["stage"] in {"sam", "superpoint"} and row["group"] in {"object", "frequent_object"}
+        if row["stage"] in {"sam", "superpoint", "road_fused"} and row["group"] in {"object", "frequent_object"}
     ]
     best_object = max(
         (row for row in object_rows if row["group"] == "object" and row["micro_iou"] is not None),
@@ -297,7 +299,7 @@ def make_object_only_report(
     lines = [
         "# Object-Only SAM Diagnostic Report",
         "",
-        "This report intentionally removes stuff/background classes from the main reading. It is a diagnostic for the current object-mask route, not a full-scene semantic segmentation benchmark. When present, `superpoint` is an official-like 3D overlap-voting post-process over SAM point labels.",
+        "This report intentionally removes stuff/background classes from the main reading. It is a diagnostic for the current object-mask route, not a full-scene semantic segmentation benchmark. When present, `superpoint` is an official-like 3D overlap-voting post-process over SAM point labels. `road_fused` also adds a geometry road prior, so its object rows should be read together with full/stuff metrics.",
         "",
         "## Object Groups",
         "",
@@ -416,13 +418,13 @@ def make_report(
         "",
         "## Split Metrics",
         "",
-        "This table separates the SAM/superpoint-stage score into all mapped classes, object-like prompts, frequent object classes, and stuff/background classes. `Assigned acc` is micro precision over the points assigned to that group.",
+        "This table separates the SAM/superpoint/road-fused stage score into all mapped classes, object-like prompts, frequent object classes, and stuff/background classes. `Assigned acc` is micro precision over the points assigned to that group.",
         "",
         "| Run | Label mode | Stage | Group | Coverage | Group pred ratio | Assigned acc | Micro R | Micro IoU | Macro IoU | Classes |",
         "| --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |",
     ]
     for row in group_rows:
-        if row["stage"] not in {"sam", "superpoint"}:
+        if row["stage"] not in {"sam", "superpoint", "road_fused"}:
             continue
         lines.append(
             "| {run} | {label_mode} | {stage} | {group} | {coverage} | {pred_ratio} | {acc} | {recall} | {miou_micro} | {miou_macro} | {classes} |".format(
@@ -450,6 +452,7 @@ def make_report(
         "- Read the full macro IoU together with object/stuff split metrics. The current prompt route is object-centric, so missing stuff predictions can depress full-scene macro IoU even when object assigned accuracy is improving.",
         "- Read `frequent_object` as the cleanest current object-mask diagnostic: it removes background and also avoids tiny long-tail classes dominating a five-sample mini split.",
         "- Compare `sam` with `superpoint` rows to test whether 3D overlap voting improves precision enough to offset lower coverage.",
+        "- Compare `road_fused` with `superpoint` rows to estimate whether a simple geometry prior can lift full/stuff scores before adding a real dense stuff model.",
         "",
         "## Lowest SAM IoU Classes",
         "",
